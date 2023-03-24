@@ -1,1 +1,48 @@
 @use "./variables" as *;
+@use "./mixins" as *;
+
+.settings {
+    background: $accent-color;
+    @include font(0.9rem, 0.9rem, $tertiary-font-color, uppercase);
+
+    .wrapper {
+        @include flexbox();
+        padding: 20px 0;
+    }
+
+    p {
+        flex-grow: 1;
+    }
+
+    a {
+        color: $tertiary-font-color;
+        margin-left: 25px;
+    }
+}
+
+.header-nav .wrapper {
+    @include flexbox();
+    padding: 20px 0;
+
+    ul {
+        @include flexbox();
+    }
+
+    li {
+        padding: 0 20px;
+        text-transform: uppercase;
+    }
+
+    .shopping-bag {
+        min-width: 25px;
+    }
+}
+
+.heading {
+    background: #f8eee5;
+
+    .wrapper {
+        background: url(../assets/header.png) right / auto 80% no-repeat;
+        padding: 150px 0;
+    }
+}

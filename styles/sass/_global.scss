@@ -1,13 +1,61 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
-.wrapper {
-    width: 50%;
-    max-width: 960px;
-    margin: 0 auto;
+// typographic
+
+html {
+    font-size: 20px;
 }
 
 body {
-    font-family: 'Rubik', sans-serif;
-    font-weight: 400;
+    font-family: $font-stack;
+    @include font();
+}
+
+h1 {
+    @include font(4rem, 4rem, $secondary-font-color, uppercase);
+
+    &.contact {
+        @include font(2rem, 2rem, $primary-font-color, uppercase);
+    }
+}
+
+h2 {
+    @include font(2rem, 2rem, $secondary-font-color, uppercase);
+    font-weight: 300;
+}
+
+.heading p {
+    @include font(1.1rem, 1.1rem, $secondary-font-color)
+}
+
+// positioning and decorative
+
+h1, h2, h3, h4, h5, h6, p, ul, input {
+    margin: 0;
+    padding: 0;
+}
+
+span, img, a {
+    display: block;
+}
+
+.wrapper {
+    width: 45%;
+    max-width: 864px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
     color: $primary-font-color;
 }
