@@ -21,12 +21,19 @@ h1 {
 }
 
 h2 {
-    @include font(2rem, 2rem, $secondary-font-color, uppercase);
-    font-weight: 300;
+    @include font(2rem, 2rem, $secondary-font-color, uppercase, 300);
+}
+
+.settings {
+    @include font(0.9rem, 0.9rem, $tertiary-font-color, uppercase);
 }
 
 .heading p {
-    @include font(1.1rem, 1.1rem, $secondary-font-color)
+    @include font(1.1rem, 1.1rem, $secondary-font-color);
+
+    a {
+        @include font(1rem, 1rem, $tertiary-font-color, uppercase)
+    }
 }
 
 // positioning and decorative
@@ -41,8 +48,8 @@ span, img, a {
 }
 
 .wrapper {
-    width: 45%;
-    max-width: 864px;
+    width: 55%;
+    max-width: 1056px;
     margin: 0 auto;
 }
 
@@ -58,4 +65,8 @@ ul {
 a {
     text-decoration: none;
     color: $primary-font-color;
+}
+
+address {
+    font-style: normal;
 }
