@@ -2,6 +2,7 @@
 @use "./mixins" as *;
 
 .settings {
+    @include font(0.8rem, 0.8rem, $tertiary-font-color, uppercase);
     background: $accent-color;
 
     .wrapper {
@@ -45,19 +46,37 @@
         padding: 150px 0;
     }
 
-    h1 {
-        margin: 20px 0;
+    p {
+        @include font(1.2rem, 1.2rem, $secondary-font-color);
     }
 
     .discover-now {
         width: 200px;
         background: $accent-color;
         text-align: center;
-        border-radius: 31px;
+        border-radius: 29px;
         margin-top: 40px;
     }
 
     a {
+        @include font(0.9rem, 0.9rem, $tertiary-font-color, uppercase);
         padding: 20px 0;
     }
+}
+
+h1 {
+    @include font(4rem, 4rem, $secondary-font-color, uppercase);
+    margin: 20px 0;
+
+    &.contact {
+        @include font(1.5rem, 1.5rem, $primary-font-color, uppercase, 600);
+        background: #eeeeee url(../assets/contact-header.jpg) center / cover no-repeat;
+        text-align: center;
+        padding: 150px 0;
+        margin: 0;
+    }
+}
+
+h2 {
+    @include font(2rem, 2rem, $secondary-font-color, uppercase, 300);
 }

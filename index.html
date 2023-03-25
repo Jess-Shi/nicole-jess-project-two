@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Pronia</title>
 </head>
@@ -44,255 +44,261 @@
         </section>
     </header>
 
-    <main>
-        <div class="wrapper">
-            <section class="promises">
-                <div class="free-shipping">
-                    <img src="./assets/icons/car.png" alt="Delivery truck icon">
+    <main class="wrapper">
+        <section class="promises">
+            <div class="free-shipping">
+                <img src="./assets/icons/car.png" alt="Delivery truck icon">
 
-                    <div class="shipping-text">
-                        <p><strong>Free Shipping</strong></p>
-                        <p>Capped at $319 per order</p>
+                <div class="shipping-text">
+                    <p><strong>Free Shipping</strong></p>
+                    <p>Capped at $319 per order</p>
+                </div>
+            </div>
+
+            <div class="safe-payment">
+                <img src="./assets/icons/card.png" alt="Credit card icon">
+
+                <div class="payment-text">
+                    <p><strong>Safe Payment</strong></p>
+                    <p>With our payment gateway</p>
+                </div>
+            </div>
+
+            <div class="best-service">
+                <img src="./assets/icons/service.png" alt="Postcard with hearts icon">
+
+                <div class="service-text">
+                    <p><strong>Best Service</strong></p>
+                    <p>Friendly & superb service</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="products">
+            <h3>Our Products</h3>
+
+            <div class="filters">
+                <button>Featured</button>
+                <button>Bestseller</button>
+                <button>Latest</button>
+            </div>
+
+            <div class="featured">
+                <div class="featured-child">
+                    <div class="product-image">
+                        <img src="./assets/p2.jpeg" alt="American Marigold in brown pot">
+                        <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
+                    </div>
+
+                    <div class="product-text">
+                        <p>American Marigold</p>
+                        <p class="price">$23.45</p>
                     </div>
                 </div>
 
-                <div class="safe-payment">
-                    <img src="./assets/icons/card.png" alt="Credit card icon">
+                <div class="featured-child">
+                    <div class="product-image">
+                        <img src="./assets/p1.jpeg" alt="Black Eyed Susan in black pot">
+                        <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
+                    </div>
 
-                    <div class="payment-text">
-                        <p><strong>Safe Payment</strong></p>
-                        <p>With our payment gateway</p>
+                    <div class="product-text">
+                        <p>Black Eyed Susan</p>
+                        <p class="price">$25.45</p>
                     </div>
                 </div>
 
-                <div class="best-service">
-                    <img src="./assets/icons/service.png" alt="Postcard with hearts icon">
-
-                    <div class="service-text">
-                        <p><strong>Best Service</strong></p>
-                        <p>Friendly & superb service</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="products">
-                <h3>Our Products</h3>
-
-                <div class="filters">
-                    <button>Featured</button>
-                    <button>Bestseller</button>
-                    <button>Latest</button>
-                </div>
-
-                <div class="featured">
-                    <div class="featured-child">
-                        <div class="product-image">
-                            <img src="./assets/p2.jpeg" alt="American Marigold in brown pot">
-                            <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
-                        </div>
-
-                        <div class="product-text">
-                            <p>American Marigold</p>
-                            <p class="price">$23.45</p>
-                        </div>
+                <div class="featured-child">
+                    <div class="product-image">
+                        <img src="./assets/p3.jpeg" alt="Bleeding Heart in white pot with grey base">
+                        <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
                     </div>
 
-                    <div class="featured-child">
-                        <div class="product-image">
-                            <img src="./assets/p1.jpeg" alt="Black Eyed Susan in black pot">
-                            <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
-                        </div>
-
-                        <div class="product-text">
-                            <p>Black Eyed Susan</p>
-                            <p class="price">$25.45</p>
-                        </div>
-                    </div>
-
-                    <div class="featured-child">
-                        <div class="product-image">
-                            <img src="./assets/p3.jpeg" alt="Bleeding Heart in white pot with grey base">
-                            <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
-                        </div>
-
-                        <div class="product-text">
-                            <p>Bleeding Heart</p>
-                            <p class="price">$30.45</p>
-                        </div>
-                    </div>
-
-                    <div class="featured-child">
-                        <div class="product-image">
-                            <img src="./assets/p4.jpeg" alt="Bloody Cranesbill in white pot with grey base">
-                            <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
-                        </div>
-
-                        <div class="product-text">
-                            <p>Bloody Cranesbill</p>
-                            <p class="price">$45.00</p>
-                        </div>
-                    </div>
-
-                    <div class="featured-child">
-                        <div class="product-image">
-                            <img src="./assets/p5.jpeg" alt="Butterfly Weed in white pot on brass metal stand">
-                            <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
-                        </div>
-
-                        <div class="product-text">
-                            <p>Butterfly Weed</p>
-                            <p class="price">$50.45</p>
-                        </div>
-                    </div>
-
-                    <div class="featured-child">
-                        <div class="product-image">
-                            <img src="./assets/p6.jpeg" alt="Common Yarrow in white pot">
-                            <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
-                        </div>
-
-                        <div class="product-text">
-                            <p>Common Yarrow</p>
-                            <p class="price">$65.00</p>
-                        </div>
-                    </div>
-
-                    <div class="featured-child">
-                        <div class="product-image">
-                            <img src="./assets/p7.jpeg" alt="Doublefile Viburnum in white pot">
-                            <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
-                        </div>
-
-                        <div class="product-text">
-                            <p>Doublefile Viburnum</p>
-                            <p class="price">$67.45</p>
-                        </div>
-                    </div>
-
-                    <div class="featured-child">
-                        <div class="product-image">
-                            <img src="./assets/p8.jpeg" alt="Feather Reed Grass in brass metal pot">
-                            <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
-                        </div>
-
-                        <div class="product-text">
-                            <p>Feather Reed Grass</p>
-                            <p class="price">$20.00</p>
-                        </div>
+                    <div class="product-text">
+                        <p>Bleeding Heart</p>
+                        <p class="price">$30.45</p>
                     </div>
                 </div>
 
-                <div class="collections">
-                    <div class="collection1">
-                        <p>Collection of Cacti</p>
-                        <h4>Pottery Pots & <span>Plants</span></h4>
-                        <p class="shop-now"><a href="#">Shop Now</a></p>
+                <div class="featured-child">
+                    <div class="product-image">
+                        <img src="./assets/p4.jpeg" alt="Bloody Cranesbill in white pot with grey base">
+                        <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
                     </div>
 
-                    <div class="collection2">
-                        <p>New Collection</p>
-                        <h4>Plant Pots</h4>
-                        <p class="shop-now"><a href="#">Shop Now</a></p>
-                    </div>
-
-                    <div class="collection3">
-                        <p>New Collection</p>
-                        <h4>Plant Pots</h4>
-                        <p class="shop-now"><a href="#">Shop Now</a></p>
-                    </div>
-
-                    <div class="collection4">
-                        <p>Collection of Cacti</p>
-                        <h4>Hanging Pots & <span>Plants</span></h4>
-                        <p class="shop-now"><a href="#">Shop Now</a></p>
+                    <div class="product-text">
+                        <p>Bloody Cranesbill</p>
+                        <p class="price">$45.00</p>
                     </div>
                 </div>
-            </section>
 
-            <section class="blog">
-                <div class="blog-heading">
-                    <h3>Latest Posts</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident a dolore nostrum nesciunt natus cumque.</p>
+                <div class="featured-child">
+                    <div class="product-image">
+                        <img src="./assets/p5.jpeg" alt="Butterfly Weed in white pot on brass metal stand">
+                        <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
+                    </div>
+
+                    <div class="product-text">
+                        <p>Butterfly Weed</p>
+                        <p class="price">$50.45</p>
+                    </div>
                 </div>
 
-                <div class="blog-posts">
-                    <a href="#" class="blog-posts-child">
-                        <p class="byline">By: Icarus  24 April 2023</p>
-                        <h5>Aenean Volputate Lorem</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae exercitationem placeat corrupti ab quod. Modi aperiam amet sunt suscipit pariatur?</p>
-                        <img src="./assets/blog3.jpeg" alt="Gardener in blue overalls holding tray of various potted plants">
-                    </a>
+                <div class="featured-child">
+                    <div class="product-image">
+                        <img src="./assets/p6.jpeg" alt="Common Yarrow in white pot">
+                        <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
+                    </div>
 
-                    <a href="#" class="blog-posts-child">
-                        <p class="byline">By: Icarus  24 April 2023</p>
-                        <h5>There Are Many Variations</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae exercitationem placeat corrupti ab quod. Modi aperiam amet sunt suscipit pariatur?</p>
-                        <img src="./assets/blog1.jpeg" alt="Vibrant green potted plant bathed in sunlight">
-                    </a>
-
-                    <a href="#" class="blog-posts-child">
-                        <p class="byline">By: Icarus  24 April 2023</p>
-                        <h5>Maecenas Laoreet Massa</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae exercitationem placeat corrupti ab quod. Modi aperiam amet sunt suscipit pariatur?</p>
-                        <img src="./assets/blog2.jpeg" alt="Gardener digging out a potted plant with small spade">
-                    </a>
+                    <div class="product-text">
+                        <p>Common Yarrow</p>
+                        <p class="price">$65.00</p>
+                    </div>
                 </div>
-            </section>
-        </div>
+
+                <div class="featured-child">
+                    <div class="product-image">
+                        <img src="./assets/p7.jpeg" alt="Doublefile Viburnum in white pot">
+                        <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
+                    </div>
+
+                    <div class="product-text">
+                        <p>Doublefile Viburnum</p>
+                        <p class="price">$67.45</p>
+                    </div>
+                </div>
+
+                <div class="featured-child">
+                    <div class="product-image">
+                        <img src="./assets/p8.jpeg" alt="Feather Reed Grass in brass metal pot">
+                        <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
+                    </div>
+
+                    <div class="product-text">
+                        <p>Feather Reed Grass</p>
+                        <p class="price">$20.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collections">
+                <div class="collection1">
+                    <p>Collection of Cacti</p>
+                    <h4>Pottery Pots & <span>Plants</span></h4>
+                    <p class="shop-now"><a href="#">Shop Now</a></p>
+                </div>
+
+                <div class="collection2">
+                    <p>New Collection</p>
+                    <h4>Plant Pots</h4>
+                    <p class="shop-now"><a href="#">Shop Now</a></p>
+                </div>
+
+                <div class="collection3">
+                    <p>New Collection</p>
+                    <h4>Plant Pots</h4>
+                    <p class="shop-now"><a href="#">Shop Now</a></p>
+                </div>
+
+                <div class="collection4">
+                    <p>Collection of Cacti</p>
+                    <h4>Hanging Pots & <span>Plants</span></h4>
+                    <p class="shop-now"><a href="#">Shop Now</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog">
+            <div class="blog-heading">
+                <h3>Latest Posts</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident a dolore nostrum nesciunt natus cumque.</p>
+            </div>
+
+            <div class="blog-posts">
+                <a href="#" class="blog-posts-child">
+                    <p class="byline">By: Icarus  24 April 2023</p>
+                    <h5>Aenean Volputate Lorem</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae exercitationem placeat corrupti ab quod. Modi aperiam amet sunt suscipit pariatur?</p>
+                    <img src="./assets/blog3.jpeg" alt="Gardener in blue overalls holding tray of various potted plants">
+                </a>
+
+                <a href="#" class="blog-posts-child">
+                    <p class="byline">By: Icarus  24 April 2023</p>
+                    <h5>There Are Many Variations</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae exercitationem placeat corrupti ab quod. Modi aperiam amet sunt suscipit pariatur?</p>
+                    <img src="./assets/blog1.jpeg" alt="Vibrant green potted plant bathed in sunlight">
+                </a>
+
+                <a href="#" class="blog-posts-child">
+                    <p class="byline">By: Icarus  24 April 2023</p>
+                    <h5>Maecenas Laoreet Massa</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae exercitationem placeat corrupti ab quod. Modi aperiam amet sunt suscipit pariatur?</p>
+                    <img src="./assets/blog2.jpeg" alt="Gardener digging out a potted plant with small spade">
+                </a>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="wrapper">
-            <section class="social-media">
+            <nav class="social-media">
                 <a href="./index.html" class="logo"><img src="./assets/logo.png" alt="Pronia logo"></a>
 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
-                <nav>
-                    <ul class="media-icons">
-                        <li><a href="https://www.facebook.com/"><img src="./assets/icons/facebook.svg" alt="Facebook icon"></a></li>
-                        <li><a href="https://twitter.com/"><img src="./assets/icons/twitter.svg" alt="Twitter icon"></a></li>
-                        <li><a href="https://www.pinterest.com/"><img src="./assets/icons/pinterest.svg" alt="Pinterest icon"></a></li>
-                        <li><a href="https://dribbble.com/"><img src="./assets/icons/dribble.svg" alt="Dribbble icon"></a></li>
-                    </ul>
-                </nav>
-            </section>
+                <ul class="media-icons">
+                    <li><a href="https://www.facebook.com/"><img src="./assets/icons/facebook.svg" alt="Facebook icon"></a></li>
+                    <li><a href="https://twitter.com/"><img src="./assets/icons/twitter.svg" alt="Twitter icon"></a></li>
+                    <li><a href="https://www.pinterest.com/"><img src="./assets/icons/pinterest.svg" alt="Pinterest icon"></a></li>
+                    <li><a href="https://dribbble.com/"><img src="./assets/icons/dribble.svg" alt="Dribbble icon"></a></li>
+                </ul>
+            </nav>
 
             <nav class="useful-links">
                 <h6>Useful Links</h6>
-                <ul><a href="#">About Pronia</a></ul>
-                <ul><a href="#">How to Shop</a></ul>
-                <ul><a href="#">FAQ</a></ul>
-                <ul><a href="#">Contact Us</a></ul>
-                <ul><a href="#">Login</a></ul>
+                <ul>
+                    <li><a href="#">About Pronia</a></li>
+                    <li><a href="#">How to Shop</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
             </nav>
 
             <nav class="account">
                 <h6>My Account</h6>
-                <ul><a href="#">Sign In</a></ul>
-                <ul><a href="#">View Cart</a></ul>
-                <ul><a href="#">My Wishlist</a></ul>
-                <ul><a href="#">Track My Order</a></ul>
-                <ul><a href="#">Help</a></ul>
+                <ul>
+                    <li><a href="#">Sign In</a></li>
+                    <li><a href="#">View Cart</a></li>
+                    <li><a href="#">My Wishlist</a></li>
+                    <li><a href="#">Track My Order</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
             </nav>
 
             <nav class="services">
                 <h6>Our Services</h6>
-                <ul><a href="#">Payment Methods</a></ul>
-                <ul><a href="#">Money-back Guarantee</a></ul>
-                <ul><a href="#">Returns</a></ul>
-                <ul><a href="#">Shipping</a></ul>
-                <ul><a href="#">Privacy Policy</a></ul>
+                <ul>
+                    <li><a href="#">Payment Methods</a></li>
+                    <li><a href="#">Money-back Guarantee</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
             </nav>
 
-            <section class="questions">
+            <nav class="questions">
                 <h6>Have a question?</h6>
                 <p>Reach us at:</p>
-                <a href="tel:+1234567890">123-456-7890</a>
-                <a href="mailto:info@pronia.ca">info@pronia.ca</a>
-                <address>123 Fake Street, Toronto, ON<br>
-                A5A 5A5, Canada</address>
-            </section>
+                <ul>
+                    <li><a href="tel:+1234567890">123-456-7890</a></li>
+                    <li><a href="mailto:info@pronia.ca">info@pronia.ca</a></li>
+                    <li><a href="https://www.google.com/maps/place/123+Front+St+W,+Toronto,+ON+M5J+2M2/@43.6448754,-79.3852097,17z/data=!3m1!4b1!4m6!3m5!1s0x882b34d378eea58f:0x5b05a27cba5c5a7d!8m2!3d43.6448715!4d-79.383021!16s%2Fg%2F11b8v444h8">
+                        <address>123 Fake Street, Toronto, ON<br>
+                            A5A 5A5, Canada</address></a>
+                    </li>
+                </ul>
+            </nav>
 
             <p class="copyright">&copy; 2023 Pronia</p>
         </div>

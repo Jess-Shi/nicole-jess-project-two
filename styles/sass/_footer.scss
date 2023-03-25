@@ -2,7 +2,7 @@
 @use "./mixins" as *;
 
 footer {
-    @include font(0.8rem, 1rem, $secondary-font-color);
+    @include font(0.8rem, 1.25rem, $secondary-font-color);
     background: #d8e9d6 url(../assets/footer.jpg) center / cover no-repeat;
 
     .wrapper {
@@ -46,12 +46,12 @@ h6 {
 }
 
 .copyright {
-    @include font(0.8rem, 0.8rem, $accent-color);
+    @include font(0.8rem, 0.8rem, $tertiary-font-color);
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    border-top: 2px solid $accent-color;
+    border-top: 2px solid $tertiary-font-color;
     text-align: center;
     padding: 15px 0;
 }

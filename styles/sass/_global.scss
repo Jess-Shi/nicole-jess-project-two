@@ -1,46 +1,22 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-// typographic
-
 html {
     font-size: 20px;
 }
 
 body {
-    font-family: $font-stack;
     @include font();
+    font-family: $font-stack;
 }
 
-h1 {
-    @include font(4rem, 4rem, $secondary-font-color, uppercase);
-
-    &.contact {
-        @include font(2rem, 2rem, $primary-font-color, uppercase);
-    }
-}
-
-h2 {
-    @include font(2rem, 2rem, $secondary-font-color, uppercase, 300);
-}
-
-.settings {
-    @include font(0.9rem, 0.9rem, $tertiary-font-color, uppercase);
-}
-
-.heading p {
-    @include font(1.1rem, 1.1rem, $secondary-font-color);
-
-    a {
-        @include font(1rem, 1rem, $tertiary-font-color, uppercase)
-    }
-}
-
-// positioning and decorative
-
-h1, h2, h3, h4, h5, h6, p, ul, input {
+h1, h2, h3, h4, h5, h6, p, ul, fieldset, input {
     margin: 0;
     padding: 0;
+}
+
+fieldset, input, textarea, button {
+    border: 0;
 }
 
 span, img, a {

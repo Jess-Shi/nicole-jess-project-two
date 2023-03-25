@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Pronia</title>
 </head>
@@ -37,14 +37,19 @@
         <h1 class="contact">Contact</h1>
     </header>
 
-    <main>
+    <main class="wrapper contact">
         <section class="contact-info">
             <h4>Contact Info:</h4>
             <p>Fill out the form and our team will get back to you within 24 hours.</p>
-            <a href="tel:+1234567890">123-456-7890</a>
-            <a href="mailto:info@pronia.ca">info@pronia.ca</a>
-            <address>123 Fake Street, Toronto, ON<br>
-            A5A 5A5, Canada</address>
+            <ul>
+                <li><a href="tel:+1234567890">123-456-7890</a></li>
+                <li><a href="mailto:info@pronia.ca">info@pronia.ca</a></li>
+                <li><a href="https://www.google.com/maps/place/123+Front+St+W,+Toronto,+ON+M5J+2M2/@43.6448754,-79.3852097,17z/data=!3m1!4b1!4m6!3m5!1s0x882b34d378eea58f:0x5b05a27cba5c5a7d!8m2!3d43.6448715!4d-79.383021!16s%2Fg%2F11b8v444h8">
+                    <address>123 Fake Street<br>
+                        Toronto, ON<br>
+                        A5A 5A5, Canada</address></a>
+                </li>
+            </ul>
         </section>
 
         <form>
@@ -73,56 +78,64 @@
 
     <footer>
         <div class="wrapper">
-            <section class="social-media">
+            <nav class="social-media">
                 <a href="./index.html" class="logo"><img src="./assets/logo.png" alt="Pronia logo"></a>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatem deleniti et.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
-                <nav>
-                    <ul class="media-icons">
-                        <li><img src="./assets/icons/facebook.svg" alt="Facebook icon"></li>
-                        <li><img src="./assets/icons/twitter.svg" alt="Twitter icon"></li>
-                        <li><img src="./assets/icons/pinterest.svg" alt="Pinterest icon"></li>
-                        <li><img src="./assets/icons/dribble.svg" alt="Dribble icon"></li>
-                    </ul>
-                </nav>
-            </section>
+                <ul class="media-icons">
+                    <li><a href="https://www.facebook.com/"><img src="./assets/icons/facebook.svg" alt="Facebook icon"></a></li>
+                    <li><a href="https://twitter.com/"><img src="./assets/icons/twitter.svg" alt="Twitter icon"></a></li>
+                    <li><a href="https://www.pinterest.com/"><img src="./assets/icons/pinterest.svg" alt="Pinterest icon"></a></li>
+                    <li><a href="https://dribbble.com/"><img src="./assets/icons/dribble.svg" alt="Dribbble icon"></a></li>
+                </ul>
+            </nav>
 
             <nav class="useful-links">
                 <h6>Useful Links</h6>
-                <ul><a href="#">About Pronia</a></ul>
-                <ul><a href="#">How to Shop</a></ul>
-                <ul><a href="#">FAQ</a></ul>
-                <ul><a href="#">Contact Us</a></ul>
-                <ul><a href="#">Login</a></ul>
+                <ul>
+                    <li><a href="#">About Pronia</a></li>
+                    <li><a href="#">How to Shop</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
             </nav>
 
             <nav class="account">
                 <h6>My Account</h6>
-                <ul><a href="#">Sign In</a></ul>
-                <ul><a href="#">View Cart</a></ul>
-                <ul><a href="#">My Wishlist</a></ul>
-                <ul><a href="#">Track My Order</a></ul>
-                <ul><a href="#">Help</a></ul>
+                <ul>
+                    <li><a href="#">Sign In</a></li>
+                    <li><a href="#">View Cart</a></li>
+                    <li><a href="#">My Wishlist</a></li>
+                    <li><a href="#">Track My Order</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
             </nav>
 
             <nav class="services">
                 <h6>Our Services</h6>
-                <ul><a href="#">Payment Methods</a></ul>
-                <ul><a href="#">Money-back Guarantee</a></ul>
-                <ul><a href="#">Returns</a></ul>
-                <ul><a href="#">Shipping</a></ul>
-                <ul><a href="#">Privacy Policy</a></ul>
+                <ul>
+                    <li><a href="#">Payment Methods</a></li>
+                    <li><a href="#">Money-back Guarantee</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
             </nav>
 
-            <section class="questions">
+            <nav class="questions">
                 <h6>Have a question?</h6>
                 <p>Reach us at:</p>
-                <a href="tel:+1234567890">123-456-7890</a>
-                <a href="mailto:info@pronia.ca">info@pronia.ca</a>
-                <address>123 Fake Street, Toronto, ON<br>
-                A5A 5A5, Canada</address>
-            </section>
+                <ul>
+                    <li><a href="tel:+1234567890">123-456-7890</a></li>
+                    <li><a href="mailto:info@pronia.ca">info@pronia.ca</a></li>
+                    <li><a href="https://www.google.com/maps/place/123+Front+St+W,+Toronto,+ON+M5J+2M2/@43.6448754,-79.3852097,17z/data=!3m1!4b1!4m6!3m5!1s0x882b34d378eea58f:0x5b05a27cba5c5a7d!8m2!3d43.6448715!4d-79.383021!16s%2Fg%2F11b8v444h8">
+                        <address>123 Fake Street, Toronto, ON<br>
+                            A5A 5A5, Canada</address></a>
+                    </li>
+                </ul>
+            </nav>
 
             <p class="copyright">&copy; 2023 Pronia</p>
         </div>
