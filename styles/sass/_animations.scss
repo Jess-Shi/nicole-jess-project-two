@@ -1,0 +1,41 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.header-nav ul a {
+    transition: border-bottom 0.1s ease;
+
+    &:hover,
+    &:focus {
+        border-bottom: 4px solid $primary-font-color;
+    }
+}
+
+.discover-now,
+.shop-now,
+form button,
+.blog-posts .child {
+    transition: box-shadow 0.25s ease;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 0 15px $primary-font-color;
+    }
+}
+
+.product-image button {
+    transition: max-width 0.25s ease;
+
+    &:hover,
+    &:focus {
+        max-width: 50px;
+    }
+}
+
+.shopping-bag {
+    transition: min-width 0.25s ease;
+
+    &:hover,
+    &:focus {
+        min-width: 40px;
+    }
+}

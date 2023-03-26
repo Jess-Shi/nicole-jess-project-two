@@ -279,7 +279,7 @@ address {
 .settings {
   font-size: 0.8rem;
   line-height: 0.8rem;
-  color: #003d1a;
+  color: #06321B;
   text-transform: uppercase;
   font-weight: 400;
   background: #abd373;
@@ -306,7 +306,7 @@ address {
           flex-grow: 1;
 }
 .settings a {
-  color: #003d1a;
+  color: #06321B;
   margin-left: 25px;
 }
 
@@ -345,7 +345,8 @@ address {
   padding: 0 20px;
   text-transform: uppercase;
 }
-.header-nav .wrapper .shopping-bag {
+
+.shopping-bag {
   min-width: 25px;
 }
 
@@ -373,7 +374,7 @@ address {
 .heading a {
   font-size: 0.9rem;
   line-height: 0.9rem;
-  color: #003d1a;
+  color: #06321B;
   text-transform: uppercase;
   font-weight: 400;
   padding: 20px 0;
@@ -422,7 +423,7 @@ h3::before {
   left: -90px;
   top: 16px;
   height: 2px;
-  background: #003d1a;
+  background: #06321B;
 }
 h3::after {
   content: "";
@@ -431,7 +432,7 @@ h3::after {
   right: -90px;
   top: 16px;
   height: 2px;
-  background: #003d1a;
+  background: #06321B;
 }
 
 .promises {
@@ -464,7 +465,7 @@ h3::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 2px dotted #003d1a;
+  border: 2px dotted #06321B;
   border-radius: 5px;
   padding: 20px 15px;
 }
@@ -556,7 +557,7 @@ h3::after {
 .price {
   font-size: 1.1rem;
   line-height: 1.1rem;
-  color: #003d1a;
+  color: #06321B;
   text-transform: none;
   font-weight: 400;
   margin-top: 15px;
@@ -633,7 +634,7 @@ h3::after {
 .collections .shop-now {
   font-size: 0.9rem;
   line-height: 0.9rem;
-  color: #003d1a;
+  color: #06321B;
   text-transform: uppercase;
   font-weight: 400;
   width: 160px;
@@ -737,7 +738,7 @@ h3::after {
 .byline p {
   font-size: 0.8rem;
   line-height: 0.8rem;
-  color: #003d1a;
+  color: #06321B;
   text-transform: uppercase;
   font-weight: 400;
   margin: 0 20px 0 0;
@@ -770,14 +771,14 @@ main.contact {
 .contact-info h2 {
   font-size: 1.4rem;
   line-height: 1.4rem;
-  color: #003d1a;
+  color: #06321B;
   text-transform: none;
   font-weight: 600;
 }
 .contact-info p {
   font-size: 0.8rem;
   line-height: 1.25rem;
-  color: #003d1a;
+  color: #06321B;
   text-transform: none;
   font-weight: 400;
   margin: 20px 0;
@@ -785,7 +786,7 @@ main.contact {
 .contact-info a {
   font-size: 0.9rem;
   line-height: 1rem;
-  color: #003d1a;
+  color: #06321B;
   text-transform: none;
   font-weight: 400;
 }
@@ -869,7 +870,7 @@ form textarea::placeholder {
 form button {
   font-size: 0.8rem;
   line-height: 0.8rem;
-  color: #003d1a;
+  color: #06321B;
   text-transform: uppercase;
   font-weight: 600;
   background: #abd373;
@@ -958,14 +959,58 @@ h6 {
 .copyright {
   font-size: 0.8rem;
   line-height: 0.8rem;
-  color: #003d1a;
+  color: #06321B;
   text-transform: none;
   font-weight: 400;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  border-top: 2px solid #003d1a;
+  border-top: 2px solid #06321B;
   text-align: center;
   padding: 15px 0;
+}
+
+.header-nav ul a {
+  -webkit-transition: border-bottom 0.1s ease;
+  transition: border-bottom 0.1s ease;
+}
+.header-nav ul a:hover, .header-nav ul a:focus {
+  border-bottom: 4px solid #393939;
+}
+
+.discover-now,
+.shop-now,
+form button,
+.blog-posts .child {
+  -webkit-transition: -webkit-box-shadow 0.25s ease;
+  transition: -webkit-box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease, -webkit-box-shadow 0.25s ease;
+}
+.discover-now:hover, .discover-now:focus,
+.shop-now:hover,
+.shop-now:focus,
+form button:hover,
+form button:focus,
+.blog-posts .child:hover,
+.blog-posts .child:focus {
+  -webkit-box-shadow: 0 0 15px #393939;
+          box-shadow: 0 0 15px #393939;
+}
+
+.product-image button {
+  -webkit-transition: max-width 0.25s ease;
+  transition: max-width 0.25s ease;
+}
+.product-image button:hover, .product-image button:focus {
+  max-width: 50px;
+}
+
+.shopping-bag {
+  -webkit-transition: min-width 0.25s ease;
+  transition: min-width 0.25s ease;
+}
+.shopping-bag:hover, .shopping-bag:focus {
+  min-width: 40px;
 }
