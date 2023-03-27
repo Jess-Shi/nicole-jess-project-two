@@ -832,6 +832,7 @@ form input {
   border-bottom: 1px solid #333333;
   padding: 10px;
   width: calc(50% - 10px);
+  height: 60px;
 }
 form input::-webkit-input-placeholder {
   font-style: italic;
@@ -910,6 +911,21 @@ footer .wrapper {
   padding: 80px 0 100px 0;
   position: relative;
 }
+footer .wrapper .child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
 footer a {
   color: #000000;
 }
@@ -940,9 +956,11 @@ footer a {
 .media-icons li {
   width: 30px;
   height: 30px;
-  padding: 5px;
   border: 2px solid black;
   margin-right: 15px;
+}
+.media-icons img {
+  padding: 5px;
 }
 
 h6 {
@@ -973,6 +991,10 @@ h6 {
   padding: 15px 0;
 }
 
+*:focus {
+  outline: none;
+}
+
 .header-nav ul a {
   -webkit-transition: border-bottom 0.1s;
   transition: border-bottom 0.1s;
@@ -989,12 +1011,7 @@ h6 {
   background-color: lightgrey;
 }
 
-.filters button:hover,
-.filters button:focus {
-  color: #06321B;
-  border: 2px dashed #06321B;
-}
-
+.logo,
 .discover-now,
 .product-image a,
 .shop-now,
@@ -1006,19 +1023,33 @@ form button,
   transition: box-shadow 0.25s;
   transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
 }
-.discover-now:hover, .discover-now:focus,
+.logo:hover, .logo:focus, .logo:focus-within,
+.discover-now:hover,
+.discover-now:focus,
+.discover-now:focus-within,
 .product-image a:hover,
 .product-image a:focus,
+.product-image a:focus-within,
 .shop-now:hover,
 .shop-now:focus,
+.shop-now:focus-within,
 .blog-posts .child:hover,
 .blog-posts .child:focus,
+.blog-posts .child:focus-within,
 form button:hover,
 form button:focus,
+form button:focus-within,
 .media-icons li:hover,
-.media-icons li:focus {
-  -webkit-box-shadow: 0 0 15px #333333;
-          box-shadow: 0 0 15px #333333;
+.media-icons li:focus,
+.media-icons li:focus-within {
+  -webkit-box-shadow: 0 0 10px #333333;
+          box-shadow: 0 0 10px #333333;
+}
+
+.filters button:hover,
+.filters button:focus {
+  color: #06321B;
+  border: 2px dashed #06321B;
 }
 
 .product-image button {
@@ -1031,6 +1062,8 @@ form button:focus,
 
 .settings a,
 .product-text a,
+.contact-info a,
+.contact-info address,
 footer a,
 footer address {
   position: relative;
@@ -1038,6 +1071,8 @@ footer address {
 }
 .settings a::after,
 .product-text a::after,
+.contact-info a::after,
+.contact-info address::after,
 footer a::after,
 footer address::after {
   content: "";
@@ -1057,6 +1092,10 @@ footer address::after {
 .settings a:hover::after, .settings a:focus::after,
 .product-text a:hover::after,
 .product-text a:focus::after,
+.contact-info a:hover::after,
+.contact-info a:focus::after,
+.contact-info address:hover::after,
+.contact-info address:focus::after,
 footer a:hover::after,
 footer a:focus::after,
 footer address:hover::after,
@@ -1073,4 +1112,15 @@ footer address:focus::after {
 footer a::after,
 footer address::after {
   background: #000000;
+}
+
+input,
+textarea {
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+input:hover, input:focus,
+textarea:hover,
+textarea:focus {
+  background-color: lightgrey;
 }

@@ -9,6 +9,10 @@ footer {
         @include flexbox();
         padding: 80px 0 100px 0;
         position: relative;
+
+        .child {
+            @include flexbox(column, space-between, flex-start);
+        }
     }
 
     a {
@@ -30,9 +34,12 @@ footer {
     li {
         width: 30px;
         height: 30px;
-        padding: 5px;
         border: 2px solid black;
         margin-right: 15px;
+    }
+
+    img {
+        padding: 5px;
     }
 }
 

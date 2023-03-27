@@ -43,6 +43,7 @@ form {
         border-bottom: 1px solid $primary-font-color;
         padding: 10px;
         width: calc(100%/2 - 10px);
+        height: 60px;
 
         &::placeholder {
             font-style: italic;

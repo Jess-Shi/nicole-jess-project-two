@@ -1,6 +1,10 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+*:focus {
+    outline: none;
+}
+
 .header-nav ul a {
     transition: border-bottom 0.1s;
 
@@ -19,12 +23,7 @@
     }
 }
 
-.filters button:hover,
-.filters button:focus {
-    color: $tertiary-font-color;
-    border: 2px dashed $tertiary-font-color;
-}
-
+.logo,
 .discover-now,
 .product-image a,
 .shop-now,
@@ -34,9 +33,16 @@ form button,
     transition: box-shadow 0.25s;
 
     &:hover,
-    &:focus {
-        box-shadow: 0 0 15px $primary-font-color;
+    &:focus,
+    &:focus-within {
+        box-shadow: 0 0 10px $primary-font-color;
     }
+}
+
+.filters button:hover,
+.filters button:focus {
+    color: $tertiary-font-color;
+    border: 2px dashed $tertiary-font-color;
 }
 
 .product-image button {
@@ -50,6 +56,8 @@ form button,
 
 .settings a,
 .product-text a,
+.contact-info a,
+.contact-info address,
 footer a,
 footer address {
     position: relative;
@@ -81,4 +89,14 @@ footer address {
 footer a::after,
 footer address::after {
     background: $secondary-font-color;
+}
+
+input,
+textarea {
+    transition: background-color 0.25s;
+
+    &:hover,
+    &:focus {
+        background-color: lightgrey;
+    }
 }
