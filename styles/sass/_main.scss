@@ -32,7 +32,7 @@ h3 {
 
     .child {
         @include flexbox();
-        border: 2px dotted $tertiary-font-color;
+        border: 2px dashed $tertiary-font-color;
         border-radius: 5px;
         padding: 20px 15px;
     
@@ -56,7 +56,7 @@ h3 {
 }
 
 .filters {
-    margin: 50px 0;
+    margin: 50px 0 30px 0;
 
     button {
         background: white;
@@ -74,22 +74,22 @@ h3 {
     flex-wrap: wrap;
 
     .child {
-        width: calc(100%/4 - 10px);
+        width: calc(100%/4 - 25px);
     }    
 }
 
 .product-image {
     position: relative;
-    margin-bottom: 15px;
+    margin: 15px 0;
 
     button {
         position: absolute;
-        left: 15px;
-        bottom: 0;
-        max-width: 35px;
+        left: 10px;
+        bottom: 10px;
+        max-width: 30px;
         height: auto;
         background: white;
-        box-shadow: 0 3px 5px grey;
+        box-shadow: 0 0 5px grey;
         cursor: pointer;
     }
 }

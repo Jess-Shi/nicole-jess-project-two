@@ -233,7 +233,7 @@ html {
 body {
   font-size: 1rem;
   line-height: 1.25rem;
-  color: #393939;
+  color: #333333;
   text-transform: none;
   font-weight: 400;
   font-family: "Rubik", sans-serif;
@@ -269,7 +269,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #393939;
+  color: #333333;
 }
 
 address {
@@ -347,7 +347,9 @@ address {
 }
 
 .shopping-bag {
-  min-width: 25px;
+  min-width: 50px;
+  padding: 10px;
+  border-radius: 25px;
 }
 
 .heading {
@@ -391,7 +393,7 @@ h1 {
 h1.contact {
   font-size: 1.5rem;
   line-height: 1.5rem;
-  color: #393939;
+  color: #333333;
   text-transform: uppercase;
   font-weight: 600;
   background: #eeeeee url(../assets/contact-header.jpg) center/cover no-repeat;
@@ -411,7 +413,7 @@ h2 {
 h3 {
   font-size: 1.7rem;
   line-height: 1.7rem;
-  color: #393939;
+  color: #333333;
   text-transform: uppercase;
   font-weight: 600;
   position: relative;
@@ -465,7 +467,7 @@ h3::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 2px dotted #06321B;
+  border: 2px dashed #06321B;
   border-radius: 5px;
   padding: 20px 15px;
 }
@@ -476,7 +478,7 @@ h3::after {
 .promises .child p {
   font-size: 0.9rem;
   line-height: 1.25rem;
-  color: #393939;
+  color: #333333;
   text-transform: none;
   font-weight: 400;
 }
@@ -505,11 +507,11 @@ h3::after {
 }
 
 .filters {
-  margin: 50px 0;
+  margin: 50px 0 30px 0;
 }
 .filters button {
   background: white;
-  color: #393939;
+  color: #333333;
   border: 2px solid lightgrey;
   border-radius: 5px;
   margin: 0 15px;
@@ -535,22 +537,22 @@ h3::after {
       flex-wrap: wrap;
 }
 .featured .child {
-  width: calc(25% - 10px);
+  width: calc(25% - 25px);
 }
 
 .product-image {
   position: relative;
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
 .product-image button {
   position: absolute;
-  left: 15px;
-  bottom: 0;
-  max-width: 35px;
+  left: 10px;
+  bottom: 10px;
+  max-width: 30px;
   height: auto;
   background: white;
-  -webkit-box-shadow: 0 3px 5px grey;
-          box-shadow: 0 3px 5px grey;
+  -webkit-box-shadow: 0 0 5px grey;
+          box-shadow: 0 0 5px grey;
   cursor: pointer;
 }
 
@@ -706,7 +708,7 @@ h3::after {
 .blog-posts h5 {
   font-size: 1.2rem;
   line-height: 1.2rem;
-  color: #393939;
+  color: #333333;
   text-transform: none;
   font-weight: 600;
   margin: 20px 0;
@@ -714,7 +716,7 @@ h3::after {
 .blog-posts p {
   font-size: 0.9rem;
   line-height: 1.5rem;
-  color: #393939;
+  color: #333333;
   text-transform: none;
   font-weight: 400;
   margin-bottom: 20px;
@@ -827,7 +829,7 @@ form fieldset {
           align-items: center;
 }
 form input {
-  border-bottom: 1px solid #393939;
+  border-bottom: 1px solid #333333;
   padding: 10px;
   width: calc(50% - 10px);
 }
@@ -847,7 +849,7 @@ form input::placeholder {
   font-style: italic;
 }
 form textarea {
-  border-bottom: 1px solid #393939;
+  border-bottom: 1px solid #333333;
   padding: 10px;
   width: 100%;
   height: 150px;
@@ -972,45 +974,103 @@ h6 {
 }
 
 .header-nav ul a {
-  -webkit-transition: border-bottom 0.1s ease;
-  transition: border-bottom 0.1s ease;
+  -webkit-transition: border-bottom 0.1s;
+  transition: border-bottom 0.1s;
 }
 .header-nav ul a:hover, .header-nav ul a:focus {
-  border-bottom: 4px solid #393939;
-}
-
-.discover-now,
-.shop-now,
-form button,
-.blog-posts .child {
-  -webkit-transition: -webkit-box-shadow 0.25s ease;
-  transition: -webkit-box-shadow 0.25s ease;
-  transition: box-shadow 0.25s ease;
-  transition: box-shadow 0.25s ease, -webkit-box-shadow 0.25s ease;
-}
-.discover-now:hover, .discover-now:focus,
-.shop-now:hover,
-.shop-now:focus,
-form button:hover,
-form button:focus,
-.blog-posts .child:hover,
-.blog-posts .child:focus {
-  -webkit-box-shadow: 0 0 15px #393939;
-          box-shadow: 0 0 15px #393939;
-}
-
-.product-image button {
-  -webkit-transition: max-width 0.25s ease;
-  transition: max-width 0.25s ease;
-}
-.product-image button:hover, .product-image button:focus {
-  max-width: 50px;
+  border-bottom: 4px solid #333333;
 }
 
 .shopping-bag {
-  -webkit-transition: min-width 0.25s ease;
-  transition: min-width 0.25s ease;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
 }
 .shopping-bag:hover, .shopping-bag:focus {
-  min-width: 40px;
+  background-color: lightgrey;
+}
+
+.filters button:hover,
+.filters button:focus {
+  color: #06321B;
+  border: 2px dashed #06321B;
+}
+
+.discover-now,
+.product-image a,
+.shop-now,
+.blog-posts .child,
+form button,
+.media-icons li {
+  -webkit-transition: -webkit-box-shadow 0.25s;
+  transition: -webkit-box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+}
+.discover-now:hover, .discover-now:focus,
+.product-image a:hover,
+.product-image a:focus,
+.shop-now:hover,
+.shop-now:focus,
+.blog-posts .child:hover,
+.blog-posts .child:focus,
+form button:hover,
+form button:focus,
+.media-icons li:hover,
+.media-icons li:focus {
+  -webkit-box-shadow: 0 0 15px #333333;
+          box-shadow: 0 0 15px #333333;
+}
+
+.product-image button {
+  -webkit-transition: max-width 0.25s;
+  transition: max-width 0.25s;
+}
+.product-image button:hover, .product-image button:focus {
+  max-width: 45px;
+}
+
+.settings a,
+.product-text a,
+footer a,
+footer address {
+  position: relative;
+  display: inline;
+}
+.settings a::after,
+.product-text a::after,
+footer a::after,
+footer address::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #06321B;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
+}
+.settings a:hover::after, .settings a:focus::after,
+.product-text a:hover::after,
+.product-text a:focus::after,
+footer a:hover::after,
+footer a:focus::after,
+footer address:hover::after,
+footer address:focus::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  width: 100%;
+}
+
+.product-text a::after {
+  background: #333333;
+}
+
+footer a::after,
+footer address::after {
+  background: #000000;
 }

@@ -2,7 +2,7 @@
 @use "./mixins" as *;
 
 .header-nav ul a {
-    transition: border-bottom 0.1s ease;
+    transition: border-bottom 0.1s;
 
     &:hover,
     &:focus {
@@ -10,11 +10,28 @@
     }
 }
 
+.shopping-bag {
+    transition: background-color 0.25s;
+
+    &:hover,
+    &:focus {
+        background-color: lightgrey;
+    }
+}
+
+.filters button:hover,
+.filters button:focus {
+    color: $tertiary-font-color;
+    border: 2px dashed $tertiary-font-color;
+}
+
 .discover-now,
+.product-image a,
 .shop-now,
+.blog-posts .child,
 form button,
-.blog-posts .child {
-    transition: box-shadow 0.25s ease;
+.media-icons li {
+    transition: box-shadow 0.25s;
 
     &:hover,
     &:focus {
@@ -23,19 +40,45 @@ form button,
 }
 
 .product-image button {
-    transition: max-width 0.25s ease;
+    transition: max-width 0.25s;
 
     &:hover,
     &:focus {
-        max-width: 50px;
+        max-width: 45px;
     }
 }
 
-.shopping-bag {
-    transition: min-width 0.25s ease;
+.settings a,
+.product-text a,
+footer a,
+footer address {
+    position: relative;
+    display: inline;
 
-    &:hover,
-    &:focus {
-        min-width: 40px;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $tertiary-font-color;
+        transform: scaleX(0);
+        transition: transform 0.25s;
     }
+
+    &:hover::after,
+    &:focus::after {
+        transform: scaleX(1);
+        width: 100%;
+    }
+}
+
+.product-text a::after {
+    background: $primary-font-color;
+}
+
+footer a::after,
+footer address::after {
+    background: $secondary-font-color;
 }
