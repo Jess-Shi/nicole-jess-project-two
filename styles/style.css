@@ -276,6 +276,16 @@ address {
   font-style: normal;
 }
 
+@media (max-width: 1680px) {
+  .wrapper {
+    width: 75%;
+  }
+}
+@media (max-width: 720px) {
+  .wrapper {
+    width: 90%;
+  }
+}
 .settings {
   font-size: 0.8rem;
   line-height: 0.8rem;
@@ -310,7 +320,7 @@ address {
   margin-left: 25px;
 }
 
-.header-nav .wrapper {
+.header-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -326,7 +336,7 @@ address {
           align-items: center;
   padding: 20px 0;
 }
-.header-nav .wrapper ul {
+.header-nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -341,7 +351,7 @@ address {
       -ms-flex-align: center;
           align-items: center;
 }
-.header-nav .wrapper li {
+.header-nav li {
   padding: 0 20px;
   text-transform: uppercase;
 }
@@ -365,7 +375,6 @@ address {
   color: #000000;
   text-transform: none;
   font-weight: 400;
-  width: 55%;
 }
 .heading .discover-now {
   width: 200px;
@@ -411,6 +420,57 @@ h2 {
   font-weight: 300;
 }
 
+@media (max-width: 1200px) {
+  .heading h1 {
+    font-size: max(3.2rem, 6vw);
+    line-height: 3.2rem;
+  }
+  .heading p {
+    width: 50%;
+  }
+  .heading .discover-now {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 960px) {
+  .heading .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: url(../assets/header.png) center 20px/50% auto no-repeat;
+    padding: 75px 0;
+    height: max(75vh, 750px);
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .settings .wrapper a,
+  .header-nav ul {
+    display: none;
+  }
+  .logo {
+    width: 90px;
+  }
+  .heading .wrapper {
+    background-size: 65%;
+  }
+  .heading .wrapper h1 {
+    width: 85%;
+  }
+  .heading .wrapper p {
+    width: 75%;
+  }
+}
 h3 {
   font-size: 1.7rem;
   line-height: 1.7rem;
@@ -742,7 +802,7 @@ h3::after {
           align-items: center;
 }
 .byline p {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   line-height: 0.8rem;
   color: #06321B;
   text-transform: uppercase;

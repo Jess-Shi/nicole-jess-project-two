@@ -198,7 +198,7 @@ h3 {
     @include flexbox(row, flex-start);
 
     p {
-        @include font(0.8rem, 0.8rem, $tertiary-font-color, uppercase);
+        @include font(0.7rem, 0.8rem, $tertiary-font-color, uppercase);
         margin: 0 10px 0 0;
     }
 }
