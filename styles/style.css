@@ -356,15 +356,16 @@ address {
   background: #f8eee5;
 }
 .heading .wrapper {
-  background: url(../assets/header.png) right/auto 80% no-repeat;
+  background: url(../assets/header.png) right/auto 75% no-repeat;
   padding: 150px 0;
 }
 .heading p {
   font-size: 1.2rem;
-  line-height: 1.2rem;
+  line-height: 1.5rem;
   color: #000000;
   text-transform: none;
   font-weight: 400;
+  width: 55%;
 }
 .heading .discover-now {
   width: 200px;
@@ -746,7 +747,7 @@ h3::after {
   color: #06321B;
   text-transform: uppercase;
   font-weight: 400;
-  margin: 0 20px 0 0;
+  margin: 0 10px 0 0;
 }
 
 main.contact {

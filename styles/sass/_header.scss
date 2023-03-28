@@ -44,12 +44,13 @@
     background: #f8eee5;
 
     .wrapper {
-        background: url(../assets/header.png) right / auto 80% no-repeat;
+        background: url(../assets/header.png) right / auto 75% no-repeat;
         padding: 150px 0;
     }
 
     p {
-        @include font(1.2rem, 1.2rem, $secondary-font-color);
+        @include font(1.2rem, 1.5rem, $secondary-font-color);
+        width: 55%;
     }
 
     .discover-now {
