@@ -11,25 +11,27 @@
     &:hover,
     &:focus {
         border-bottom: 4px solid $primary-font-color;
+        animation: bounce 0.4s ease 0.1s infinite alternate;
     }
 }
 
-.shopping-bag {
-    transition: background-color 0.25s;
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
 
-    &:hover,
-    &:focus {
-        background-color: lightgrey;
+    100% {
+        transform: translateY(-8px);
     }
 }
 
 .logo,
+.shopping-bag,
 .discover-now,
 .product-image a,
 .shop-now,
 .blog-posts .child,
-form button,
-.media-icons li {
+form button {
     transition: box-shadow 0.25s;
 
     &:hover,
@@ -45,12 +47,14 @@ form button,
     border: 2px dashed $tertiary-font-color;
 }
 
-.product-image button {
-    transition: max-width 0.25s;
+.product-image button,
+.media-icons li {
+    transition: transform 0.25s;
 
     &:hover,
-    &:focus {
-        max-width: 45px;
+    &:focus,
+    &:focus-within {
+        transform: scale(1.5);
     }
 }
 
@@ -72,7 +76,7 @@ footer address {
         height: 2px;
         background: $tertiary-font-color;
         transform: scaleX(0);
-        transition: transform 0.25s;
+        transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     &:hover::after,

@@ -548,7 +548,7 @@ h3::after {
   position: absolute;
   left: 10px;
   bottom: 10px;
-  max-width: 30px;
+  max-width: 40px;
   height: auto;
   background: white;
   -webkit-box-shadow: 0 0 5px grey;
@@ -720,6 +720,9 @@ h3::after {
   text-transform: none;
   font-weight: 400;
   margin-bottom: 20px;
+}
+.blog-posts img {
+  border-radius: 10px;
 }
 
 .byline {
@@ -1001,29 +1004,47 @@ h6 {
 }
 .header-nav ul a:hover, .header-nav ul a:focus {
   border-bottom: 4px solid #333333;
+  -webkit-animation: bounce 0.4s ease 0.1s infinite alternate;
+          animation: bounce 0.4s ease 0.1s infinite alternate;
 }
 
-.shopping-bag {
-  -webkit-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-}
-.shopping-bag:hover, .shopping-bag:focus {
-  background-color: lightgrey;
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
 }
 
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
+}
 .logo,
+.shopping-bag,
 .discover-now,
 .product-image a,
 .shop-now,
 .blog-posts .child,
-form button,
-.media-icons li {
+form button {
   -webkit-transition: -webkit-box-shadow 0.25s;
   transition: -webkit-box-shadow 0.25s;
   transition: box-shadow 0.25s;
   transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
 }
 .logo:hover, .logo:focus, .logo:focus-within,
+.shopping-bag:hover,
+.shopping-bag:focus,
+.shopping-bag:focus-within,
 .discover-now:hover,
 .discover-now:focus,
 .discover-now:focus-within,
@@ -1038,10 +1059,7 @@ form button,
 .blog-posts .child:focus-within,
 form button:hover,
 form button:focus,
-form button:focus-within,
-.media-icons li:hover,
-.media-icons li:focus,
-.media-icons li:focus-within {
+form button:focus-within {
   -webkit-box-shadow: 0 0 10px #333333;
           box-shadow: 0 0 10px #333333;
 }
@@ -1052,12 +1070,19 @@ form button:focus-within,
   border: 2px dashed #06321B;
 }
 
-.product-image button {
-  -webkit-transition: max-width 0.25s;
-  transition: max-width 0.25s;
+.product-image button,
+.media-icons li {
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
 }
-.product-image button:hover, .product-image button:focus {
-  max-width: 45px;
+.product-image button:hover, .product-image button:focus, .product-image button:focus-within,
+.media-icons li:hover,
+.media-icons li:focus,
+.media-icons li:focus-within {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 .settings a,
@@ -1084,10 +1109,10 @@ footer address::after {
   background: #06321B;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transition: -webkit-transform 0.25s;
-  transition: -webkit-transform 0.25s;
-  transition: transform 0.25s;
-  transition: transform 0.25s, -webkit-transform 0.25s;
+  -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: -webkit-transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .settings a:hover::after, .settings a:focus::after,
 .product-text a:hover::after,

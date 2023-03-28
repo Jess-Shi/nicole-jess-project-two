@@ -86,7 +86,7 @@ h3 {
         position: absolute;
         left: 10px;
         bottom: 10px;
-        max-width: 30px;
+        max-width: 40px;
         height: auto;
         background: white;
         box-shadow: 0 0 5px grey;
@@ -187,6 +187,10 @@ h3 {
     p {
         @include font(0.9rem, 1.5rem);
         margin-bottom: 20px;
+    }
+
+    img {
+        border-radius: 10px;
     }
 }
 
