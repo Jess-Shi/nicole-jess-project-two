@@ -8,9 +8,9 @@ h3 {
     &::before {
         content: "";
         position: absolute;
-        width: 70px;
-        left: -90px;
-        top: 16px;
+        width: 25%;
+        left: -33%;
+        top: 50%;
         height: 2px;
         background: $tertiary-font-color;
     }
@@ -18,9 +18,9 @@ h3 {
     &::after {
         content: "";
         position: absolute;
-        width: 70px;
-        right: -90px;
-        top: 16px;
+        width: 25%;
+        right: -33%;
+        top: 50%;
         height: 2px;
         background: $tertiary-font-color;
     }
@@ -74,7 +74,7 @@ h3 {
     flex-wrap: wrap;
 
     .child {
-        width: calc(100%/4 - 25px);
+        width: calc(100%/4 - 24px);
     }    
 }
 
@@ -123,7 +123,7 @@ h3 {
 
     .collection2,
     .collection3 {
-        @include flexbox(column, flex-end, center);
+        @include flexbox(column, flex-start, center);
         width: calc(30% - 12px);
         background: $accent-color url(../assets/b2.jpeg) center / cover no-repeat;
         text-align: center;
@@ -141,15 +141,15 @@ h3 {
 
     h4 {
         @include font(1.6rem, 1.6rem, $secondary-font-color, none, 600);
-        margin: 20px 0;
+        margin: 24px 0;
     }
 
     .shop-now {
         @include font(0.9rem, 0.9rem, $tertiary-font-color, uppercase);
-        width: 160px;
+        width: 156px;
         background: $accent-color;
         text-align: center;
-        border-radius: 25px;
+        border-radius: 24px;
         padding: 15px 0;
     }
 }
@@ -162,7 +162,7 @@ h3 {
     @include flexbox(column, space-between, center);
 
     p {
-        margin-top: 20px;
+        margin-top: 24px;
         width: 75%;
         text-align: center;
     }
@@ -170,35 +170,122 @@ h3 {
 
 .blog-posts {
     @include flexbox();
-    margin: 80px 0 100px 0;
+    margin: 48px 0 84px 0;
 
     .child {
         width: calc(100%/3 - 24px);
-        background: #f6f7fb;
+        background: $blog-post-background;
         padding: 36px;
-        border-radius: 10px
+        border-radius: 12px;
+    }
+
+    .blog-text {
+        @include font(0.9rem, 1.5rem);
+        margin-bottom: 24px;
+    }
+
+    .byline {
+        @include flexbox(row, flex-start);
+        @include font(0.7rem, 0.8rem, $tertiary-font-color, uppercase);
+        margin-bottom: 12px;
+
+        p {
+            margin-right: 12px;
+        }
     }
 
     h5 {
         @include font(1.2rem, 1.2rem, $primary-font-color, none, 600);
-        margin: 20px 0;
-    }
-
-    p {
-        @include font(0.9rem, 1.5rem);
-        margin-bottom: 20px;
+        margin: 24px 0;
     }
 
     img {
-        border-radius: 10px;
+        border-radius: 12px;
     }
 }
 
-.byline {
-    @include flexbox(row, flex-start);
 
-    p {
-        @include font(0.7rem, 0.8rem, $tertiary-font-color, uppercase);
-        margin: 0 10px 0 0;
+@media (max-width: 1296px) {
+    
+    .promises {
+        flex-direction: column;
+
+        .child {
+            justify-content: center;
+            width: max(288px, 60vw);
+            margin-top: 24px;
+        }
+    }
+
+    .featured {
+        @include flexbox(row, center);
+
+        .child {
+            @include flexbox(column);
+            min-width: max(288px, 42%);
+        }
+    }
+
+    .collections {
+
+        .collection1,
+        .collection4 {
+            width: 100%;
+        }
+
+        .collection2,
+        .collection3 {
+            width: calc(50% - 12px);
+        }
+    }
+
+    .blog-posts {
+        flex-direction: column;
+
+        .child {
+            @include flexbox(row, center, flex-start);
+            width: 648px;
+            margin-bottom: 24px;
+        }
+
+        .blog-text {
+            margin: 0 24px 0 0;
+        }
+
+        img {
+            width: 216px;
+        }
+    }
+}
+
+@media (max-width: 720px) {
+
+    .settings {
+        font-size: 0.7rem;
+    }
+
+    h3 {
+        font-size: max(1.2rem, 5vw);
+    }
+    
+    .blog-posts {
+
+        .child {
+            @include flexbox(column, space-between, center);
+            width: max(288px, 50vw);
+        }
+
+        .blog-text {
+            margin: 0 0 24px 0;
+            text-align: center;
+        }
+
+        .byline {
+            @include flexbox(row, center);
+
+            p {
+                margin: 0 6px;
+            }
+        }
     }
 }

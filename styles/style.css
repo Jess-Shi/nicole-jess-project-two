@@ -512,18 +512,18 @@ h3 {
 h3::before {
   content: "";
   position: absolute;
-  width: 70px;
-  left: -90px;
-  top: 16px;
+  width: 25%;
+  left: -33%;
+  top: 50%;
   height: 2px;
   background: #06321B;
 }
 h3::after {
   content: "";
   position: absolute;
-  width: 70px;
-  right: -90px;
-  top: 16px;
+  width: 25%;
+  right: -33%;
+  top: 50%;
   height: 2px;
   background: #06321B;
 }
@@ -628,7 +628,7 @@ h3::after {
       flex-wrap: wrap;
 }
 .featured .child {
-  width: calc(25% - 25px);
+  width: calc(25% - 24px);
 }
 
 .product-image {
@@ -696,9 +696,9 @@ h3::after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -722,7 +722,7 @@ h3::after {
   color: #000000;
   text-transform: none;
   font-weight: 600;
-  margin: 20px 0;
+  margin: 24px 0;
 }
 .collections .shop-now {
   font-size: 0.9rem;
@@ -730,10 +730,10 @@ h3::after {
   color: #06321B;
   text-transform: uppercase;
   font-weight: 400;
-  width: 160px;
+  width: 156px;
   background: #abd373;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 24px;
   padding: 15px 0;
 }
 
@@ -769,7 +769,7 @@ h3::after {
           align-items: center;
 }
 .blog-heading p {
-  margin-top: 20px;
+  margin-top: 24px;
   width: 75%;
   text-align: center;
 }
@@ -788,35 +788,23 @@ h3::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 80px 0 100px 0;
+  margin: 48px 0 84px 0;
 }
 .blog-posts .child {
   width: calc(33.3333333333% - 24px);
   background: #f6f7fb;
   padding: 36px;
-  border-radius: 10px;
+  border-radius: 12px;
 }
-.blog-posts h5 {
-  font-size: 1.2rem;
-  line-height: 1.2rem;
-  color: #4c4c4c;
-  text-transform: none;
-  font-weight: 600;
-  margin: 20px 0;
-}
-.blog-posts p {
+.blog-posts .blog-text {
   font-size: 0.9rem;
   line-height: 1.5rem;
   color: #4c4c4c;
   text-transform: none;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
-.blog-posts img {
-  border-radius: 10px;
-}
-
-.byline {
+.blog-posts .byline {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -830,16 +818,157 @@ h3::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-.byline p {
   font-size: 0.7rem;
   line-height: 0.8rem;
   color: #06321B;
   text-transform: uppercase;
   font-weight: 400;
-  margin: 0 10px 0 0;
+  margin-bottom: 12px;
+}
+.blog-posts .byline p {
+  margin-right: 12px;
+}
+.blog-posts h5 {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  color: #4c4c4c;
+  text-transform: none;
+  font-weight: 600;
+  margin: 24px 0;
+}
+.blog-posts img {
+  border-radius: 12px;
 }
 
+@media (max-width: 1296px) {
+  .promises {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .promises .child {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: max(288px, 60vw);
+    margin-top: 24px;
+  }
+  .featured {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .featured .child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-width: max(288px, 42%);
+  }
+  .collections .collection1,
+  .collections .collection4 {
+    width: 100%;
+  }
+  .collections .collection2,
+  .collections .collection3 {
+    width: calc(50% - 12px);
+  }
+  .blog-posts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .blog-posts .child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 648px;
+    margin-bottom: 24px;
+  }
+  .blog-posts .blog-text {
+    margin: 0 24px 0 0;
+  }
+  .blog-posts img {
+    width: 216px;
+  }
+}
+@media (max-width: 720px) {
+  .settings {
+    font-size: 0.7rem;
+  }
+  h3 {
+    font-size: max(1.2rem, 5vw);
+  }
+  .blog-posts .child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: max(288px, 50vw);
+  }
+  .blog-posts .blog-text {
+    margin: 0 0 24px 0;
+    text-align: center;
+  }
+  .blog-posts .byline {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .blog-posts .byline p {
+    margin: 0 6px;
+  }
+}
 main.contact {
   display: -webkit-box;
   display: -ms-flexbox;
