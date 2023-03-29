@@ -34,6 +34,14 @@
     }
 }
 
+// mobile collapsible menu styles begin
+
+.collapsible-menu-top {
+    display: none;
+}
+
+// mobile collapsible menu styles end
+
 .shopping-bag {
     min-width: 50px;
     padding: 10px;
@@ -116,9 +124,26 @@ h2 {
 @media (max-width: 600px) {
     
     .settings .wrapper a,
-    .header-nav ul {
+    .header-nav > ul {
         display: none;
     }
+
+    // mobile collapsible menu styles begin
+
+    .collapsible-menu-top {
+        display: block;
+
+        summary {
+            @include font(1.1rem, 1rem, $primary-font-color, uppercase);
+            cursor: pointer;
+        }
+
+        ul {
+            @include flexbox(column, center, center);
+        }
+    }
+
+    // mobile collapsible menu styles end
 
     .logo {
         width: 90px;

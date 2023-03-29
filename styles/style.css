@@ -233,7 +233,7 @@ html {
 body {
   font-size: 1rem;
   line-height: 1.25rem;
-  color: #333333;
+  color: #4c4c4c;
   text-transform: none;
   font-weight: 400;
   font-family: "Rubik", sans-serif;
@@ -269,7 +269,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #333333;
+  color: #4c4c4c;
 }
 
 address {
@@ -356,6 +356,10 @@ address {
   text-transform: uppercase;
 }
 
+.collapsible-menu-top {
+  display: none;
+}
+
 .shopping-bag {
   min-width: 50px;
   padding: 10px;
@@ -403,7 +407,7 @@ h1 {
 h1.contact {
   font-size: 1.5rem;
   line-height: 1.5rem;
-  color: #333333;
+  color: #4c4c4c;
   text-transform: uppercase;
   font-weight: 600;
   background: #eeeeee url(../assets/contact-header.jpg) center/cover no-repeat;
@@ -455,8 +459,34 @@ h2 {
 }
 @media (max-width: 600px) {
   .settings .wrapper a,
-  .header-nav ul {
+  .header-nav > ul {
     display: none;
+  }
+  .collapsible-menu-top {
+    display: block;
+  }
+  .collapsible-menu-top summary {
+    font-size: 1.1rem;
+    line-height: 1rem;
+    color: #4c4c4c;
+    text-transform: uppercase;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  .collapsible-menu-top ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .logo {
     width: 90px;
@@ -474,7 +504,7 @@ h2 {
 h3 {
   font-size: 1.7rem;
   line-height: 1.7rem;
-  color: #333333;
+  color: #4c4c4c;
   text-transform: uppercase;
   font-weight: 600;
   position: relative;
@@ -539,7 +569,7 @@ h3::after {
 .promises .child p {
   font-size: 0.9rem;
   line-height: 1.25rem;
-  color: #333333;
+  color: #4c4c4c;
   text-transform: none;
   font-weight: 400;
 }
@@ -572,7 +602,7 @@ h3::after {
 }
 .filters button {
   background: white;
-  color: #333333;
+  color: #4c4c4c;
   border: 2px solid lightgrey;
   border-radius: 5px;
   margin: 0 15px;
@@ -762,14 +792,14 @@ h3::after {
 }
 .blog-posts .child {
   width: calc(33.3333333333% - 24px);
-  background: rgba(178, 182, 197, 0.4039215686);
+  background: #f6f7fb;
   padding: 36px;
   border-radius: 10px;
 }
 .blog-posts h5 {
   font-size: 1.2rem;
   line-height: 1.2rem;
-  color: #333333;
+  color: #4c4c4c;
   text-transform: none;
   font-weight: 600;
   margin: 20px 0;
@@ -777,7 +807,7 @@ h3::after {
 .blog-posts p {
   font-size: 0.9rem;
   line-height: 1.5rem;
-  color: #333333;
+  color: #4c4c4c;
   text-transform: none;
   font-weight: 400;
   margin-bottom: 20px;
@@ -893,7 +923,7 @@ form fieldset {
           align-items: center;
 }
 form input {
-  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid #4c4c4c;
   padding: 10px;
   width: calc(50% - 10px);
   height: 60px;
@@ -914,7 +944,7 @@ form input::placeholder {
   font-style: italic;
 }
 form textarea {
-  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid #4c4c4c;
   padding: 10px;
   width: 100%;
   height: 150px;
@@ -1064,7 +1094,7 @@ h6 {
   transition: border-bottom 0.1s;
 }
 .header-nav ul a:hover, .header-nav ul a:focus {
-  border-bottom: 4px solid #333333;
+  border-bottom: 4px solid #4c4c4c;
   -webkit-animation: bounce 0.4s ease 0.1s infinite alternate;
           animation: bounce 0.4s ease 0.1s infinite alternate;
 }
@@ -1121,8 +1151,8 @@ form button {
 form button:hover,
 form button:focus,
 form button:focus-within {
-  -webkit-box-shadow: 0 0 10px #333333;
-          box-shadow: 0 0 10px #333333;
+  -webkit-box-shadow: 0 0 10px #4c4c4c;
+          box-shadow: 0 0 10px #4c4c4c;
 }
 
 .filters button:hover,
@@ -1192,7 +1222,7 @@ footer address:focus::after {
 }
 
 .product-text a::after {
-  background: #333333;
+  background: #4c4c4c;
 }
 
 footer a::after,
