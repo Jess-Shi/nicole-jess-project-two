@@ -31,10 +31,11 @@ h3 {
     margin: 75px 0;
 
     .child {
-        @include flexbox();
+        @include flexbox(row, center);
         border: 2px dashed $tertiary-font-color;
+        width: calc(100%/3 - 12px);
         border-radius: 5px;
-        padding: 20px 15px;
+        padding: 20px 0;
     
         img {
             max-width: 50px;
@@ -222,7 +223,7 @@ h3 {
 
         .child {
             @include flexbox(column);
-            min-width: max(288px, 42%);
+            min-width: max(288px, 50%);
         }
     }
 
@@ -267,6 +268,27 @@ h3 {
     h3 {
         font-size: max(1.2rem, 5vw);
     }
+
+    .collections {
+        @include flexbox(column);
+
+        .child {
+            width: max(288px, 60%);
+        }
+
+        .collection1,
+        .collection4 {
+            @include flexbox(column);
+            background-position: -300px;
+            text-align: center;
+
+            h4, p {
+                background: rgba(204, 197, 197, 0.7);
+                border-radius: 15px;
+                padding: 0 10px;
+            }
+        }
+    }
     
     .blog-posts {
 
@@ -286,6 +308,23 @@ h3 {
             p {
                 margin: 0 6px;
             }
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    
+    .promises .child p {
+        font-size: 0.8rem;
+    }
+
+    .filters {
+        @include flexbox(column);
+        margin: 36px 0 12px 0;
+
+        button {
+            margin: 6px 0;
+            width: 50vw;
         }
     }
 }
