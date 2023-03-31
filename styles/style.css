@@ -512,7 +512,7 @@ h3::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 75px 0;
+  margin: 72px 0;
 }
 .promises .child {
   display: -webkit-box;
@@ -528,10 +528,10 @@ h3::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 2px dashed #06321B;
+  border: 2px dotted #06321B;
   width: calc(33.3333333333% - 12px);
-  border-radius: 5px;
-  padding: 20px 0;
+  border-radius: 6px;
+  padding: 18px 0;
 }
 .promises .child img {
   max-width: 50px;
@@ -825,13 +825,20 @@ h3::after {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin: 48px 0;
   }
   .promises .child {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    width: max(288px, 60vw);
-    margin-top: 24px;
+    width: min(360px, 100%);
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px dotted #06321B;
+    padding: 9px 0;
+  }
+  .promises > :first-child {
+    border-top: 2px dotted #06321B;
   }
   .featured {
     display: -webkit-box;
@@ -877,6 +884,7 @@ h3::after {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin: 36px 0;
   }
   .blog-posts .child {
     display: -webkit-box;
@@ -892,14 +900,14 @@ h3::after {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    width: 648px;
+    width: 684px;
     margin-bottom: 24px;
   }
   .blog-posts .blog-text {
     margin: 0 24px 0 0;
   }
   .blog-posts img {
-    width: 216px;
+    width: 240px;
   }
 }
 @media (max-width: 720px) {
@@ -983,7 +991,8 @@ h3::after {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: max(288px, 50vw);
+    width: min(420px, 100%);
+    padding: 24px;
   }
   .blog-posts .blog-text {
     margin: 0 0 24px 0;
@@ -1394,7 +1403,7 @@ form button:focus-within {
 .filters button:hover,
 .filters button:focus {
   color: #06321B;
-  border: 2px dashed #06321B;
+  border: 2px dotted #06321B;
 }
 
 .product-image button,

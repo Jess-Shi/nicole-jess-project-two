@@ -28,14 +28,14 @@ h3 {
 
 .promises {
     @include flexbox();
-    margin: 75px 0;
+    margin: 72px 0;
 
     .child {
         @include flexbox(row, center);
-        border: 2px dashed $tertiary-font-color;
+        border: 2px dotted $tertiary-font-color;
         width: calc(100%/3 - 12px);
-        border-radius: 5px;
-        padding: 20px 0;
+        border-radius: 6px;
+        padding: 18px 0;
     
         img {
             max-width: 50px;
@@ -210,16 +210,25 @@ h3 {
     }
 }
 
+// begin media queries
 
 @media (max-width: 1296px) {
     
     .promises {
         flex-direction: column;
+        margin: 48px 0;
 
         .child {
             justify-content: center;
-            width: max(288px, 60vw);
-            margin-top: 24px;
+            width: min(360px, 100%);
+            border: none;
+            border-radius: 0;
+            border-bottom: 2px dotted $tertiary-font-color;
+            padding: 9px 0;
+        }
+
+        > :first-child {
+            border-top: 2px dotted $tertiary-font-color;
         }
     }
 
@@ -247,10 +256,11 @@ h3 {
 
     .blog-posts {
         flex-direction: column;
+        margin: 36px 0;
 
         .child {
             @include flexbox(row, center, flex-start);
-            width: 648px;
+            width: 684px;
             margin-bottom: 24px;
         }
 
@@ -259,7 +269,7 @@ h3 {
         }
 
         img {
-            width: 216px;
+            width: 240px;
         }
     }
 }
@@ -317,7 +327,8 @@ h3 {
 
         .child {
             @include flexbox(column, space-between, center);
-            width: max(288px, 50vw);
+            width: min(420px, 100%);
+            padding: 24px;
         }
 
         .blog-text {
