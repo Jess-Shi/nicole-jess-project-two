@@ -7,12 +7,12 @@ footer {
 
     .wrapper {
         @include flexbox();
-        padding: 80px 0 100px 0;
+        padding: 84px 0 96px 0;
         position: relative;
+    }
 
-        .child {
-            @include flexbox(column, space-between, flex-start);
-        }
+    .child {
+        @include flexbox(column, space-between, flex-start);
     }
 
     a {
@@ -24,7 +24,7 @@ footer {
     flex-basis: 20%;
 
     p {
-        margin: 20px 0;
+        margin: 24px 0;
     }
 }
 
@@ -35,17 +35,17 @@ footer {
         width: 30px;
         height: 30px;
         border: 2px solid black;
-        margin-right: 15px;
+        margin-right: 12px;
     }
 
     img {
-        padding: 5px;
+        padding: 3px;
     }
 }
 
 h6 {
     @include font(1rem, 1rem, $secondary-font-color);
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .questions p {
@@ -60,5 +60,46 @@ h6 {
     right: 0;
     border-top: 2px solid $tertiary-font-color;
     text-align: center;
-    padding: 15px 0;
+    padding: 12px 0;
+}
+
+@media (max-width: 1200px) {
+    
+    footer {
+
+        .wrapper {
+            @include flexbox(column);
+            padding: 48px 0 72px 0;
+        }
+
+        .child {
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+
+            ul {
+                display: none;
+            }
+        }
+
+        .social-media {
+
+            p {
+                cursor: auto;
+            }
+
+            ul {
+                display: flex;
+                margin-bottom: 24px;
+            }
+        }
+
+        .media-icons li {
+            margin: 0 6px;
+        }
+
+        .questions p {
+            display: none;
+        }
+    }
 }

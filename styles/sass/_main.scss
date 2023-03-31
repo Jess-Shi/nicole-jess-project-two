@@ -104,10 +104,11 @@ h3 {
     @include flexbox(row, space-between, stretch);
     width: 100%;
     flex-wrap: wrap;
-    margin: 50px 0;
+    margin: 48px 0;
 
     .child {
-        padding: 40px;
+        height: 264px;
+        padding: 36px;
         margin-bottom: 24px;
     }
 
@@ -143,6 +144,10 @@ h3 {
     h4 {
         @include font(1.6rem, 1.6rem, $secondary-font-color, none, 600);
         margin: 24px 0;
+    }
+
+    p {
+        @include font(0.9rem, 0.9rem, $secondary-font-color);
     }
 
     .shop-now {
@@ -273,7 +278,8 @@ h3 {
         @include flexbox(column);
 
         .child {
-            width: max(288px, 60%);
+            width: 100%;
+            margin: 0;
         }
 
         .collection1 {
@@ -286,7 +292,7 @@ h3 {
 
         .collection1,
         .collection4 {
-            @include flexbox(column);
+            @include flexbox(column, center);
             text-align: center;
 
             h4, p {
@@ -294,6 +300,16 @@ h3 {
                 border-radius: 15px;
                 padding: 0 10px;
             }
+
+            h4 {
+                font-size: max(1.2rem, 4vw);
+                line-height: 1.4rem;
+            }
+        }
+
+        .collection2,
+        .collection3 {
+            justify-content: center;
         }
     }
     
