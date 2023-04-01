@@ -39,26 +39,25 @@ form {
         @include flexbox();
     }
 
-    input {
+    input,
+    textarea {
         border-bottom: 1px solid $primary-font-color;
+        border-radius: 0;
         padding: 12px;
-        width: calc(100%/2 - 12px);
-        height: 60px;
 
         &::placeholder {
             font-style: italic;
         }
     }
 
+    input {
+        width: calc(100%/2 - 12px);
+        height: 60px;
+    }
+
     textarea {
-        border-bottom: 1px solid $primary-font-color;
-        padding: 12px;
         width: 100%;
         height: 144px;
-
-        &::placeholder {
-            font-style: italic;
-        }
     }
 
     button {
