@@ -32,13 +32,13 @@ footer {
     @include flexbox(row, flex-start);
 
     li {
-        width: 30px;
-        height: 30px;
         border: 2px solid black;
         margin-right: 12px;
     }
 
     img {
+        width: 30px;
+        height: 30px;
         padding: 3px;
     }
 }

@@ -466,7 +466,7 @@ h2 {
   .shopping-bag {
     display: none;
   }
-  img.mobile {
+  .header-nav .mobile {
     display: block;
     cursor: pointer;
   }
@@ -622,8 +622,8 @@ h3::after {
   position: absolute;
   left: 12px;
   bottom: 12px;
-  max-width: 36px;
-  height: auto;
+  width: 36px;
+  height: 30px;
   background: white;
   -webkit-box-shadow: 0 0 6px grey;
           box-shadow: 0 0 6px grey;
@@ -690,7 +690,7 @@ h3::after {
   text-align: center;
 }
 .collections .collection3 {
-  background: #abd373 url(../assets/b3.jpeg) center/cover no-repeat;
+  background: #dee2e6 url(../assets/b3.jpeg) center/cover no-repeat;
 }
 .collections h4 {
   font-size: 1.6rem;
@@ -884,7 +884,8 @@ h3::after {
     left: auto;
     right: 0;
     bottom: -60px;
-    min-width: 48px;
+    width: 48px;
+    height: 42px;
   }
   .collections .collection1,
   .collections .collection4 {
@@ -1025,17 +1026,12 @@ h3::after {
     font-size: 0.8rem;
   }
   .filters {
-    margin: 36px 0 12px 0;
+    margin: 24px 0 0 0;
   }
   .filters button {
     display: none;
   }
   .filters .mobile {
-    font-size: 1.1rem;
-    line-height: 1.1rem;
-    color: #4c4c4c;
-    text-transform: uppercase;
-    font-weight: 400;
     display: block;
     cursor: pointer;
     margin: 0;
@@ -1300,12 +1296,12 @@ footer a {
           align-items: center;
 }
 .media-icons li {
-  width: 30px;
-  height: 30px;
   border: 2px solid black;
   margin-right: 12px;
 }
 .media-icons img {
+  width: 30px;
+  height: 30px;
   padding: 3px;
 }
 

@@ -87,8 +87,8 @@ h3 {
         position: absolute;
         left: 12px;
         bottom: 12px;
-        max-width: 36px;
-        height: auto;
+        width: 36px;
+        height: 30px;
         background: white;
         box-shadow: 0 0 6px grey;
         cursor: pointer;
@@ -131,7 +131,7 @@ h3 {
     }
 
     .collection3 {
-        background: $accent-color url(../assets/b3.jpeg) center / cover no-repeat;
+        background: #dee2e6 url(../assets/b3.jpeg) center / cover no-repeat;
     }
 
     h4 {
@@ -244,7 +244,8 @@ h3 {
         left: auto;
         right: 0;
         bottom: -60px;
-        min-width: 48px;
+        width: 48px;
+        height: 42px;
     }
 
     .collections {
@@ -348,14 +349,13 @@ h3 {
     }
 
     .filters {
-        margin: 36px 0 12px 0;
+        margin: 24px 0 0 0;
 
         button {
             display: none;
         }
 
         .mobile {
-            @include font(1.1rem, 1.1rem, $primary-font-color, uppercase);
             display: block;
             cursor: pointer;
             margin: 0;
