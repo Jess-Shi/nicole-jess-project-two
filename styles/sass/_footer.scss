@@ -66,6 +66,7 @@ h6 {
 @media (max-width: 1200px) {
     
     footer {
+        background-image: url(../assets/footer-smallscreen.png);
 
         .wrapper {
             @include flexbox(column);

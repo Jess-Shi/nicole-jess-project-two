@@ -47,6 +47,10 @@ address {
     font-style: normal;
 }
 
+.mobile {
+    display: none;
+}
+
 @media (max-width: 1680px) {
 
     .wrapper {

@@ -37,7 +37,7 @@ form button {
     &:hover,
     &:focus,
     &:focus-within {
-        box-shadow: 0 0 10px $primary-font-color;
+        box-shadow: 0 0 9px $primary-font-color;
     }
 }
 
@@ -101,6 +101,6 @@ textarea {
 
     &:hover,
     &:focus {
-        background-color: lightgrey;
+        background-color: $input-hover;
     }
 }
