@@ -1171,12 +1171,12 @@ form button {
   text-transform: uppercase;
   font-weight: 600;
   background: #abd373;
-  width: 200px;
-  padding: 20px 0;
+  width: 192px;
+  padding: 21px 0;
   text-align: center;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
 }
 

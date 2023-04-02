@@ -63,11 +63,11 @@ form {
     button {
         @include font(0.8rem, 0.8rem, $tertiary-font-color, uppercase, 600);
         background: $accent-color;
-        width: 200px;
-        padding: 20px 0;
+        width: 192px;
+        padding: 21px 0;
         text-align: center;
         align-self: flex-end;
-        border-radius: 10px;
+        border-radius: 12px;
         cursor: pointer;
     }
 }
