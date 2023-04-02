@@ -321,7 +321,7 @@ address {
 }
 .settings a {
   color: #06321B;
-  margin-left: 25px;
+  margin-left: 24px;
 }
 
 .header-nav {
@@ -338,7 +338,7 @@ address {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px 0;
+  padding: 24px 0;
 }
 .header-nav ul {
   display: -webkit-box;
@@ -356,14 +356,14 @@ address {
           align-items: center;
 }
 .header-nav li {
-  padding: 0 20px;
+  padding: 0 18px;
   text-transform: uppercase;
 }
 
 .shopping-bag {
-  min-width: 50px;
-  padding: 10px;
-  border-radius: 25px;
+  width: 48px;
+  padding: 9px;
+  border-radius: 24px;
 }
 
 .heading {
@@ -371,7 +371,7 @@ address {
 }
 .heading .wrapper {
   background: url(../assets/header.png) right/auto 75% no-repeat;
-  padding: 150px 0;
+  padding: 144px 0;
 }
 .heading p {
   font-size: 1.2rem;
@@ -381,11 +381,11 @@ address {
   font-weight: 400;
 }
 .heading .discover-now {
-  width: 200px;
+  width: 192px;
   background: #abd373;
   text-align: center;
-  border-radius: 29px;
-  margin-top: 40px;
+  border-radius: 30px;
+  margin-top: 36px;
 }
 .heading a {
   font-size: 0.9rem;
@@ -393,7 +393,7 @@ address {
   color: #06321B;
   text-transform: uppercase;
   font-weight: 400;
-  padding: 20px 0;
+  padding: 21px 0;
 }
 
 h1 {
@@ -402,7 +402,7 @@ h1 {
   color: #000000;
   text-transform: uppercase;
   font-weight: 400;
-  margin: 20px 0;
+  margin: 24px 0;
 }
 h1.contact {
   font-size: 1.5rem;
@@ -412,7 +412,7 @@ h1.contact {
   font-weight: 600;
   background: #eeeeee url(../assets/contact-header.jpg) center/cover no-repeat;
   text-align: center;
-  padding: 150px 0;
+  padding: 144px 0;
   margin: 0;
 }
 
@@ -433,7 +433,7 @@ h2 {
     width: 50%;
   }
   .heading .discover-now {
-    margin-top: 20px;
+    margin-top: 24px;
   }
   h1.contact {
     background-image: url(../assets/contact-header-smallscreen.png);
@@ -455,8 +455,8 @@ h2 {
         -ms-flex-align: center;
             align-items: center;
     background: url(../assets/header.png) center 20px/50% auto no-repeat;
-    padding: 75px 0;
-    height: max(75vh, 750px);
+    padding: 72px 0;
+    height: 744px;
     text-align: center;
   }
 }
@@ -471,7 +471,7 @@ h2 {
     cursor: pointer;
   }
   .logo {
-    width: 90px;
+    width: 96px;
   }
   .heading .wrapper {
     background-size: 65%;
