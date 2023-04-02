@@ -38,8 +38,8 @@ h3 {
         padding: 18px 0;
     
         img {
-            max-width: 50px;
-            margin-right: 15px;
+            width: 48px;
+            margin-right: 12px;
         }
     
         p {
@@ -57,15 +57,15 @@ h3 {
 }
 
 .filters {
-    margin: 50px 0 30px 0;
+    margin: 48px 0 24px 0;
 
     button {
-        background: white;
+        background: $button-background;
         color: $primary-font-color;
-        border: 2px solid lightgrey;
-        border-radius: 5px;
-        margin: 0 15px;
-        padding: 10px 20px;
+        border: 2px solid $button-border;
+        border-radius: 6px;
+        margin: 0 12px;
+        padding: 12px 24px;
         cursor: pointer;
     }
 }
@@ -81,7 +81,7 @@ h3 {
 
 .product-image {
     position: relative;
-    margin: 15px 0;
+    margin: 24px 0 12px 0;
 
     button {
         position: absolute;
@@ -90,8 +90,8 @@ h3 {
         width: 36px;
         height: 30px;
         padding: 3px;
-        background: white;
-        box-shadow: 0 0 6px grey;
+        background: $button-background;
+        box-shadow: 0 0 6px $primary-font-color;
         cursor: pointer;
 
         img {
@@ -103,52 +103,53 @@ h3 {
 
 .price {
     @include font(1.1rem, 1.1rem, $tertiary-font-color);
-    margin-top: 15px;
+    margin-top: 12px;
 }
 
 .collections {
     @include flexbox();
     flex-wrap: wrap;
+    width: 100%;
     margin: 48px 0;
 
     .child {
         height: 264px;
         padding: 36px;
         margin-bottom: 24px;
+        background: $collections-background center / cover no-repeat;
     }
 
     .collection1 {
         width: calc(70% - 12px);
-        background: #dee2e6 url(../assets/b1.jpeg) center / cover no-repeat;
-
+        background-image: url(../assets/b1.jpeg);
     }
 
     .collection4 {
         width: calc(70% - 12px);
-        background: #dee2e6 url(../assets/b4.jpeg) center / cover no-repeat;
+        background-image: url(../assets/b4.jpeg);
     }
 
     .collection2,
     .collection3 {
         @include flexbox(column, flex-start, center);
         width: calc(30% - 12px);
-        background: #dee2e6 url(../assets/b2.jpeg) center / cover no-repeat;
+        background-image: url(../assets/b2.jpeg);
         text-align: center;
     }
 
     .collection3 {
-        background: #dee2e6 url(../assets/b3.jpeg) center / cover no-repeat;
+        background-image: url(../assets/b3.jpeg);
     }
 
     h4 {
         @include font(1.6rem, 1.6rem, $secondary-font-color, none, 600);
         margin: 24px 0;
-        text-shadow: 0 3px 6px #fff, 0 -3px 6px #fff;
+        text-shadow: 0 3px 6px $collections-background, 0 -3px 6px $collections-background;
     }
 
     p {
         @include font(0.9rem, 0.9rem, $secondary-font-color);
-        text-shadow: 0 3px 3px #fff, 0 -3px 3px #fff;
+        text-shadow: 0 3px 3px $collections-background, 0 -3px 3px $collections-background;
     }
 
     .shop-now {
@@ -238,7 +239,7 @@ h3 {
 
         .child {
             @include flexbox(column);
-            min-width: max(288px, 50%);
+            width: max(288px, 50%);
         }
     }
 
@@ -307,7 +308,7 @@ h3 {
         @include flexbox(column);
 
         .child {
-            width: 100%;
+            width: min(360px, 100%);
             margin: 0;
         }
 
