@@ -482,6 +482,9 @@ h2 {
   .heading .wrapper p {
     width: 75%;
   }
+  h1.contact {
+    background-image: url(../assets/contact-header-mobile.png);
+  }
 }
 h3 {
   font-size: 1.7rem;
