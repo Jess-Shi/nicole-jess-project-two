@@ -1400,8 +1400,8 @@ h6 {
             transform: translateY(0);
   }
   100% {
-    -webkit-transform: translateY(-8px);
-            transform: translateY(-8px);
+    -webkit-transform: translateY(-9px);
+            transform: translateY(-9px);
   }
 }
 
@@ -1411,8 +1411,8 @@ h6 {
             transform: translateY(0);
   }
   100% {
-    -webkit-transform: translateY(-8px);
-            transform: translateY(-8px);
+    -webkit-transform: translateY(-9px);
+            transform: translateY(-9px);
   }
 }
 .logo,
@@ -1474,23 +1474,18 @@ form button:focus-within {
 .settings a,
 .product-text a,
 .contact-info a,
-.contact-info address,
-footer a,
-footer address {
+footer a:not(.social-media a) {
   position: relative;
   display: inline;
 }
 .settings a::after,
 .product-text a::after,
 .contact-info a::after,
-.contact-info address::after,
-footer a::after,
-footer address::after {
+footer a:not(.social-media a)::after {
   content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
-  width: 0;
   height: 2px;
   background: #06321B;
   -webkit-transform: scaleX(0);
@@ -1505,12 +1500,8 @@ footer address::after {
 .product-text a:focus::after,
 .contact-info a:hover::after,
 .contact-info a:focus::after,
-.contact-info address:hover::after,
-.contact-info address:focus::after,
-footer a:hover::after,
-footer a:focus::after,
-footer address:hover::after,
-footer address:focus::after {
+footer a:not(.social-media a):hover::after,
+footer a:not(.social-media a):focus::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
   width: 100%;
@@ -1520,8 +1511,7 @@ footer address:focus::after {
   background: #4c4c4c;
 }
 
-footer a::after,
-footer address::after {
+footer a::after {
   background: #000000;
 }
 
@@ -1533,5 +1523,5 @@ textarea {
 input:hover, input:focus,
 textarea:hover,
 textarea:focus {
-  background-color: #d3d3d3;
+  background-color: rgba(211, 211, 211, 0.8);
 }
