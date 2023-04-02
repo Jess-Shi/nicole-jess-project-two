@@ -1297,7 +1297,7 @@ footer a {
           align-items: center;
 }
 .media-icons li {
-  border: 2px solid black;
+  border: 2px solid #000000;
   margin-right: 12px;
 }
 .media-icons img {

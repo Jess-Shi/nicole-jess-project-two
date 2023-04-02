@@ -3,7 +3,7 @@
 
 footer {
     @include font(0.8rem, 1.25rem, $secondary-font-color);
-    background: #d8e9d6 url(../assets/footer.jpg) center / cover no-repeat;
+    background: $footer-background url(../assets/footer.jpg) center / cover no-repeat;
 
     .wrapper {
         @include flexbox();
@@ -32,7 +32,7 @@ footer {
     @include flexbox(row, flex-start);
 
     li {
-        border: 2px solid black;
+        border: 2px solid $secondary-font-color;
         margin-right: 12px;
     }
 

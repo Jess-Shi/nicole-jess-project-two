@@ -72,7 +72,7 @@ h1 {
 
     &.contact {
         @include font(1.5rem, 1.5rem, $primary-font-color, uppercase, 600);
-        background: #eeeeee url(../assets/contact-header.jpg) center / cover no-repeat;
+        background: $contact-header-background url(../assets/contact-header.jpg) center / cover no-repeat;
         text-align: center;
         padding: 144px 0;
         margin: 0;
