@@ -1,0 +1,14 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+footer .child .display-row {
+    @include flexbox();
+    
+    li {
+        margin: 0 12px;
+    }
+}
+
+footer .child .display-column {
+    @include flexbox(column);
+}
