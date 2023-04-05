@@ -17,54 +17,32 @@
 
 // myAccount.classList.toggle("display");
 
-const displayRow = (selector) => {
-    document.querySelector(selector).classList.toggle("display-row");
-}
-
-const displayColumn = (selector) => {
-    document.querySelector(selector).classList.toggle("display-column");
+const display = (selector) => {
+    document.querySelector(selector).classList.toggle("display");
 }
 
 const scrollIntoView = (selector) => {
     document.querySelector(selector).scrollIntoView({behavior: "smooth"});
 }
 
-if (window.matchMedia("(max-width: 1200px)").matches) {
+document.querySelector(".useful-links").addEventListener("click", () => {
+    display(".useful-links ul");
+    scrollIntoView(".useful-links ul");
+});
 
-    document.querySelector(".useful-links").addEventListener("click", () => {
-        displayRow(".useful-links ul");
-    });
+document.querySelector(".account").addEventListener("click", () => {
+    display(".account ul");
+    scrollIntoView(".account ul");
+});
 
-    document.querySelector(".account").addEventListener("click", () => {
-        displayRow(".account ul");
-    });
+document.querySelector(".services").addEventListener("click", () => {
+    display(".services ul");
+    scrollIntoView(".services ul");
+});
 
-    document.querySelector(".services").addEventListener("click", () => {
-        displayRow(".services ul");
-    });
-
-    document.querySelector(".questions").addEventListener("click", () => {
-        displayColumn(".questions ul");
-        scrollIntoView(".questions ul");
-        displayColumn(".questions p");
-    });
-}
-
-if (window.matchMedia("(max-width: 780px)").matches) {
-
-    document.querySelector(".useful-links").addEventListener("click", () => {
-        displayColumn(".useful-links ul");
-        scrollIntoView(".useful-links ul");
-    });
-
-    document.querySelector(".account").addEventListener("click", () => {
-        displayColumn(".account ul");
-        scrollIntoView(".account ul");
-    });
-
-    document.querySelector(".services").addEventListener("click", () => {
-        displayColumn(".services ul");
-        scrollIntoView(".services ul");
-    });
-}
+document.querySelector(".questions").addEventListener("click", () => {
+    display(".questions ul");
+    scrollIntoView(".questions ul");
+    display(".questions p");
+});
 

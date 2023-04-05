@@ -1,14 +1,10 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-footer .child .display-row {
-    @include flexbox();
-    
-    li {
-        margin: 0 12px;
+@media (max-width: 1200px) {
+
+    footer .child .display {
+        display: block;
     }
 }
 
-footer .child .display-column {
-    @include flexbox(column);
-}
