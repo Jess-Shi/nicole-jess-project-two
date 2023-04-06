@@ -364,13 +364,14 @@ h3 {
     .filters {
         margin: 24px 0 0 0;
 
-        button {
+        .options {
             display: none;
         }
 
         .mobile {
             display: block;
-            cursor: pointer;
+            border: 2px solid $button-background;
+            padding: 3px;
             margin: 0;
         }
     }

@@ -8,3 +8,9 @@
     }
 }
 
+@media (max-width: 540px) {
+
+    .filters .display {
+        @include flexbox(column);
+    }
+}
