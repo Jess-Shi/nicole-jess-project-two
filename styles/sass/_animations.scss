@@ -46,6 +46,7 @@ form button {
 .filters button:focus {
     color: $tertiary-font-color;
     border: 2px dotted $tertiary-font-color;
+    background-color: $button-border;
 }
 
 .product-image button,

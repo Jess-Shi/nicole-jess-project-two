@@ -1063,7 +1063,7 @@ h3::after {
     display: block;
     border: 2px solid #ffffff;
     padding: 3px;
-    margin: 0;
+    margin: 0 auto;
   }
 }
 main.contact {
@@ -1475,6 +1475,7 @@ form button:focus-within {
 .filters button:focus {
   color: #06321B;
   border: 2px dotted #06321B;
+  background-color: #d3d3d3;
 }
 
 .product-image button,
@@ -1567,5 +1568,19 @@ textarea:focus {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-top: 12px;
+  }
+  .filters .display button {
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px dotted #06321B;
+    width: 180px;
+    padding: 6px 0;
+  }
+  .filters .display button:hover, .filters .display button:focus {
+    background-color: #d3d3d3;
+  }
+  .filters .display :first-child {
+    border-top: 2px dotted #06321B;
   }
 }

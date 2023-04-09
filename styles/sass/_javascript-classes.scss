@@ -18,5 +18,23 @@
 
     .filters .display {
         @include flexbox(column);
+        margin-top: 12px;
+
+        button {
+            border: none;
+            border-radius: 0;
+            border-bottom: 2px dotted $tertiary-font-color;
+            width: 180px;
+            padding: 6px 0;
+
+            &:hover,
+            &:focus {
+                background-color: $button-border;
+            }
+        }
+
+        :first-child {
+            border-top: 2px dotted $tertiary-font-color;
+        }
     }
 }

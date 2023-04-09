@@ -1,4 +1,14 @@
 
+document.addEventListener("click", () => {
+
+    const displayed = document.querySelectorAll(".display");
+
+    for (let i = 0; i < displayed.length; i++) {
+        
+        displayed[i].classList.remove("display");
+    }
+});
+
 //settings
 
 const settings = document.querySelectorAll(".settings .expandable");
@@ -11,19 +21,14 @@ for (let i = 0; i < settings.length; i++) {
         settings[i].lastElementChild.classList.toggle("display");
         settings[i].insertBefore(e.target, settings[i].firstElementChild);
     });
-
-    document.addEventListener("click", () => {
-        if (settings[i].lastElementChild.classList.contains("display")) {
-            settings[i].lastElementChild.classList.remove("display");
-        }
-    });
 }
 
 
+//filters
 
-//filter
+document.querySelector(".filters .mobile").addEventListener("click", (e) => {
 
-document.querySelector(".filters .mobile").addEventListener("click", () => {
+    e.stopPropagation();
     document.querySelector(".filters .options").classList.toggle("display");
 });
 
