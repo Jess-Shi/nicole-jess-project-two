@@ -48,10 +48,6 @@ h6 {
     margin-bottom: 18px;
 }
 
-.questions p {
-    margin-bottom: 0;
-}
-
 .copyright {
     @include font(0.8rem, 0.8rem, $tertiary-font-color);
     position: absolute;
@@ -76,18 +72,18 @@ h6 {
         .child {
             align-items: center;
             text-align: center;
-            margin-bottom: 18px;
+            margin-bottom: 15px;
 
             ul {
                 display: none;
-                margin-bottom: 18px;
+                margin: 15px 0;
             }
         }
 
         .social-media {
 
             p {
-                cursor: auto;
+                margin: 12px 0;
             }
 
             ul {
@@ -97,19 +93,6 @@ h6 {
 
         .media-icons li {
             margin: 0 6px;
-        }
-
-        .questions p {
-            display: none;
-        }
-
-        button {
-            background-color: $footer-background;
-            cursor: pointer;
-        }
-
-        h6 {
-            margin: 0;
         }
     }
 }

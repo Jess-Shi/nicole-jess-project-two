@@ -1331,10 +1331,6 @@ h6 {
   margin-bottom: 18px;
 }
 
-.questions p {
-  margin-bottom: 0;
-}
-
 .copyright {
   font-size: 0.8rem;
   line-height: 0.8rem;
@@ -1375,14 +1371,14 @@ h6 {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
   }
   footer .child ul {
     display: none;
-    margin-bottom: 18px;
+    margin: 15px 0;
   }
   footer .social-media p {
-    cursor: auto;
+    margin: 12px 0;
   }
   footer .social-media ul {
     display: -webkit-box;
@@ -1391,16 +1387,6 @@ h6 {
   }
   footer .media-icons li {
     margin: 0 6px;
-  }
-  footer .questions p {
-    display: none;
-  }
-  footer button {
-    background-color: #d8e9d6;
-    cursor: pointer;
-  }
-  footer h6 {
-    margin: 0;
   }
 }
 *:focus {
@@ -1561,6 +1547,20 @@ textarea:focus {
 @media (max-width: 1200px) {
   footer .child .display {
     display: block;
+  }
+  footer button {
+    font-size: 1rem;
+    line-height: 1rem;
+    color: #000000;
+    text-transform: none;
+    font-weight: 400;
+    background-color: #d8e9d6;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #d8e9d6;
+    cursor: pointer;
+  }
+  footer button:hover, footer button:focus {
+    border-bottom: 2px solid #06321B;
   }
 }
 @media (max-width: 540px) {

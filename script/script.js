@@ -9,6 +9,7 @@ document.addEventListener("click", () => {
     }
 });
 
+
 //settings
 
 const settings = document.querySelectorAll(".settings .expandable");
@@ -26,43 +27,80 @@ for (let i = 0; i < settings.length; i++) {
 
 //filters
 
-document.querySelector(".filters .mobile").addEventListener("click", (e) => {
+if (document.querySelector(".filters")) {
 
-    e.stopPropagation();
-    document.querySelector(".filters .options").classList.toggle("display");
-});
+    document.querySelector(".filters .mobile").addEventListener("click", (e) => {
+
+        const options = document.querySelector(".filters .options");
+        e.stopPropagation();
+        options.classList.toggle("display");
+        options.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+}
+
 
 //footer
 
+const toggleFooterNav = (e) => {
+
+    if (e.target.tagName === "BUTTON") {
+
+        const ul = e.target.nextElementSibling;
+        e.stopPropagation();
+        ul.classList.toggle("display");
+        ul.scrollIntoView({behavior: "smooth"});
+    }
+}
+
+let below1200 = false;
+
+if (window.matchMedia("(max-width: 1200px)").matches) {
+
+    const h6 = document.querySelectorAll("h6");
+
+    for (let i = 0; i < h6.length; i++) {
+
+        const button = document.createElement("button");
+        button.innerHTML = h6[i].innerHTML;
+        h6[i].replaceWith(button);
+    }
+        
+    document.querySelector("footer").addEventListener("click", toggleFooterNav);
+
+    below1200 = true;
+}
+
 window.addEventListener("resize", () => {
 
-    if (window.matchMedia("(max-width: 1200px)").matches) {
+    if (window.innerWidth <= 1200 && !below1200) {
 
-        const footerNav = document.querySelectorAll("h6");
+        const h6 = document.querySelectorAll("h6");
 
-        for (let i = 0; i < footerNav.length; i++) {
+        for (let i = 0; i < h6.length; i++) {
 
             const button = document.createElement("button");
-            footerNav[i].parentElement.insertBefore(button, footerNav[i]);
-            button.appendChild(footerNav[i]);
+            button.innerHTML = h6[i].innerHTML;
+            h6[i].replaceWith(button);
         }
+
+        document.querySelector("footer").addEventListener("click", toggleFooterNav);
+
+        below1200 = true;
+
+    } else if (window.innerWidth > 1200 && below1200) {
+
+        const buttons = document.querySelectorAll("footer button");
+
+        for (let i = 0; i < buttons.length; i++) {
+
+            const h6 = document.createElement("h6");
+            h6.innerHTML = buttons[i].innerHTML;
+            buttons[i].replaceWith(h6);
+        }
+
+        document.querySelector("footer").removeEventListener("click", toggleFooterNav);
+
+        below1200 = false;
     }
-})
+});
 
-
-
-// const footerNav = document.querySelectorAll(".useful-links, .account, .services, .questions");
-
-// for (let i = 0; i < footerNav.length; i++) {
-    
-//     footerNav[i].addEventListener("click", () => {
-
-//         const menu = document.querySelector(`.${footerNav[i].classList[1]} ul`);
-//         menu.classList.toggle("display");
-//         menu.scrollIntoView({ behavior: "smooth" });
-        
-//         if (i === 3) {
-//             document.querySelector(`.${footerNav[i].classList[1]} p`).classList.toggle("display");
-//         }
-//     });
-// }

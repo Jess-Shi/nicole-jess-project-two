@@ -9,8 +9,24 @@
 
 @media (max-width: 1200px) {
 
-    footer .child .display {
-        display: block;
+    footer {
+
+        .child .display {
+            display: block;
+        }
+
+        button {
+            @include font(1rem, 1rem, $secondary-font-color);
+            background-color: $footer-background;
+            padding-bottom: 3px;
+            border-bottom: 2px solid $footer-background;
+            cursor: pointer;
+
+            &:hover,
+            &:focus {
+                border-bottom: 2px solid $tertiary-font-color;
+            }
+        }
     }
 }
 
