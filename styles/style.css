@@ -312,16 +312,29 @@ address {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 15px 0;
+  height: 42px;
 }
 .settings p {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
-.settings a {
+.settings .expandable {
+  margin-left: 12px;
+  position: relative;
+}
+.settings .expandable :last-child {
+  position: absolute;
+  left: 0;
+  bottom: -42px;
+  display: none;
+}
+.settings button {
+  background-color: #abd373;
   color: #06321B;
-  margin-left: 24px;
+  font-family: "Rubik", sans-serif;
+  height: 42px;
+  padding: 0 12px;
 }
 
 .header-nav {
@@ -461,7 +474,7 @@ h2 {
   }
 }
 @media (max-width: 600px) {
-  .settings .wrapper a,
+  .settings button,
   .header-nav > ul,
   .shopping-bag {
     display: none;
@@ -1419,6 +1432,7 @@ h6 {
             transform: translateY(-9px);
   }
 }
+.settings button,
 .logo,
 .shopping-bag,
 .discover-now,
@@ -1431,7 +1445,10 @@ form button {
   transition: box-shadow 0.25s;
   transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
 }
-.logo:hover, .logo:focus, .logo:focus-within,
+.settings button:hover, .settings button:focus, .settings button:focus-within,
+.logo:hover,
+.logo:focus,
+.logo:focus-within,
 .shopping-bag:hover,
 .shopping-bag:focus,
 .shopping-bag:focus-within,
@@ -1475,14 +1492,12 @@ form button:focus-within {
           transform: scale(1.5);
 }
 
-.settings a,
 .product-text a,
 .contact-info a,
 footer a:not(.social-media a) {
   position: relative;
   display: inline;
 }
-.settings a::after,
 .product-text a::after,
 .contact-info a::after,
 footer a:not(.social-media a)::after {
@@ -1499,9 +1514,7 @@ footer a:not(.social-media a)::after {
   transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.settings a:hover::after, .settings a:focus::after,
-.product-text a:hover::after,
-.product-text a:focus::after,
+.product-text a:hover::after, .product-text a:focus::after,
 .contact-info a:hover::after,
 .contact-info a:focus::after,
 footer a:not(.social-media a):hover::after,
@@ -1528,6 +1541,10 @@ input:hover, input:focus,
 textarea:hover,
 textarea:focus {
   background-color: #dddddd;
+}
+
+.settings .expandable .display {
+  display: block;
 }
 
 @media (max-width: 1200px) {

@@ -1,6 +1,12 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+
+.settings .expandable .display {
+    display: block;
+}
+
+
 @media (max-width: 1200px) {
 
     footer .child .display {
