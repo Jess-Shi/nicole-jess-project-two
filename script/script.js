@@ -34,18 +34,35 @@ document.querySelector(".filters .mobile").addEventListener("click", (e) => {
 
 //footer
 
-const footerNav = document.querySelectorAll(".useful-links, .account, .services, .questions");
+window.addEventListener("resize", () => {
 
-for (let i = 0; i < footerNav.length; i++) {
-    
-    footerNav[i].addEventListener("click", () => {
+    if (window.matchMedia("(max-width: 1200px)").matches) {
 
-        const menu = document.querySelector(`.${footerNav[i].classList[1]} ul`);
-        menu.classList.toggle("display");
-        menu.scrollIntoView({ behavior: "smooth" });
-        
-        if (i === 3) {
-            document.querySelector(`.${footerNav[i].classList[1]} p`).classList.toggle("display");
+        const footerNav = document.querySelectorAll("h6");
+
+        for (let i = 0; i < footerNav.length; i++) {
+
+            const button = document.createElement("button");
+            footerNav[i].parentElement.insertBefore(button, footerNav[i]);
+            button.appendChild(footerNav[i]);
         }
-    });
-}
+    }
+})
+
+
+
+// const footerNav = document.querySelectorAll(".useful-links, .account, .services, .questions");
+
+// for (let i = 0; i < footerNav.length; i++) {
+    
+//     footerNav[i].addEventListener("click", () => {
+
+//         const menu = document.querySelector(`.${footerNav[i].classList[1]} ul`);
+//         menu.classList.toggle("display");
+//         menu.scrollIntoView({ behavior: "smooth" });
+        
+//         if (i === 3) {
+//             document.querySelector(`.${footerNav[i].classList[1]} p`).classList.toggle("display");
+//         }
+//     });
+// }

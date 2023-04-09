@@ -42,11 +42,19 @@ form button {
     }
 }
 
-.filters button:hover,
-.filters button:focus {
-    color: $tertiary-font-color;
-    border: 2px dotted $tertiary-font-color;
-    background-color: $button-border;
+.filters {
+
+    button:hover,
+    button:focus {
+        color: $tertiary-font-color;
+        border: 2px dotted $tertiary-font-color;
+    }
+
+    .mobile:hover,
+    .mobile:focus {
+        border: none;
+        background-color: $button-border;
+    }
 }
 
 .product-image button,

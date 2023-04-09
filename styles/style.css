@@ -1061,8 +1061,8 @@ h3::after {
   }
   .filters .mobile {
     display: block;
-    border: 2px solid #ffffff;
-    padding: 3px;
+    border: none;
+    padding: 6px;
     margin: 0 auto;
   }
 }
@@ -1375,11 +1375,11 @@ h6 {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
-    cursor: pointer;
+    margin-bottom: 18px;
   }
   footer .child ul {
     display: none;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
   }
   footer .social-media p {
     cursor: auto;
@@ -1388,13 +1388,19 @@ h6 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-bottom: 24px;
   }
   footer .media-icons li {
     margin: 0 6px;
   }
   footer .questions p {
     display: none;
+  }
+  footer button {
+    background-color: #d8e9d6;
+    cursor: pointer;
+  }
+  footer h6 {
+    margin: 0;
   }
 }
 *:focus {
@@ -1475,6 +1481,10 @@ form button:focus-within {
 .filters button:focus {
   color: #06321B;
   border: 2px dotted #06321B;
+}
+.filters .mobile:hover,
+.filters .mobile:focus {
+  border: none;
   background-color: #d3d3d3;
 }
 

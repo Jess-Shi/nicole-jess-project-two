@@ -76,11 +76,11 @@ h6 {
         .child {
             align-items: center;
             text-align: center;
-            cursor: pointer;
+            margin-bottom: 18px;
 
             ul {
                 display: none;
-                margin-bottom: 24px;
+                margin-bottom: 18px;
             }
         }
 
@@ -92,7 +92,6 @@ h6 {
 
             ul {
                 display: flex;
-                margin-bottom: 24px;
             }
         }
 
@@ -102,6 +101,15 @@ h6 {
 
         .questions p {
             display: none;
+        }
+
+        button {
+            background-color: $footer-background;
+            cursor: pointer;
+        }
+
+        h6 {
+            margin: 0;
         }
     }
 }
