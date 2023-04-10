@@ -29,7 +29,6 @@
     button {
         background-color: $accent-color;
         color: $tertiary-font-color;
-        font-family: $font-stack;
         height: 42px;
         padding: 0 12px;
     }
@@ -135,14 +134,8 @@ h2 {
 @media (max-width: 600px) {
     
     .settings button,
-    .header-nav > ul,
-    .shopping-bag {
+    .header-nav {
         display: none;
-    }
-
-    .header-nav .mobile {
-        display: block;
-        cursor: pointer;
     }
 
     .logo {

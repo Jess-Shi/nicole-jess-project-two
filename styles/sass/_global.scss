@@ -19,6 +19,10 @@ fieldset, input, textarea, button {
     border: 0;
 }
 
+button {
+    font-family: $font-stack;
+}
+
 span, img, a {
     display: block;
 }

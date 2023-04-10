@@ -248,6 +248,10 @@ fieldset, input, textarea, button {
   border: 0;
 }
 
+button {
+  font-family: "Rubik", sans-serif;
+}
+
 span, img, a {
   display: block;
 }
@@ -332,7 +336,6 @@ address {
 .settings button {
   background-color: #abd373;
   color: #06321B;
-  font-family: "Rubik", sans-serif;
   height: 42px;
   padding: 0 12px;
 }
@@ -475,13 +478,8 @@ h2 {
 }
 @media (max-width: 600px) {
   .settings button,
-  .header-nav > ul,
-  .shopping-bag {
+  .header-nav {
     display: none;
-  }
-  .header-nav .mobile {
-    display: block;
-    cursor: pointer;
   }
   .logo {
     width: 96px;
@@ -1285,6 +1283,14 @@ footer .child {
       -ms-flex-align: start;
           align-items: flex-start;
 }
+footer h6 {
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #000000;
+  text-transform: none;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
 footer a {
   color: #000000;
 }
@@ -1320,15 +1326,6 @@ footer a {
   width: 30px;
   height: 30px;
   padding: 3px;
-}
-
-h6 {
-  font-size: 1rem;
-  line-height: 1rem;
-  color: #000000;
-  text-transform: none;
-  font-weight: 400;
-  margin-bottom: 18px;
 }
 
 .copyright {
@@ -1561,6 +1558,139 @@ textarea:focus {
   }
   footer button:hover, footer button:focus {
     border-bottom: 2px solid #06321B;
+  }
+}
+@media (max-width: 600px) {
+  header .mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .mobile .visible {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    padding: 24px 0;
+  }
+  header .mobile .hidden {
+    display: none;
+  }
+  header .mobile .display {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    padding: 24px 0;
+    border-top: 2px solid #4c4c4c;
+    border-bottom: 2px solid #4c4c4c;
+  }
+  header .mobile .child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .mobile .shopping-bag {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 150px;
+  }
+  header .mobile .shopping-bag img {
+    width: 30px;
+  }
+  header .mobile h6 {
+    font-size: 1rem;
+    line-height: 1rem;
+    color: #4c4c4c;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 2px solid #4c4c4c;
+    padding-bottom: 6px;
+    margin: 24px 0 12px 0;
+  }
+  header .mobile ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .mobile li a {
+    border-radius: 6px;
+    padding: 3px 6px;
+    margin: 3px 0;
+  }
+  header .mobile li a:hover, header .mobile li a:focus {
+    background-color: #d3d3d3;
+  }
+  header .mobile button {
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 3px 6px;
+    margin: 3px 0;
+    cursor: pointer;
+  }
+  header .mobile button:hover, header .mobile button:focus {
+    background-color: #d3d3d3;
   }
 }
 @media (max-width: 540px) {

@@ -15,6 +15,11 @@ footer {
         @include flexbox(column, space-between, flex-start);
     }
 
+    h6 {
+        @include font(1rem, 1rem, $secondary-font-color);
+        margin-bottom: 18px;
+    }
+
     a {
         color: $secondary-font-color;
     }
@@ -41,11 +46,6 @@ footer {
         height: 30px;
         padding: 3px;
     }
-}
-
-h6 {
-    @include font(1rem, 1rem, $secondary-font-color);
-    margin-bottom: 18px;
 }
 
 .copyright {
