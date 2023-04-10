@@ -1684,6 +1684,7 @@ textarea:focus {
   }
   header .mobile button {
     background-color: #ffffff;
+    color: #4c4c4c;
     border-radius: 6px;
     padding: 3px 6px;
     margin: 3px 0;
