@@ -7,16 +7,30 @@
 
     .wrapper {
         @include flexbox();
-        padding: 15px 0;
+        height: 42px;
     }
 
     p {
         flex-grow: 1;
     }
 
-    a {
+    .expandable {
+        margin-left: 12px;
+        position: relative;
+
+        :last-child {
+            position: absolute;
+            left: 0;
+            bottom: -42px;
+            display: none;
+        }
+    }
+
+    button {
+        background-color: $accent-color;
         color: $tertiary-font-color;
-        margin-left: 24px;
+        height: 42px;
+        padding: 0 12px;
     }
 }
 
@@ -119,15 +133,9 @@ h2 {
 
 @media (max-width: 600px) {
     
-    .settings .wrapper a,
-    .header-nav > ul,
-    .shopping-bag {
+    .settings button,
+    .header-nav {
         display: none;
-    }
-
-    .header-nav .mobile {
-        display: block;
-        cursor: pointer;
     }
 
     .logo {

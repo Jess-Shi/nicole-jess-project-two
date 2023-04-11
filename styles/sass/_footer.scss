@@ -15,6 +15,11 @@ footer {
         @include flexbox(column, space-between, flex-start);
     }
 
+    h6 {
+        @include font(1rem, 1rem, $secondary-font-color);
+        margin-bottom: 18px;
+    }
+
     a {
         color: $secondary-font-color;
     }
@@ -43,15 +48,6 @@ footer {
     }
 }
 
-h6 {
-    @include font(1rem, 1rem, $secondary-font-color);
-    margin-bottom: 18px;
-}
-
-.questions p {
-    margin-bottom: 0;
-}
-
 .copyright {
     @include font(0.8rem, 0.8rem, $tertiary-font-color);
     position: absolute;
@@ -76,31 +72,27 @@ h6 {
         .child {
             align-items: center;
             text-align: center;
-            cursor: pointer;
+            margin-bottom: 15px;
 
             ul {
                 display: none;
+                margin: 15px 0;
             }
         }
 
         .social-media {
 
             p {
-                cursor: auto;
+                margin: 12px 0;
             }
 
             ul {
                 display: flex;
-                margin-bottom: 24px;
             }
         }
 
         .media-icons li {
             margin: 0 6px;
-        }
-
-        .questions p {
-            display: none;
         }
     }
 }

@@ -15,8 +15,14 @@
         <section class="settings">
             <div class="wrapper">
                 <p>Hello everyone! 25% off all products</p>
-                <a href="#">CAD</a>
-                <a href="#">English</a>
+                <div class="expandable">
+                    <button>CAD</button>
+                    <button>USD</button>
+                </div>
+                <div class="expandable">
+                    <button>English</button>
+                    <button>French</button>
+                </div>
             </div>
         </section>
 
@@ -30,9 +36,43 @@
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="./contact.html">Contact Us</a></li>
             </ul>
-            <img src="./assets/icons/menu.png" alt="Menu icon" class="mobile">
 
             <a href="#" class="shopping-bag"><img src="./assets/icons/shopping-bag.svg" alt="Shopping bag icon"></a>
+        </nav>
+
+        <nav class="wrapper mobile">
+            <div class="visible">
+                <div class="logo">
+                    <a href="./index.html"><img src="./assets/logo.png" alt="Pronia logo"></a>
+                </div>
+    
+                <button><img src="./assets/icons/menu.png" alt="Menu icon"></button>
+            </div>
+
+            <div class="hidden">
+                <a href="#" class="child shopping-bag"><img src="./assets/icons/shopping-bag.svg" alt="Shopping bag icon">View Cart</a>
+
+                <nav class="child">
+                    <h6>Menu</h6>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="./contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+
+                <div class="child">
+                    <h6>Currency</h6>
+                    <button>CAD</button>
+                    <button>USD</button>
+                </div>
+
+                <div class="child">
+                    <h6>Language</h6>
+                    <button>English</button>
+                    <button>French</button>
+                </div>
+            </div>
         </nav>
 
         <section class="heading">
@@ -79,10 +119,12 @@
             <h3>Our Products</h3>
 
             <div class="filters">
-                <img src="./assets/icons/filter.png" alt="Filter icon" class="mobile">
-                <button>Featured</button>
-                <button>Bestseller</button>
-                <button>Latest</button>
+                <button class="mobile"><img src="./assets/icons/filter.png" alt="Filter icon"></button>
+                <div class="options">
+                    <button>Featured</button>
+                    <button>Bestseller</button>
+                    <button>Latest</button>
+                </div>
             </div>
 
             <div class="featured">
@@ -284,7 +326,7 @@
                 </ul>
             </nav>
 
-            <nav class="child account">
+            <nav class="child account" id="account">
                 <h6>My Account</h6>
                 <ul>
                     <li><a href="#">Sign In</a></li>
@@ -308,8 +350,8 @@
 
             <nav class="child questions">
                 <h6>Have a question?</h6>
-                <p>Reach us at:</p>
                 <ul>
+                    <li><p>Reach us at:</p></li>
                     <li><a href="tel:+1234567890">123-456-7890</a></li>
                     <li><a href="mailto:info@pronia.ca">info@pronia.ca</a></li>
                     <li><address><a href="https://www.google.com/maps/place/123+Front+St+W,+Toronto,+ON+M5J+2M2/@43.6448754,-79.3852097,17z/data=!3m1!4b1!4m6!3m5!1s0x882b34d378eea58f:0x5b05a27cba5c5a7d!8m2!3d43.6448715!4d-79.383021!16s%2Fg%2F11b8v444h8">
@@ -322,5 +364,7 @@
             <p class="copyright">&copy; 2023 Pronia</p>
         </div>
     </footer>
+
+    <script src="./script/script.js"></script>
 </body>
 </html>

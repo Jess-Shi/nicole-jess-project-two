@@ -364,14 +364,15 @@ h3 {
     .filters {
         margin: 24px 0 0 0;
 
-        button {
+        .options {
             display: none;
         }
 
         .mobile {
             display: block;
-            cursor: pointer;
-            margin: 0;
+            border: none;
+            padding: 6px;
+            margin: 0 auto;
         }
     }
 }
