@@ -1,0 +1,33 @@
+// MVP 1 - Add all product data to Firebase (images, price, title, etc).
+
+    // Create a file (firebase.js) to configure and export the Firebase object.
+
+
+
+// MVP 2 - Display the number of items currently added to the user's cart.
+
+    // Import the database object, and any required Firebase modules at the top of the main app file (app.js).
+
+    // Call getDatabase() and ref() to create a reference to the Firebase database.
+
+    // Add product IDs to the corresponding add-to-cart buttons in the HTML
+
+    // Add event listeners to the cart buttons
+
+        // When the buttons are clicked, add the products with the corresponding ID to the cart
+        // Increase the count on the shopping bag as users add items to it
+        // Change the inCart property of the products in the database to true
+
+
+// MVP 3 - Allows users to view what has been added to their cart.
+
+    // Create a popup with details of the products added to the cart (and a checkout button!)
+        
+        // Automatically add the price of all items in the cart and display the subtotal
+        // Add an input field that allows the user to increase (or decrease) the amount of each item in cart
+        // Add a trashcan for each product that allows the user to delete the product completely
+
+
+
+
+        
