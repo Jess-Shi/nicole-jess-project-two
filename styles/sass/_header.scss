@@ -133,7 +133,7 @@ h2 {
 
 @media (max-width: 600px) {
     
-    .settings button,
+    .settings .expandable,
     .header-nav {
         display: none;
     }
@@ -156,5 +156,12 @@ h2 {
 
     h1.contact {
         background-image: url(../assets/contact-header-mobile.png);
+    }
+}
+
+@media (max-width: 420px) {
+    
+    .settings {
+        font-size: 0.65rem;
     }
 }
