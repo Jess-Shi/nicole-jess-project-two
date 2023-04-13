@@ -1,0 +1,55 @@
+{
+    "product": [
+
+        {
+            "ID": "1",
+            "name": "American Marigold",
+            "description": "lorem ipsum",
+            "price": 23.45,
+            "image": "",
+            "inCart": false,
+            "category": "featured",
+            "inventory": {
+                "quantity": 100000000,
+                "inStock": true
+            },
+            "attributes": {
+                "height": "75 cm",
+                "width": "35 cm"
+            }
+        }
+
+    ],
+
+    "user": [
+
+        {
+            "userID": "1",
+            "firstName": "",
+            "lastName": "",
+            "phone": "",
+            "email": "",
+            "message": ""
+        },
+
+        {
+            "userID": "2",
+            "firstName": "",
+            "lastName": "",
+            "phone": "",
+            "email": "",
+            "message": ""
+        },
+
+        {
+            "userID": "3",
+            "firstName": "",
+            "lastName": "",
+            "phone": "",
+            "email": "",
+            "message": ""
+        }
+
+    ]
+
+}
