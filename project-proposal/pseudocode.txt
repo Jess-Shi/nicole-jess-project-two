@@ -27,6 +27,7 @@
         // Add an input field that allows the user to increase (or decrease) the amount of each item in cart
         // Add a trashcan for each product that allows the user to delete the product completely
 
+//test
 
 
 
