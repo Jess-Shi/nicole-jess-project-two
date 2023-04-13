@@ -1,13 +1,27 @@
 {
-    "product": [
+    "product": {
 
-        {
-            "ID": "1",
+        "Nmers-d039ksf732fsd": {
             "name": "American Marigold",
             "description": "lorem ipsum",
             "price": 23.45,
             "image": "",
-            "inCart": false,
+            "category": "featured",
+            "inventory": {
+                "quantity": 100000000,
+                "inStock": true
+            },
+            "attributes": {
+                "height": "75 cm",
+                "width": "35 cm"
+            }
+        },
+
+        "Nmers-jkdsf8983505fd": {
+            "name": "American Marigold",
+            "description": "lorem ipsum",
+            "price": 23.45,
+            "image": "",
             "category": "featured",
             "inventory": {
                 "quantity": 100000000,
@@ -18,38 +32,11 @@
                 "width": "35 cm"
             }
         }
+    },
 
-    ],
+    "cart": {
 
-    "user": [
 
-        {
-            "userID": "1",
-            "firstName": "",
-            "lastName": "",
-            "phone": "",
-            "email": "",
-            "message": ""
-        },
 
-        {
-            "userID": "2",
-            "firstName": "",
-            "lastName": "",
-            "phone": "",
-            "email": "",
-            "message": ""
-        },
-
-        {
-            "userID": "3",
-            "firstName": "",
-            "lastName": "",
-            "phone": "",
-            "email": "",
-            "message": ""
-        }
-
-    ]
-
+    }
 }
