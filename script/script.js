@@ -3,7 +3,8 @@ import {
   getDatabase,
   ref,
   set,
-  onValue,
+  get,
+  onValue
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 const database = getDatabase(app);
@@ -16,10 +17,8 @@ const cartCountRef = ref(database, "/cartCount");
 onValue(dbRef, (data) => {
   const ourData = data.val();
   const products = ourData.products;
-  const cartCount = ourData.cartCount;
 
   displayItems(products);
-  displayCartCount(cartCount);
 });
 
 const displayItems = (products) => {
@@ -52,18 +51,24 @@ const cartCountElement = document.querySelector(".cart-count");
 
 const featuredProducts = document.querySelector(".featured");
 
-const displayCartCount = (cartCount) => {
+featuredProducts.addEventListener("click", (e) => {
 
-  featuredProducts.addEventListener("click", (e) => {
+  if (e.target.parentElement.tagName === "BUTTON") {
 
-    if (e.target.parentElement.tagName === "BUTTON") {
-      set(cartCountRef, cartCount);
-    }
-  });
+    get(cartCountRef).then((cartCount) => {
 
-  cartCountElement.innerHTML = `<p>${cartCount}</p>`;
+      const number = parseInt(cartCount.val());
 
-}
+      const newCartCount = number + 1;
+
+      console.log(newCartCount);
+      set(cartCountRef, newCartCount);
+      cartCountElement.innerHTML = `<p>${newCartCount}</p>`;
+    });
+  }
+});
+
+
 
 // global
 
