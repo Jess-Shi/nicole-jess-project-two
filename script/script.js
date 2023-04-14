@@ -26,14 +26,14 @@ const displayItems = (products) => {
   featuredDiv.innerHTML = "";
 
   for (let item in products) {
-    
+
     const productDiv = document.createElement("div");
     productDiv.classList.add("child");
 
     productDiv.innerHTML = `
       <div class="product-image">
         <a href="#"><img src=${products[item].image} alt=${products[item].description}></a>
-        <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
+        <button id=${item}><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
       </div>
 
       <div class="product-text">
