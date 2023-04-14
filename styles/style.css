@@ -1544,13 +1544,13 @@ textarea:focus {
 .shopping-bag {
   position: relative;
 }
-.shopping-bag .cart-count {
+.shopping-bag .cart-count, .shopping-bag .cart-count-mobile {
   position: absolute;
   top: -6px;
   right: -6px;
   text-align: center;
 }
-.shopping-bag .cart-count p {
+.shopping-bag .cart-count p, .shopping-bag .cart-count-mobile p {
   font-size: 0.75rem;
   background-color: #abd373;
   color: #06321B;

@@ -21,6 +21,7 @@ onValue(dbRef, (data) => {
 
   displayItems(products);
   displayCartCount(cartCount);
+  displayMobileCartCount(cartCount);
 });
 
 const displayItems = (products) => {
@@ -37,7 +38,7 @@ const displayItems = (products) => {
       <div class="product-image">
         <a href="#"><img src=${products[item].image} alt=${
       products[item].description
-    }></a>
+      }></a>
         <button id=${item}><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
       </div>
 
@@ -79,6 +80,18 @@ const displayCartCount = (cartCount) => {
     cartCountElement.innerHTML = `<p>${cartCount}</p>`;
   } else {
     cartCountElement.innerHTML = ``;
+  }
+};
+
+
+const cartCountMobileElement = document.querySelector(".cart-count-mobile");
+
+const displayMobileCartCount = (cartCount) => {
+
+  if (cartCount > 0) {
+    cartCountMobileElement.innerHTML = `<p>${cartCount}</p>`;
+  } else {
+    cartCountMobileElement.innerHTML = ``;
   }
 };
 
