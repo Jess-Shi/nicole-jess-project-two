@@ -74,13 +74,19 @@ const addToCart = () => {
       get(productRef).then((product) =>{
         
         const newCartItem = product.val()[productKey];
+
+        const customRef = ref(database, `/cartRef/${productKey}`)
         
-        set(cartRef,);
+        set(customRef, newCartItem);
 
-      });      
-   
+        const amountInCartRef = ref(database, `/cartRef/${productKey}/amountInCart`);
 
-
+        get(amountInCartRef).then((amount) => {
+          
+          
+          
+        });
+      });
     });
   });
 }
