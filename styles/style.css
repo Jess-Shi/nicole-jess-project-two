@@ -331,6 +331,7 @@ address {
   position: absolute;
   left: 0;
   bottom: -42px;
+  z-index: 10;
   display: none;
 }
 .settings button {
@@ -1474,17 +1475,13 @@ form button:focus-within {
   background-color: #d3d3d3;
 }
 
-.product-image button,
 .media-icons li {
   -webkit-transition: -webkit-transform 0.25s;
   transition: -webkit-transform 0.25s;
   transition: transform 0.25s;
   transition: transform 0.25s, -webkit-transform 0.25s;
 }
-.product-image button:hover, .product-image button:focus, .product-image button:focus-within,
-.media-icons li:hover,
-.media-icons li:focus,
-.media-icons li:focus-within {
+.media-icons li:hover, .media-icons li:focus, .media-icons li:focus-within {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
 }

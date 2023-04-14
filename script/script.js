@@ -19,12 +19,13 @@ onValue(dbRef, (data) => {
   const products = ourData.products;
   const cartCount = ourData.cartCount;
 
-  displayCartCount(cartCount);
   displayItems(products);
+  displayCartCount(cartCount);
 });
 
 const displayItems = (products) => {
   const featuredDiv = document.querySelector(".featured");
+
   featuredDiv.innerHTML = "";
 
   for (let item in products) {
@@ -47,24 +48,34 @@ const displayItems = (products) => {
 
     featuredDiv.append(productDiv);
   }
+
+  const addToCartButtons = document.querySelectorAll(".featured button");
+
+  addToCartButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+      get(cartCountRef).then((cartCount) => {
+
+        const newCartCount = cartCount.val() + 1;
+        set(cartCountRef, newCartCount);
+      });
+    });
+  });
 };
 
-const displayCartCount = (cartCount) => {
-  cartCountElement.innerHTML = `<p>${cartCount}</p>`;
-};
 
-const featuredProducts = document.querySelector(".featured");
 const cartCountElement = document.querySelector(".cart-count");
 
-featuredProducts.addEventListener("click", (e) => {
-  if (e.target.parentElement.tagName === "BUTTON") {
-    get(cartCountRef).then((cartCount) => {
-      const number = parseInt(cartCount.val());
-      const newCartCount = number + 1;
-      set(cartCountRef, newCartCount);
-    });
+const displayCartCount = (cartCount) => {
+
+  if (cartCount > 0) {
+    cartCountElement.innerHTML = `<p>${cartCount}</p>`;
+  } else {
+    cartCountElement.innerHTML = ``;
   }
-});
+};
+
 
 // global
 
@@ -98,6 +109,7 @@ document
       .querySelector("header .mobile .hidden")
       .classList.toggle("display");
   });
+
 
 // filters
 
