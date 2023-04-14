@@ -37,7 +37,10 @@
                 <li><a href="./contact.html">Contact Us</a></li>
             </ul>
 
-            <a href="#" class="shopping-bag"><img src="./assets/icons/shopping-bag.svg" alt="Shopping bag icon"></a>
+            <div class="shopping-bag">
+                <button class="bag-icon"><img src="./assets/icons/shopping-bag.svg" alt="Shopping bag icon"></button>
+                <div class="cart-count"></div>
+            </div>
         </nav>
 
         <nav class="wrapper mobile">
@@ -45,13 +48,17 @@
                 <div class="logo">
                     <a href="./index.html"><img src="./assets/logo.png" alt="Pronia logo"></a>
                 </div>
-    
-                <button><img src="./assets/icons/menu.png" alt="Menu icon"></button>
+
+                <div class="nav-icons">
+                    <div class="shopping-bag">
+                        <button class="bag-icon"><img src="./assets/icons/shopping-bag.svg" alt="Shopping bag icon"></button>
+                        <div class="cart-count"></div>
+                    </div>
+                    <button class="hamburger-icon"><img src="./assets/icons/menu.png" alt="Menu icon"></button>
+                </div>
             </div>
 
             <div class="hidden">
-                <a href="#" class="child shopping-bag"><img src="./assets/icons/shopping-bag.svg" alt="Shopping bag icon">View Cart</a>
-
                 <nav class="child">
                     <h6>Menu</h6>
                     <ul>

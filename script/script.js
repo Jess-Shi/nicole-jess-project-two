@@ -71,7 +71,7 @@ for (let i = 0; i < settings.length; i++) {
 // hamburger menu
 
 document
-  .querySelector("header .mobile button")
+  .querySelector("header .mobile .hamburger-icon")
   .addEventListener("click", (e) => {
     e.stopPropagation();
     document

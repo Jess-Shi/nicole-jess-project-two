@@ -55,14 +55,31 @@
 
         .child {
             @include flexbox(column);
+
+            button {
+                background-color: $button-background;
+                color: $primary-font-color;
+                border-radius: 6px;
+                padding: 3px 6px;
+                margin: 3px 0;
+                cursor: pointer;
+
+                &:hover,
+                &:focus {
+                background-color: $button-border;
+            }
+            }
         }
 
-        .shopping-bag {
+        .nav-icons {
             @include flexbox();
-            width: 150px;
+        }
+
+        .bag-icon {
+            margin-right: 6px;
 
             img {
-                width: 30px;
+                width: 48px;
             }
         }
 
@@ -88,17 +105,20 @@
             }
         }
 
-        button {
+        .hamburger-icon {
             background-color: $button-background;
             color: $primary-font-color;
+            width: 48px;
+            height: auto;
             border-radius: 6px;
             padding: 3px 6px;
             margin: 3px 0;
             cursor: pointer;
+            transition: box-shadow 0.25s;
 
             &:hover,
             &:focus {
-                background-color: $button-border;
+                box-shadow: 0 0 9px $primary-font-color;
             }
         }
     }

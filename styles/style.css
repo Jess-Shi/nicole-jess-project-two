@@ -376,10 +376,11 @@ address {
   text-transform: uppercase;
 }
 
-.shopping-bag {
+.bag-icon {
   width: 48px;
   padding: 9px;
   border-radius: 24px;
+  background-color: #ffffff;
 }
 
 .heading {
@@ -1425,7 +1426,7 @@ footer a {
 }
 .settings button,
 .logo,
-.shopping-bag,
+.bag-icon,
 .discover-now,
 .product-image a,
 .shop-now,
@@ -1440,9 +1441,9 @@ form button {
 .logo:hover,
 .logo:focus,
 .logo:focus-within,
-.shopping-bag:hover,
-.shopping-bag:focus,
-.shopping-bag:focus-within,
+.bag-icon:hover,
+.bag-icon:focus,
+.bag-icon:focus-within,
 .discover-now:hover,
 .discover-now:focus,
 .discover-now:focus-within,
@@ -1632,7 +1633,18 @@ textarea:focus {
         -ms-flex-align: center;
             align-items: center;
   }
-  header .mobile .shopping-bag {
+  header .mobile .child button {
+    background-color: #ffffff;
+    color: #4c4c4c;
+    border-radius: 6px;
+    padding: 3px 6px;
+    margin: 3px 0;
+    cursor: pointer;
+  }
+  header .mobile .child button:hover, header .mobile .child button:focus {
+    background-color: #d3d3d3;
+  }
+  header .mobile .nav-icons {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1646,10 +1658,12 @@ textarea:focus {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 150px;
   }
-  header .mobile .shopping-bag img {
-    width: 30px;
+  header .mobile .bag-icon {
+    margin-right: 6px;
+  }
+  header .mobile .bag-icon img {
+    width: 48px;
   }
   header .mobile h6 {
     font-size: 1rem;
@@ -1684,16 +1698,23 @@ textarea:focus {
   header .mobile li a:hover, header .mobile li a:focus {
     background-color: #d3d3d3;
   }
-  header .mobile button {
+  header .mobile .hamburger-icon {
     background-color: #ffffff;
     color: #4c4c4c;
+    width: 48px;
+    height: auto;
     border-radius: 6px;
     padding: 3px 6px;
     margin: 3px 0;
     cursor: pointer;
+    -webkit-transition: -webkit-box-shadow 0.25s;
+    transition: -webkit-box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
   }
-  header .mobile button:hover, header .mobile button:focus {
-    background-color: #d3d3d3;
+  header .mobile .hamburger-icon:hover, header .mobile .hamburger-icon:focus {
+    -webkit-box-shadow: 0 0 9px #4c4c4c;
+            box-shadow: 0 0 9px #4c4c4c;
   }
 }
 @media (max-width: 540px) {

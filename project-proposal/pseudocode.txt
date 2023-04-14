@@ -27,7 +27,14 @@
         // Add an input field that allows the user to increase (or decrease) the amount of each item in cart
         // Add a button for each product that allows the user to delete the product completely
 
-//test
+
+// Create a let variable to hold the number of items in cart
+// Find the products section on the page with querySelector
+// Add an event listener to the section
+    // If event target is a button, add 1 to the variable
+// Find .cart-count on the page
+// Set the innerHTML to the variable
+// Style it so it looks nice
 
 
 
