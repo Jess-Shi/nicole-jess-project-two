@@ -11,12 +11,15 @@ const dbRef = ref(database);
 
 const productRef = ref(database, "/products");
 const cartRef = ref(database, "/cart");
+const cartCountRef = ref(database, "/cartCount");
 
 onValue(dbRef, (data) => {
   const ourData = data.val();
   const products = ourData.products;
+  const cartCount = ourData.cartCount;
 
   displayItems(products);
+  displayCartCount(cartCount);
 });
 
 const displayItems = (products) => {
@@ -45,21 +48,22 @@ const displayItems = (products) => {
   }
 };
 
-let itemsInCart = 0;
-const cartCount = document.querySelector(".cart-count");
+const cartCountElement = document.querySelector(".cart-count");
 
 const featuredProducts = document.querySelector(".featured");
 
-featuredProducts.addEventListener("click", (e) => {
-  console.log(e.target.parentElement)
-  if (e.target.parentElement.tagName === "BUTTON") {
-    itemsInCart++;
-  }
+const displayCartCount = (cartCount) => {
 
-  if (itemsInCart > 0) {
-    cartCount.innerHTML = itemsInCart;
-  }
-});
+  featuredProducts.addEventListener("click", (e) => {
+
+    if (e.target.parentElement.tagName === "BUTTON") {
+      set(cartCountRef, cartCount);
+    }
+  });
+
+  cartCountElement.innerHTML = `<p>${cartCount}</p>`;
+
+}
 
 // global
 
