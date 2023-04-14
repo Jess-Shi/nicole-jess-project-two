@@ -24,6 +24,7 @@ onValue(dbRef, (data) => {
 });
 
 const displayItems = (products) => {
+
   const featuredDiv = document.querySelector(".featured");
 
   featuredDiv.innerHTML = "";
@@ -49,20 +50,25 @@ const displayItems = (products) => {
     featuredDiv.append(productDiv);
   }
 
+  addToCart();
+};
+
+const addToCart = () => {
+
   const addToCartButtons = document.querySelectorAll(".featured button");
-
+  
   addToCartButtons.forEach((button) => {
-
+  
     button.addEventListener("click", () => {
-
+  
       get(cartCountRef).then((cartCount) => {
-
+  
         const newCartCount = cartCount.val() + 1;
         set(cartCountRef, newCartCount);
       });
     });
   });
-};
+}
 
 
 const cartCountElement = document.querySelector(".cart-count");
