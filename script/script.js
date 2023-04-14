@@ -2,46 +2,47 @@ import app from "./firebase-config.js";
 import {
   getDatabase,
   ref,
-  push,
-  onValue,
-  get,
+  set,
+  onValue
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 const database = getDatabase(app);
 const dbRef = ref(database);
 
-console.log(dbRef);
-
 const productRef = ref(database, "/products");
 const cartRef = ref(database, "/cart");
 
-get(dbRef).then((data) => {
-  const products = data.val().products;
+onValue(dbRef, (data) => {
+
+  const ourData = data.val();
+  const products = ourData.products;
+
   displayItems(products);
 });
 
 const displayItems = (products) => {
+
   const featuredDiv = document.querySelector(".featured");
   featuredDiv.innerHTML = "";
 
   for (let item in products) {
+    
     const productDiv = document.createElement("div");
     productDiv.classList.add("child");
 
-    productDiv.innerHtml = `
-            <div class="product-image">
-                <a href="#"><img src=${products[item].image} alt=${
-      products[item].description
-    }></a>
-                <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
-            </div>
-    
-            <div class="product-text">
-                <a href="#">${products[item].name}</a>
-                <p class="price">$${products[item].price.toFixed(2)}</p>
-            </div>
-        
-            `;
+    productDiv.innerHTML = `
+      <div class="product-image">
+        <a href="#"><img src=${products[item].image} alt=${products[item].description}></a>
+        <button><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
+      </div>
+
+      <div class="product-text">
+        <a href="#">${products[item].name}</a>
+        <p class="price">$${products[item].price.toFixed(2)}</p>
+      </div>
+    `;
+
+    featuredDiv.append(productDiv);
   }
 };
 
