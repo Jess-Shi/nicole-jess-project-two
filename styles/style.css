@@ -1557,6 +1557,9 @@ textarea:focus {
   padding: 0 9px;
   border-radius: 12px;
 }
+.shopping-bag .cart-count-mobile {
+  right: 0;
+}
 
 .settings .expandable .display {
   display: block;

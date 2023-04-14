@@ -17,24 +17,43 @@
         // When the buttons are clicked, add the products with the corresponding key to the cart
         // Set the added products to the cart node in Firebase with the corresponding key
         // Increase the count on the shopping cart as users add items to it
+            // Create a let variable to hold the number of items in cart
+            // Find the products section on the page with querySelector
+                // Add an event listener to the section
+            // If event target is a button, add 1 to the variable
+            // Find .cart-count on the page
+            // Set the innerHTML to the variable
+            // Style it so it looks nice
 
 
 // MVP 3 - Allows users to view what has been added to their cart.
 
     // Create a popup with details of the products added to the cart (and a checkout button!)
+    
+        //in the html add a div element to hold the pop up details
+        //add event listener to the cart button
+        //select the div element for popup and add innerHTML with these details.
+
+        //update the logic in the cart-icon button so that we can get the button id and use it to get the matching product from firebase.
+            // once we have the product, add it to the cart object in firebase.
+            //if it exists in the cart just increase the number, else add to cart 
+
+        
+
+
+
+
+
         
         // Automatically add the price of all items in the cart and display the subtotal
         // Add an input field that allows the user to increase (or decrease) the amount of each item in cart
         // Add a button for each product that allows the user to delete the product completely
 
 
-// Create a let variable to hold the number of items in cart
-// Find the products section on the page with querySelector
-// Add an event listener to the section
-    // If event target is a button, add 1 to the variable
-// Find .cart-count on the page
-// Set the innerHTML to the variable
-// Style it so it looks nice
+
+
+
+
 
 
 

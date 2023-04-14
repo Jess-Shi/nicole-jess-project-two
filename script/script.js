@@ -61,15 +61,38 @@ const addToCart = () => {
   addToCartButtons.forEach((button) => {
   
     button.addEventListener("click", () => {
+
   
       get(cartCountRef).then((cartCount) => {
   
         const newCartCount = cartCount.val() + 1;
         set(cartCountRef, newCartCount);
       });
+
+      const productKey = button.id;
+      
+      get(productRef).then((product) =>{
+        
+        const newCartItem = product.val()[productKey];
+        
+        set(cartRef,);
+
+      });      
+   
+
+
     });
   });
 }
+
+
+
+        //add event listener to the cart button
+        //select the div element for popup and add innerHTML with these details.
+
+        //update the logic in the cart-icon button so that we can get the button id and use it to get the matching product from firebase.
+            // once we have the product, add it to the cart object in firebase.
+            //if it exists in the cart just increase the number, else add to cart 
 
 
 const cartCountElement = document.querySelector(".cart-count");
@@ -94,6 +117,7 @@ const displayMobileCartCount = (cartCount) => {
     cartCountMobileElement.innerHTML = ``;
   }
 };
+
 
 
 // global
