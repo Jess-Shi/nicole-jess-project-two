@@ -1540,6 +1540,21 @@ textarea:focus {
   background-color: #dddddd;
 }
 
+.shopping-bag {
+  position: relative;
+}
+.shopping-bag .cart-count {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 25px;
+  height: 25px;
+  background-color: #abd373;
+  color: #06321B;
+  border-radius: 50%;
+  text-align: center;
+}
+
 .settings .expandable .display {
   display: block;
 }

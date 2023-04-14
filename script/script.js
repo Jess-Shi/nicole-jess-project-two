@@ -3,7 +3,7 @@ import {
   getDatabase,
   ref,
   set,
-  onValue
+  onValue,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 const database = getDatabase(app);
@@ -13,7 +13,6 @@ const productRef = ref(database, "/products");
 const cartRef = ref(database, "/cart");
 
 onValue(dbRef, (data) => {
-
   const ourData = data.val();
   const products = ourData.products;
 
@@ -21,18 +20,18 @@ onValue(dbRef, (data) => {
 });
 
 const displayItems = (products) => {
-
   const featuredDiv = document.querySelector(".featured");
   featuredDiv.innerHTML = "";
 
   for (let item in products) {
-
     const productDiv = document.createElement("div");
     productDiv.classList.add("child");
 
     productDiv.innerHTML = `
       <div class="product-image">
-        <a href="#"><img src=${products[item].image} alt=${products[item].description}></a>
+        <a href="#"><img src=${products[item].image} alt=${
+      products[item].description
+    }></a>
         <button id=${item}><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
       </div>
 
@@ -45,6 +44,22 @@ const displayItems = (products) => {
     featuredDiv.append(productDiv);
   }
 };
+
+let itemsInCart = 0;
+const cartCount = document.querySelector(".cart-count");
+
+const featuredProducts = document.querySelector(".featured");
+
+featuredProducts.addEventListener("click", (e) => {
+  console.log(e.target.parentElement)
+  if (e.target.parentElement.tagName === "BUTTON") {
+    itemsInCart++;
+  }
+
+  if (itemsInCart > 0) {
+    cartCount.innerHTML = itemsInCart;
+  }
+});
 
 // global
 
