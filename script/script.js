@@ -9,6 +9,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 const database = getDatabase(app);
+
 const dbRef = ref(database);
 
 const productRef = ref(database, "/products");
@@ -97,6 +98,8 @@ const bagButton = document.querySelector('.bag-icon');
 
 
 bagButton.addEventListener('click', ()=>{
+  
+  cartModal.innerHTML = ""; 
 
   get(cartRef).then((cartItems)=>{
 
@@ -122,41 +125,46 @@ bagButton.addEventListener('click', ()=>{
       </div>
   
       <div class="amount-btns">
-          <button>-</button>
-          <label class="sr-only" for="quantity" >Quantity</label>
-          <input type="number" id="quantity" value="${items[item].amountInCart}"/>
-          <button>+</button>
+          <button class="decrease">-</button>
+          <label class="sr-only" for='quantity of ${items[item].name}' >Quantity of ${items[item].name}</label>
+          <input type="number" id='quantity of ${items[item].name}' value="${items[item].amountInCart}"/>
+          <button class="increase">+</button>
       </div>
     `;
-      
       cartModal.append(productContainer);
   }
   
-    const emptyCartButtons = document.querySelectorAll(".remove");
+    const cartButtons = document.querySelectorAll(".cart-modal button");
     
-    emptyCartButtons.forEach((button) => {
-
+    cartButtons.forEach((button) => {
+      
       button.addEventListener("click", () => {
-
+        
         const product = button.closest(".product-container");
         const productKey = product.classList[1];
+        let cartAmount = document.getElementById(`quantity of ${cartItems.val()[productKey].name}`).value;
 
-        get(cartCountRef).then((cartCount) => {
+        onValue()
 
-          const newCartCount = cartCount.val() - cartItems.val()[productKey].amountInCart;
-          set(cartCountRef, newCartCount);
-        })
+        if(button.classList[0] === 'increase' ){
+          cartAmount++;
+          console.log(cartAmount);
+        }
 
-        // remove(cartItems.val()[productKey]);
+        // get(cartCountRef).then((cartCount) => {
+
+        //     const newCartCount = cartCount.val() - cartItems.val()[productKey].amountInCart;
+        //     set(cartCountRef, newCartCount);
+        // });
+
+        // //this removes it from database
+        // const itemRef = ref(database, `/cart/${productKey}`);
+        // remove(itemRef);
 
       });
     });
   });
-})
-
-
-
-//select the div element for popup and add innerHTML with these details.
+});
 
 
 
