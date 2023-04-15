@@ -36,10 +36,8 @@ const displayItems = (products) => {
 
     productDiv.innerHTML = `
       <div class="product-image">
-        <a href="#"><img src=${products[item].image} alt=${
-      products[item].description
-      }></a>
-        <button id=${item}><img src="./assets/icons/cart.svg" alt="Shopping cart icon"></button>
+        <a href="#"><img src=${products[item].image} alt=${products[item].description}/></a>
+        <button id=${item}><img src="./assets/icons/cart.svg" alt="Shopping cart icon"/></button>
       </div>
 
       <div class="product-text">
@@ -62,29 +60,30 @@ const addToCart = () => {
   
     button.addEventListener("click", () => {
 
-  
       get(cartCountRef).then((cartCount) => {
   
         const newCartCount = cartCount.val() + 1;
         set(cartCountRef, newCartCount);
       });
 
-      const productKey = button.id;
-      
-      get(productRef).then((product) =>{
-        
-        const newCartItem = product.val()[productKey];
+      get(productRef).then((product) => {
 
-        const customRef = ref(database, `/cartRef/${productKey}`)
-        
-        set(customRef, newCartItem);
+        const newCartItem = product.val()[button.id];
+        const newCartItemRef = ref(database, `/cartRef/${button.id}`);
+        const amountInCartRef = ref(database, `/cartRef/${button.id}/amountInCart`);
 
-        const amountInCartRef = ref(database, `/cartRef/${productKey}/amountInCart`);
+        get(newCartItemRef).then((newProduct) => {
 
-        get(amountInCartRef).then((amount) => {
-          
-          
-          
+          if (newProduct.val() === null) {
+
+            set(newCartItemRef, newCartItem);
+            set(amountInCartRef, 1);
+            
+          } else {
+
+            const newAmount = newProduct.val().amountInCart + 1;
+            set(amountInCartRef, newAmount);
+          }
         });
       });
     });
