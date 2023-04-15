@@ -52,7 +52,10 @@
 
 
 
-
+//add addEventListener to the remove button
+    //set the amountInCart to 0 on remove button click
+    //set cartCount to minus amountInCart
+    //add t
 
 
 

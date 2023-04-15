@@ -5,6 +5,7 @@ import {
   set,
   get,
   onValue,
+  remove
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 const database = getDatabase(app);
@@ -100,39 +101,57 @@ bagButton.addEventListener('click', ()=>{
   get(cartRef).then((cartItems)=>{
 
     const items = cartItems.val();
-   
+  
     for(let item in items){
 
-     const productContainer = document.createElement('div');
-   
-     productContainer.innerHTML = `
-     
-         <div class="imageContainer">
-             <img src=${items[item].image} />
-         </div>
-   
-         <div class="productDetails">
-             <h2>${items[item].name}</h2>
-             <p>Quantity: ${items[item].amountInCart}</p>
-             <p>Price: $${items[item].price}</p>
-             <button>Remove</button>
-         </div>
-   
-         <div class="amountBtns">
-             <button>-</button>
-             <label class="sr-only" for="quantity" >Quantity</label>
-             <input type="number" id="quantity" value="${items[item].amountInCart}"/>
-             <button>+</button>
-         </div>
-   
-     `;
-   
-     cartModal.append(productContainer);
-    }
-   
+      const productContainer = document.createElement('div');
+      productContainer.classList.add("product-container");
+      productContainer.classList.add(item);
+  
+    productContainer.innerHTML = `
     
-   });
+      <div class="image-container">
+          <img src=${items[item].image} />
+      </div>
 
+      <div class="product-details">
+          <h2>${items[item].name}</h2>
+          <p>Quantity: ${items[item].amountInCart}</p>
+          <p>Price: $${items[item].price}</p>
+          <button class="remove">Remove</button>
+      </div>
+  
+      <div class="amount-btns">
+          <button>-</button>
+          <label class="sr-only" for="quantity" >Quantity</label>
+          <input type="number" id="quantity" value="${items[item].amountInCart}"/>
+          <button>+</button>
+      </div>
+    `;
+      
+      cartModal.append(productContainer);
+  }
+  
+    const emptyCartButtons = document.querySelectorAll(".remove");
+    
+    emptyCartButtons.forEach((button) => {
+
+      button.addEventListener("click", () => {
+
+        const product = button.closest(".product-container");
+        const productKey = product.classList[1];
+
+        get(cartCountRef).then((cartCount) => {
+
+          const newCartCount = cartCount.val() - cartItems.val()[productKey].amountInCart;
+          set(cartCountRef, newCartCount);
+        })
+
+        // remove(cartItems.val()[productKey]);
+
+      });
+    });
+  });
 })
 
 
