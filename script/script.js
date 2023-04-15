@@ -101,7 +101,7 @@ bagButton.addEventListener('click', ()=>{
   
   cartModal.innerHTML = ""; 
 
-  get(cartRef).then((cartItems)=>{
+  onValue(cartRef, (cartItems) => {
 
     const items = cartItems.val();
   
@@ -134,39 +134,41 @@ bagButton.addEventListener('click', ()=>{
       cartModal.append(productContainer);
   }
   
-    const cartButtons = document.querySelectorAll(".cart-modal button");
+    modifyCart(cartItems);
+  });
+});
+
+
+const modifyCart = (cartItems) => {
+
+  const cartButtons = document.querySelectorAll(".cart-modal button");
     
     cartButtons.forEach((button) => {
       
       button.addEventListener("click", () => {
-        
+
         const product = button.closest(".product-container");
+
         const productKey = product.classList[1];
         let cartAmount = document.getElementById(`quantity of ${cartItems.val()[productKey].name}`).value;
-
-        onValue()
 
         if(button.classList[0] === 'increase' ){
           cartAmount++;
           console.log(cartAmount);
         }
 
-        // get(cartCountRef).then((cartCount) => {
+        get(cartCountRef).then((cartCount) => {
 
-        //     const newCartCount = cartCount.val() - cartItems.val()[productKey].amountInCart;
-        //     set(cartCountRef, newCartCount);
-        // });
+            const newCartCount = cartCount.val() - cartItems.val()[productKey].amountInCart;
+            set(cartCountRef, newCartCount);
+        });
 
-        // //this removes it from database
-        // const itemRef = ref(database, `/cart/${productKey}`);
-        // remove(itemRef);
-
-      });
+        //this removes it from database
+        const itemRef = ref(database, `/cart/${productKey}`);
+        remove(itemRef);
     });
   });
-});
-
-
+}
 
 
 const cartCountElement = document.querySelector(".cart-count");
