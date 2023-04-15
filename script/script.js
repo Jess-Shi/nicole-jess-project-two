@@ -69,8 +69,8 @@ const addToCart = () => {
       get(productRef).then((product) => {
 
         const newCartItem = product.val()[button.id];
-        const newCartItemRef = ref(database, `/cartRef/${button.id}`);
-        const amountInCartRef = ref(database, `/cartRef/${button.id}/amountInCart`);
+        const newCartItemRef = ref(database, `/cart/${button.id}`);
+        const amountInCartRef = ref(database, `/cart/${button.id}/amountInCart`);
 
         get(newCartItemRef).then((newProduct) => {
 
@@ -91,13 +91,55 @@ const addToCart = () => {
 }
 
 
+const cartModal = document.querySelector('.cart-modal');
+const bagButton = document.querySelector('.bag-icon');
 
-        //add event listener to the cart button
-        //select the div element for popup and add innerHTML with these details.
 
-        //update the logic in the cart-icon button so that we can get the button id and use it to get the matching product from firebase.
-            // once we have the product, add it to the cart object in firebase.
-            //if it exists in the cart just increase the number, else add to cart 
+bagButton.addEventListener('click', ()=>{
+
+  get(cartRef).then((cartItems)=>{
+
+    const items = cartItems.val();
+   
+    for(let item in items){
+
+     const productContainer = document.createElement('div');
+   
+     productContainer.innerHTML = `
+     
+         <div class="imageContainer">
+             <img src=${items[item].image} />
+         </div>
+   
+         <div class="productDetails">
+             <h2>${items[item].name}</h2>
+             <p>Quantity: ${items[item].amountInCart}</p>
+             <p>Price: $${items[item].price}</p>
+             <button>Remove</button>
+         </div>
+   
+         <div class="amountBtns">
+             <button>-</button>
+             <label class="sr-only" for="quantity" >Quantity</label>
+             <input type="number" id="quantity" value="${items[item].amountInCart}"/>
+             <button>+</button>
+         </div>
+   
+     `;
+   
+     cartModal.append(productContainer);
+    }
+   
+    
+   });
+
+})
+
+
+
+//select the div element for popup and add innerHTML with these details.
+
+
 
 
 const cartCountElement = document.querySelector(".cart-count");
