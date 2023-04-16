@@ -127,14 +127,14 @@ const displayItemsInCart = () => {
             <h2>${items[item].name}</h2>
             <p>Quantity: ${items[item].amountInCart}</p>
             <p>Price: $${items[item].price}</p>
-            <button class="remove">Remove</button>
+            <button>Remove</button>
         </div>
 
         <div class="amount-btns">
-            <button class="decrease">-</button>
+            <button>-</button>
             <label class="sr-only" for='quantity of ${items[item].name}' >Quantity of ${items[item].name}</label>
             <input type="number" id='quantity of ${items[item].name}' value="${items[item].amountInCart}"/>
-            <button class="increase">+</button>
+            <button>+</button>
         </div>
       `;
         cartModal.append(productContainer);
@@ -146,43 +146,31 @@ const modifyCart = () => {
 
   get(cartRef).then((cartItems) => {
 
-    const cartButtons = document.querySelectorAll(".cart-modal button");
-  
-    cartButtons.forEach((button) => {
-    
-      button.addEventListener("click", () => {
-      
-        const product = button.closest(".product-container");
-        const productKey = product.classList[1];
-        
-        // let cartAmount = document.getElementById(`quantity of ${cartItems.val()[productKey].name}`).value;
+    cartModal.addEventListener("click", (e) => {
 
-        // if(button.classList[0] === 'increase' ){
-        //   cartAmount++;
-        //   console.log(cartAmount);
-        // }
+      const product = e.target.closest(".product-container");
+      const productKey = product.classList[1];
+    
+      if (e.target.innerHTML === "+") {
+        
+      } else if (e.target.innerHTML === "-") {
+
+      } else if (e.target.innerHTML === "Remove") {
 
         get(cartCountRef).then((cartCount) => {
 
           const newCartCount = cartCount.val() - cartItems.val()[productKey].amountInCart;
           set(cartCountRef, newCartCount);
         });
-
-        //this removes it from database
+    
         const itemRef = ref(database, `/cart/${productKey}`);
         remove(itemRef);
+      }
 
-        // displayItemsInCart();
-
-        console.log("a click event happened!");
-
-      });
+      displayItemsInCart();
     });
   });
 }
-
-
-
 
 
 const cartCountElement = document.querySelector(".cart-count");
