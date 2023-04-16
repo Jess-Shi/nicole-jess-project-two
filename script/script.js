@@ -98,12 +98,12 @@ const bagButton = document.querySelector('.bag-icon');
 
 bagButton.addEventListener('click', ()=>{
   
-  displayItemsInCart();
+  generateCartModal();
 
   modifyCart();
 });
 
-const displayItemsInCart = () => {
+const generateCartModal = () => {
 
   cartModal.innerHTML = "";
   
@@ -140,20 +140,28 @@ const displayItemsInCart = () => {
         cartModal.append(productContainer);
     }
 
+    let subtotal = 0;
 
+    for (let item in items) {
 
-    const subtotalDiv = document.createElement('div');
+      const price = items[item].amountInCart * items[item].price;
+      subtotal += price;
+    }
+
+    const subtotalDiv = document.createElement("div");
 
     subtotalDiv.innerHTML = `
-
     <p>Subtotal</p>
-    <p></p>
-
-
-    
-    
+    <p>$${subtotal.toFixed(2)}</p>
     `
 
+    const checkoutDiv = document.createElement("div");
+
+    checkoutDiv.innerHTML = `
+      <a href="#">Checkout</a>
+    `
+
+    cartModal.append(subtotalDiv, checkoutDiv);
   });
 }
 
@@ -206,7 +214,7 @@ const modifyCart = () => {
         remove(itemRef);
       };
 
-      displayItemsInCart();
+      generateCartModal();
     });
   });
 }
