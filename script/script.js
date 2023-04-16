@@ -126,7 +126,7 @@ const displayItemsInCart = () => {
         <div class="product-details">
             <h2>${items[item].name}</h2>
             <p>Quantity: ${items[item].amountInCart}</p>
-            <p>Price: $${items[item].price}</p>
+            <p>Price: $${(items[item].price * items[item].amountInCart).toFixed(2)}</p>
             <button>Remove</button>
         </div>
 
@@ -144,16 +144,42 @@ const displayItemsInCart = () => {
 
 const modifyCart = () => {
 
-  get(cartRef).then((cartItems) => {
-
-    cartModal.addEventListener("click", (e) => {
-
+  cartModal.addEventListener("click", (e) => {
+    
+    get(cartRef).then((cartItems) => {
+      
       const product = e.target.closest(".product-container");
       const productKey = product.classList[1];
-    
+      const cartItem = cartItems.val()[productKey];
+      const amountInCartRef = ref(database, `/cart/${productKey}/amountInCart`);
+      const itemRef = ref(database, `/cart/${productKey}`);
+
       if (e.target.innerHTML === "+") {
         
+        const newAmount = cartItem.amountInCart + 1; 
+        set(amountInCartRef, newAmount);
+
+        get(cartCountRef).then((cartCount) => {
+
+          const newCartCount = cartCount.val() + 1;
+          set(cartCountRef, newCartCount);
+        });
+        
       } else if (e.target.innerHTML === "-") {
+
+        const newAmount = cartItem.amountInCart - 1;
+        set(amountInCartRef, newAmount);
+
+        get(cartCountRef).then((cartCount) => {
+
+          const newCartCount = cartCount.val() - 1;
+          set(cartCountRef, newCartCount);
+        });
+
+          if(newAmount === 0 ){
+            remove(itemRef);
+
+          }
 
       } else if (e.target.innerHTML === "Remove") {
 
@@ -162,10 +188,8 @@ const modifyCart = () => {
           const newCartCount = cartCount.val() - cartItems.val()[productKey].amountInCart;
           set(cartCountRef, newCartCount);
         });
-    
-        const itemRef = ref(database, `/cart/${productKey}`);
         remove(itemRef);
-      }
+      };
 
       displayItemsInCart();
     });
