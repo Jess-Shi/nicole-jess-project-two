@@ -96,12 +96,18 @@ const addToCart = () => {
 const cartModal = document.querySelector('.cart-modal');
 const bagButton = document.querySelector('.bag-icon');
 
-
 bagButton.addEventListener('click', ()=>{
   
-  cartModal.innerHTML = ""; 
+  displayItemsInCart();
 
-  onValue(cartRef, (cartItems) => {
+  modifyCart();
+});
+
+const displayItemsInCart = () => {
+
+  cartModal.innerHTML = "";
+  
+  get(cartRef).then((cartItems)=>{
 
     const items = cartItems.val();
   
@@ -111,64 +117,72 @@ bagButton.addEventListener('click', ()=>{
       productContainer.classList.add("product-container");
       productContainer.classList.add(item);
   
-    productContainer.innerHTML = `
-    
-      <div class="image-container">
-          <img src=${items[item].image} />
-      </div>
-
-      <div class="product-details">
-          <h2>${items[item].name}</h2>
-          <p>Quantity: ${items[item].amountInCart}</p>
-          <p>Price: $${items[item].price}</p>
-          <button class="remove">Remove</button>
-      </div>
-  
-      <div class="amount-btns">
-          <button class="decrease">-</button>
-          <label class="sr-only" for='quantity of ${items[item].name}' >Quantity of ${items[item].name}</label>
-          <input type="number" id='quantity of ${items[item].name}' value="${items[item].amountInCart}"/>
-          <button class="increase">+</button>
-      </div>
-    `;
-      cartModal.append(productContainer);
-  }
-  
-    modifyCart(cartItems);
-  });
-});
-
-
-const modifyCart = (cartItems) => {
-
-  const cartButtons = document.querySelectorAll(".cart-modal button");
-    
-    cartButtons.forEach((button) => {
+      productContainer.innerHTML = `
       
+        <div class="image-container">
+            <img src=${items[item].image} />
+        </div>
+
+        <div class="product-details">
+            <h2>${items[item].name}</h2>
+            <p>Quantity: ${items[item].amountInCart}</p>
+            <p>Price: $${items[item].price}</p>
+            <button class="remove">Remove</button>
+        </div>
+
+        <div class="amount-btns">
+            <button class="decrease">-</button>
+            <label class="sr-only" for='quantity of ${items[item].name}' >Quantity of ${items[item].name}</label>
+            <input type="number" id='quantity of ${items[item].name}' value="${items[item].amountInCart}"/>
+            <button class="increase">+</button>
+        </div>
+      `;
+        cartModal.append(productContainer);
+    }
+  });
+}
+
+const modifyCart = () => {
+
+  get(cartRef).then((cartItems) => {
+
+    const cartButtons = document.querySelectorAll(".cart-modal button");
+  
+    cartButtons.forEach((button) => {
+    
       button.addEventListener("click", () => {
-
+      
         const product = button.closest(".product-container");
-
         const productKey = product.classList[1];
-        let cartAmount = document.getElementById(`quantity of ${cartItems.val()[productKey].name}`).value;
+        
+        // let cartAmount = document.getElementById(`quantity of ${cartItems.val()[productKey].name}`).value;
 
-        if(button.classList[0] === 'increase' ){
-          cartAmount++;
-          console.log(cartAmount);
-        }
+        // if(button.classList[0] === 'increase' ){
+        //   cartAmount++;
+        //   console.log(cartAmount);
+        // }
 
         get(cartCountRef).then((cartCount) => {
 
-            const newCartCount = cartCount.val() - cartItems.val()[productKey].amountInCart;
-            set(cartCountRef, newCartCount);
+          const newCartCount = cartCount.val() - cartItems.val()[productKey].amountInCart;
+          set(cartCountRef, newCartCount);
         });
 
         //this removes it from database
         const itemRef = ref(database, `/cart/${productKey}`);
         remove(itemRef);
+
+        // displayItemsInCart();
+
+        console.log("a click event happened!");
+
+      });
     });
   });
 }
+
+
+
 
 
 const cartCountElement = document.querySelector(".cart-count");
