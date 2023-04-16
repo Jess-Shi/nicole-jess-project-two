@@ -139,6 +139,21 @@ const displayItemsInCart = () => {
       `;
         cartModal.append(productContainer);
     }
+
+
+
+    const subtotalDiv = document.createElement('div');
+
+    subtotalDiv.innerHTML = `
+
+    <p>Subtotal</p>
+    <p></p>
+
+
+    
+    
+    `
+
   });
 }
 
