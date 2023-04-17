@@ -224,12 +224,17 @@ const modifyCartOnChange = (e) => {
   const amountInCartRef = ref(database, `/cart/${productKey}/amountInCart`);
   const itemRef = ref(database, `/cart/${productKey}`);
 
+  if(input.value < 0 ){
+    input.value = 0;
+  }
+
   const newAmount = parseInt(input.value);
   set(amountInCartRef, newAmount);
 
   if(newAmount === 0 ){
     remove(itemRef);
   }
+
 
   generateCartModal();
 }
