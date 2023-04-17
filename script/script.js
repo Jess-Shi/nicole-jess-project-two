@@ -116,6 +116,9 @@ const generateCartModal = () => {
       const productContainer = document.createElement('div');
       productContainer.classList.add("product-container");
       productContainer.classList.add(item);
+
+      const id = `quantity of ${items[item].name}`;
+      const idWithoutSpaces = id.replaceAll(" ", "-");
   
       productContainer.innerHTML = `
       
@@ -132,8 +135,8 @@ const generateCartModal = () => {
 
         <div class="amount-btns">
             <button>-</button>
-            <label class="sr-only" for='quantity of ${items[item].name}' >Quantity of ${items[item].name}</label>
-            <input type="number" min="0" id='quantity of ${items[item].name}' value="${items[item].amountInCart}"/>
+            <label class="sr-only" for=${idWithoutSpaces} >Quantity of ${items[item].name}</label>
+            <input type="number" min="0" id=${idWithoutSpaces} value="${items[item].amountInCart}"/>
             <button>+</button>
         </div>
       `;
@@ -143,23 +146,7 @@ const generateCartModal = () => {
 
       const cartInputs = document.querySelectorAll(".cart-modal input");
       cartInputs.forEach((input) => {
-
-        input.addEventListener("change", (e) => {
-
-          const product = e.target.closest(".product-container");
-          const productKey = product.classList[1];
-          const amountInCartRef = ref(database, `/cart/${productKey}/amountInCart`);
-          const itemRef = ref(database, `/cart/${productKey}`);
-
-          const newAmount = parseInt(input.value);
-          set(amountInCartRef, newAmount);
-
-          if(newAmount === 0 ){
-            remove(itemRef);
-          }
-
-          generateCartModal();
-        });
+        input.addEventListener("change", modifyCartOnChange);
       });
     }
 
@@ -223,13 +210,23 @@ const modifyCartOnClick = (e) => {
   });
 }
 
-// const modifyCartOnChange = (e) => {
+const modifyCartOnChange = (e) => {
 
-  
-// }
+  const input = e.target;
+  const product = input.closest(".product-container");
+  const productKey = product.classList[1];
+  const amountInCartRef = ref(database, `/cart/${productKey}/amountInCart`);
+  const itemRef = ref(database, `/cart/${productKey}`);
 
+  const newAmount = parseInt(input.value);
+  set(amountInCartRef, newAmount);
 
+  if(newAmount === 0 ){
+    remove(itemRef);
+  }
 
+  generateCartModal();
+}
 
 
 const cartCountElement = document.querySelector(".cart-count");
