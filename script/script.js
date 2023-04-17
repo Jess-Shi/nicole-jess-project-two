@@ -14,12 +14,20 @@ const dbRef = ref(database);
 
 const productRef = ref(database, "/products");
 const cartRef = ref(database, "/cart");
-const cartCountRef = ref(database, "/cartCount");
 
 onValue(dbRef, (data) => {
+
   const ourData = data.val();
   const products = ourData.products;
-  const cartCount = ourData.cartCount;
+  const cart = ourData.cart;
+
+  let cartCount = 0;
+
+  for (let item in cart) {
+
+    const amountInCart = cart[item].amountInCart;
+    cartCount += amountInCart;
+  }
 
   displayItems(products);
   displayCartCount(cartCount);
@@ -62,12 +70,6 @@ const addToCart = () => {
   
     button.addEventListener("click", () => {
 
-      get(cartCountRef).then((cartCount) => {
-  
-        const newCartCount = cartCount.val() + 1;
-        set(cartCountRef, newCartCount);
-      });
-
       get(productRef).then((product) => {
 
         const newCartItem = product.val()[button.id];
@@ -99,8 +101,6 @@ const bagButton = document.querySelector('.bag-icon');
 bagButton.addEventListener('click', ()=>{
   
   generateCartModal();
-
-  modifyCart();
 });
 
 const generateCartModal = () => {
@@ -133,11 +133,34 @@ const generateCartModal = () => {
         <div class="amount-btns">
             <button>-</button>
             <label class="sr-only" for='quantity of ${items[item].name}' >Quantity of ${items[item].name}</label>
-            <input type="number" id='quantity of ${items[item].name}' value="${items[item].amountInCart}"/>
+            <input type="number" min="0" id='quantity of ${items[item].name}' value="${items[item].amountInCart}"/>
             <button>+</button>
         </div>
       `;
-        cartModal.append(productContainer);
+
+      cartModal.append(productContainer);
+      cartModal.addEventListener("click", modifyCartOnClick);
+
+      const cartInputs = document.querySelectorAll(".cart-modal input");
+      cartInputs.forEach((input) => {
+
+        input.addEventListener("change", (e) => {
+
+          const product = e.target.closest(".product-container");
+          const productKey = product.classList[1];
+          const amountInCartRef = ref(database, `/cart/${productKey}/amountInCart`);
+          const itemRef = ref(database, `/cart/${productKey}`);
+
+          const newAmount = parseInt(input.value);
+          set(amountInCartRef, newAmount);
+
+          if(newAmount === 0 ){
+            remove(itemRef);
+          }
+
+          generateCartModal();
+        });
+      });
     }
 
     let subtotal = 0;
@@ -165,66 +188,57 @@ const generateCartModal = () => {
   });
 }
 
-const modifyCart = () => {
+const modifyCartOnClick = (e) => {
 
-  cartModal.addEventListener("click", (e) => {
+  get(cartRef).then((cartItems) => {
     
-    get(cartRef).then((cartItems) => {
+    const product = e.target.closest(".product-container");
+    const productKey = product.classList[1];
+    const cartItem = cartItems.val()[productKey];
+    const amountInCartRef = ref(database, `/cart/${productKey}/amountInCart`);
+    const itemRef = ref(database, `/cart/${productKey}`);
+
+    if (e.target.innerHTML === "+") {
       
-      const product = e.target.closest(".product-container");
-      const productKey = product.classList[1];
-      const cartItem = cartItems.val()[productKey];
-      const amountInCartRef = ref(database, `/cart/${productKey}/amountInCart`);
-      const itemRef = ref(database, `/cart/${productKey}`);
-
-      if (e.target.innerHTML === "+") {
-        
-        const newAmount = cartItem.amountInCart + 1; 
-        set(amountInCartRef, newAmount);
-
-        get(cartCountRef).then((cartCount) => {
-
-          const newCartCount = cartCount.val() + 1;
-          set(cartCountRef, newCartCount);
-        });
-        
-      } else if (e.target.innerHTML === "-") {
-
-        const newAmount = cartItem.amountInCart - 1;
-        set(amountInCartRef, newAmount);
-
-        get(cartCountRef).then((cartCount) => {
-
-          const newCartCount = cartCount.val() - 1;
-          set(cartCountRef, newCartCount);
-        });
-
-          if(newAmount === 0 ){
-            remove(itemRef);
-
-          }
-
-      } else if (e.target.innerHTML === "Remove") {
-
-        get(cartCountRef).then((cartCount) => {
-
-          const newCartCount = cartCount.val() - cartItems.val()[productKey].amountInCart;
-          set(cartCountRef, newCartCount);
-        });
-        remove(itemRef);
-      };
-
+      const newAmount = cartItem.amountInCart + 1; 
+      set(amountInCartRef, newAmount);
       generateCartModal();
-    });
+      
+    } else if (e.target.innerHTML === "-") {
+
+      const newAmount = cartItem.amountInCart - 1;
+      set(amountInCartRef, newAmount);
+
+      if(newAmount === 0 ){
+        remove(itemRef);
+      }
+      
+      generateCartModal();
+
+    } else if (e.target.innerHTML === "Remove") {
+
+      remove(itemRef);
+      generateCartModal();
+    };
   });
 }
+
+// const modifyCartOnChange = (e) => {
+
+  
+// }
+
+
+
 
 
 const cartCountElement = document.querySelector(".cart-count");
 
 const displayCartCount = (cartCount) => {
 
-  if (cartCount > 0) {
+  if (cartCount > 99) {
+    cartCountElement.innerHTML = `<p>99+</p>`;
+  } else if (cartCount > 0) { 
     cartCountElement.innerHTML = `<p>${cartCount}</p>`;
   } else {
     cartCountElement.innerHTML = ``;
@@ -236,7 +250,9 @@ const cartCountMobileElement = document.querySelector(".cart-count-mobile");
 
 const displayMobileCartCount = (cartCount) => {
 
-  if (cartCount > 0) {
+  if (cartCount > 99) {
+    cartCountMobileElement.innerHTML = `<p>99+</p>`;
+  } else if (cartCount > 0) { 
     cartCountMobileElement.innerHTML = `<p>${cartCount}</p>`;
   } else {
     cartCountMobileElement.innerHTML = ``;
