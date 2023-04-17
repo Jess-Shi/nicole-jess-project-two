@@ -142,37 +142,43 @@ const generateCartModal = () => {
       `;
 
       cartModal.append(productContainer);
-      cartModal.addEventListener("click", modifyCartOnClick);
-
-      const cartInputs = document.querySelectorAll(".cart-modal input");
-      cartInputs.forEach((input) => {
-        input.addEventListener("change", modifyCartOnChange);
-      });
     }
-
+    
     let subtotal = 0;
-
+    
     for (let item in items) {
-
+      
       const price = items[item].amountInCart * items[item].price;
       subtotal += price;
     }
-
+    
     const subtotalDiv = document.createElement("div");
-
+    
     subtotalDiv.innerHTML = `
     <p>Subtotal</p>
     <p>$${subtotal.toFixed(2)}</p>
     `
-
+    
     const checkoutDiv = document.createElement("div");
-
+    
     checkoutDiv.innerHTML = `
-      <a href="#">Checkout</a>
+    <a href="#">Checkout</a>
     `
-
+    
     cartModal.append(subtotalDiv, checkoutDiv);
+    cartModal.addEventListener("click", modifyCartOnClick);
+
+    const cartInputs = document.querySelectorAll(".cart-modal input");
+    cartInputs.forEach((input) => {
+      input.addEventListener("change", modifyCartOnChange);
+    });
+
+    if(!items){
+      cartModal.innerHTML = `<p>Your cart is empty!  <a href="#products">Click here</a> to start filling it up.</p>`
+    }
   });
+
+
 }
 
 const modifyCartOnClick = (e) => {
