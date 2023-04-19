@@ -96,17 +96,23 @@ const addToCart = () => {
 
 
 const cartModal = document.querySelector('.cart-modal');
+cartModal.style.display = "none";
 const bagButton = document.querySelector('.bag-icon');
 
 bagButton.addEventListener('click', ()=>{
   
   generateCartModal();
+
+  const overlay = document.createElement('div');
+  overlay.classList.add("overlay");
+  document.body.append(overlay);
 });
 
 const generateCartModal = () => {
 
   cartModal.innerHTML = "";
-  
+  cartModal.style.display = "flex";
+
   get(cartRef).then((cartItems)=>{
 
     const items = cartItems.val();
@@ -153,6 +159,7 @@ const generateCartModal = () => {
     }
     
     const subtotalDiv = document.createElement("div");
+    subtotalDiv.classList.add("subtotal");
     
     subtotalDiv.innerHTML = `
     <h2>Subtotal</h2>
@@ -160,12 +167,18 @@ const generateCartModal = () => {
     `
     
     const checkoutDiv = document.createElement("div");
+    checkoutDiv.classList.add("checkout");
     
     checkoutDiv.innerHTML = `
     <a href="#">Checkout</a>
     `
+
+    const closeModal = document.createElement("button");
+    closeModal.innerHTML = "x";
+    closeModal.classList.add("close");
+    closeModal.addEventListener("click", closeCart);
     
-    cartModal.append(subtotalDiv, checkoutDiv);
+    cartModal.append(subtotalDiv, checkoutDiv, closeModal);
     cartModal.addEventListener("click", modifyCartOnClick);
 
     const cartInputs = document.querySelectorAll(".cart-modal input");
@@ -173,8 +186,16 @@ const generateCartModal = () => {
       input.addEventListener("change", modifyCartOnChange);
     });
 
-    if(!items){
-      cartModal.innerHTML = `<p>Your cart is empty!  <a href="#products">Click here</a> to start filling it up.</p>`
+    if (!items) {
+      cartModal.classList.add("empty-cart");
+      cartModal.innerHTML = `<p>Your cart is empty!  <a href="#products">Click here</a> to start filling it up.</p>`;
+      const closeModal = document.createElement("button");
+      closeModal.innerHTML = "x";
+      closeModal.classList.add("close");
+      cartModal.append(closeModal);
+      closeModal.addEventListener("click", closeCart);
+    } else {
+      cartModal.classList.remove("empty-cart");
     }
   });
 
@@ -237,6 +258,14 @@ const modifyCartOnChange = (e) => {
 
 
   generateCartModal();
+}
+
+
+const closeCart = () => {
+
+  cartModal.style.display = "none";
+  const overlay = document.querySelector('.overlay');
+  document.body.removeChild(overlay);
 }
 
 

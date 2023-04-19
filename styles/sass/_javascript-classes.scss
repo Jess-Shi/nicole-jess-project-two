@@ -7,23 +7,24 @@
     
     @include flexbox(column);
     position: fixed;
-    width: 900px;
-    height: 1000px;
+    width: 1080px;
+    height: 800px;
     top: 50%;
     left: 50%;
     overflow-y: auto;
     transform: translate(-50%, -50%);
     background: $footer-background;
-    border-radius: 20px;
-    z-index: 1;
+    padding: 48px 96px;
+    box-shadow: 0 0 24px $secondary-font-color;
+    z-index: 20;
     
     
     .product-container{
         @include flexbox();
-        background: $modal-background;
+        width: 720px;
+        background: $pure-white;
         margin: 40px 40px 0 40px;
         border-radius: 20px;
-        padding: 10px;
     }
     
     .image-container img{
@@ -67,7 +68,37 @@
 
     }
 
-    
+    .subtotal {
+        @include flexbox();
+        width: 720px;
+        border-bottom: 2px solid $pure-white;
+        padding: 24px 0 12px 0;
+    }
+
+    .checkout {
+
+        background: $tertiary-font-color;
+        width: 720px;
+        margin-top: 48px;
+        padding: 24px;
+        border-radius: 60px;
+        text-align: center;
+
+        
+        a {
+            @include font(1.5rem, 1.5rem, $secondary-font-color, none, 600);
+            color: $pure-white;
+        }
+    }
+
+    .close {
+        cursor: pointer;
+        font-size: 2rem;
+        background: $footer-background;
+        position: absolute;
+        top: 24px;
+        right: 24px;
+    }
 
 
     /* Chrome, Safari, Edge, Opera */
@@ -84,8 +115,17 @@
     text-align: center;
     }
 
-    
 
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
 }
 
 .shopping-bag {
