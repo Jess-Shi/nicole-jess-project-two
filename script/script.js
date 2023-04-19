@@ -189,14 +189,14 @@ const generateCartModal = () => {
     if (!items) {
       cartModal.classList.add("empty-cart");
       cartModal.innerHTML = `<p>Your cart is empty! <br/>Click here to start filling it up.</p>
-      <a href="#products">Shop Now</a>
+      <a href="#products" class="shop">Shop Now</a>
       `;
       const closeModal = document.createElement("button");
       closeModal.innerHTML = "x";
       closeModal.classList.add("close");
       cartModal.append(closeModal);
       closeModal.addEventListener("click", closeCart);
-      const shopNowBtn = document.querySelector('a');
+      const shopNowBtn = document.querySelector('.shop');
       shopNowBtn.addEventListener('click', closeCart);
       
     } else {
@@ -210,35 +210,38 @@ const generateCartModal = () => {
 const modifyCartOnClick = (e) => {
 
   get(cartRef).then((cartItems) => {
-    
-    const product = e.target.closest(".product-container");
-    const productKey = product.classList[1];
-    const cartItem = cartItems.val()[productKey];
-    const amountInCartRef = ref(database, `/cart/${productKey}/amountInCart`);
-    const itemRef = ref(database, `/cart/${productKey}`);
 
-    if (e.target.innerHTML === "+") {
-      
-      const newAmount = cartItem.amountInCart + 1; 
-      set(amountInCartRef, newAmount);
-      generateCartModal();
-      
-    } else if (e.target.innerHTML === "-") {
+    if (e.target.innerHTML === "+" || e.target.innerHTML === "-" || e.target.innerHTML === "Remove") {
 
-      const newAmount = cartItem.amountInCart - 1;
-      set(amountInCartRef, newAmount);
-
-      if(newAmount === 0 ){
+      const product = e.target.closest(".product-container");
+      const productKey = product.classList[1];
+      const cartItem = cartItems.val()[productKey];
+      const amountInCartRef = ref(database, `/cart/${productKey}/amountInCart`);
+      const itemRef = ref(database, `/cart/${productKey}`);
+  
+      if (e.target.innerHTML === "+") {
+        
+        const newAmount = cartItem.amountInCart + 1; 
+        set(amountInCartRef, newAmount);
+        generateCartModal();
+        
+      } else if (e.target.innerHTML === "-") {
+  
+        const newAmount = cartItem.amountInCart - 1;
+        set(amountInCartRef, newAmount);
+  
+        if(newAmount === 0 ){
+          remove(itemRef);
+        }
+        
+        generateCartModal();
+  
+      } else if (e.target.innerHTML === "Remove") {
+  
         remove(itemRef);
-      }
-      
-      generateCartModal();
-
-    } else if (e.target.innerHTML === "Remove") {
-
-      remove(itemRef);
-      generateCartModal();
-    };
+        generateCartModal();
+      };
+    }
   });
 }
 

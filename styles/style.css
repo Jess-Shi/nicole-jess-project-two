@@ -1556,19 +1556,17 @@ textarea:focus {
       -ms-flex-align: center;
           align-items: center;
   position: fixed;
-  width: 1080px;
-  height: 800px;
+  max-height: 720px;
   top: 50%;
   left: 50%;
-  overflow-y: auto;
+  overflow: hidden auto;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background: #d8e9d6;
-  padding: 48px 96px;
+  padding: 120px;
   -webkit-box-shadow: 0 0 24px #000000;
           box-shadow: 0 0 24px #000000;
   z-index: 20;
-  /* Chrome, Safari, Edge, Opera */
 }
 .cart-modal .product-container {
   display: -webkit-box;
@@ -1586,17 +1584,21 @@ textarea:focus {
           align-items: center;
   width: 720px;
   background: #ffffff;
-  margin: 40px 40px 0 40px;
-  border-radius: 20px;
+  margin-bottom: 36px;
+  border-radius: 24px;
 }
-.cart-modal .image-container img {
-  border-radius: 20px;
+.cart-modal img {
+  border-radius: 24px;
+}
+.cart-modal .product-details {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 .cart-modal .product-details p {
   line-height: 1.5rem;
 }
 .cart-modal .product-details button {
-  margin-top: 30px;
+  margin-top: 36px;
   background-color: #ffffff;
   border-bottom: 1px solid #000000;
   cursor: pointer;
@@ -1625,14 +1627,18 @@ textarea:focus {
           align-items: center;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  margin: 0 30px 30px 0;
+  margin: 0 36px 36px 0;
 }
 .cart-modal .amount-btns button {
-  cursor: pointer;
   font-size: 1.2rem;
+  line-height: 1.2rem;
+  color: #000000;
+  text-transform: none;
+  font-weight: 600;
+  cursor: pointer;
   background-color: #abd373;
-  width: 35px;
-  height: 35px;
+  width: 36px;
+  height: 36px;
   text-align: center;
   border-radius: 50%;
 }
@@ -1652,7 +1658,7 @@ textarea:focus {
           align-items: center;
   width: 720px;
   border-bottom: 2px solid #ffffff;
-  padding: 24px 0 12px 0;
+  padding: 12px 0;
 }
 .cart-modal .checkout {
   background: #06321B;
@@ -1671,22 +1677,29 @@ textarea:focus {
   color: #ffffff;
 }
 .cart-modal .close {
-  cursor: pointer;
   font-size: 2rem;
+  line-height: 1.5rem;
+  color: #06321B;
+  text-transform: none;
+  font-weight: 600;
+  cursor: pointer;
   background: #d8e9d6;
   position: absolute;
   top: 24px;
   right: 24px;
 }
-.cart-modal input::-webkit-outer-spin-button,
-.cart-modal input::-webkit-inner-spin-button {
+.cart-modal input[type=number] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+  width: 48px;
+  height: 36px;
+  margin: 0 3px;
+  text-align: center;
+}
+.cart-modal input[type=number]::-webkit-outer-spin-button, .cart-modal input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-.cart-modal input[type=number] {
-  -moz-appearance: textfield;
-  width: 70px;
-  text-align: center;
 }
 
 .empty-cart {
@@ -1696,7 +1709,7 @@ textarea:focus {
 }
 .empty-cart p {
   font-size: 2rem;
-  line-height: 2rem;
+  line-height: 2.5rem;
   color: #000000;
   text-transform: none;
   font-weight: 400;
