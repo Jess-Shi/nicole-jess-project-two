@@ -155,8 +155,8 @@ const generateCartModal = () => {
     const subtotalDiv = document.createElement("div");
     
     subtotalDiv.innerHTML = `
-    <p>Subtotal</p>
-    <p>$${subtotal.toFixed(2)}</p>
+    <h2>Subtotal</h2>
+    <h2>$${subtotal.toFixed(2)}</h2>
     `
     
     const checkoutDiv = document.createElement("div");

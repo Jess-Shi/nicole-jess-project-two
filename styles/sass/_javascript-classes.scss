@@ -2,6 +2,92 @@
 @use "./mixins" as *;
 
 
+.cart-modal{
+
+    
+    @include flexbox(column);
+    position: fixed;
+    width: 900px;
+    height: 1000px;
+    top: 50%;
+    left: 50%;
+    overflow-y: auto;
+    transform: translate(-50%, -50%);
+    background: $footer-background;
+    border-radius: 20px;
+    z-index: 1;
+    
+    
+    .product-container{
+        @include flexbox();
+        background: $modal-background;
+        margin: 40px 40px 0 40px;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    
+    .image-container img{
+        border-radius: 20px;
+    }
+    
+    .product-details{
+
+        p{
+            line-height: 1.5rem;
+        }
+
+        button{
+            margin-top: 30px;
+            background-color: $button-background;
+            border-bottom: 1px solid $secondary-font-color;
+            cursor: pointer;
+        }
+    }
+
+    h2{
+        @include font(1.5rem, 1.5rem, $secondary-font-color, none, 600);
+        margin-bottom: 20px;
+        
+    }
+
+    .amount-btns{
+        @include flexbox();
+        align-self: flex-end;
+        margin: 0 30px 30px 0;
+
+        button{
+            cursor: pointer;
+            font-size: 1.2rem;
+            background-color: $accent-color;
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+    }
+
+    
+
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+    //https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp
+    input[type=number] {
+    -moz-appearance: textfield;
+    width: 70px;
+    text-align: center;
+    }
+
+    
+
+}
+
 .shopping-bag {
     position: relative;
 
