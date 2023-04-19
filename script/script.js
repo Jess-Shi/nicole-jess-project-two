@@ -188,12 +188,17 @@ const generateCartModal = () => {
 
     if (!items) {
       cartModal.classList.add("empty-cart");
-      cartModal.innerHTML = `<p>Your cart is empty!  <a href="#products">Click here</a> to start filling it up.</p>`;
+      cartModal.innerHTML = `<p>Your cart is empty! <br/>Click here to start filling it up.</p>
+      <a href="#products">Shop Now</a>
+      `;
       const closeModal = document.createElement("button");
       closeModal.innerHTML = "x";
       closeModal.classList.add("close");
       cartModal.append(closeModal);
       closeModal.addEventListener("click", closeCart);
+      const shopNowBtn = document.querySelector('a');
+      shopNowBtn.addEventListener('click', closeCart);
+      
     } else {
       cartModal.classList.remove("empty-cart");
     }

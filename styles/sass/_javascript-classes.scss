@@ -4,7 +4,6 @@
 
 .cart-modal{
 
-    
     @include flexbox(column);
     position: fixed;
     width: 1080px;
@@ -114,7 +113,28 @@
     width: 70px;
     text-align: center;
     }
+}
 
+.empty-cart{
+    border-radius: 30px;
+    height: 500px;
+    text-align: center;
+
+    p{
+        @include font(2rem, 2rem, $secondary-font-color);
+        margin: auto;
+    }
+    
+    a {
+        @include font(1.5rem, 1.5rem, $secondary-font-color, none, 600);
+        background: $tertiary-font-color;
+        width: 720px;
+        margin-top: 48px;
+        padding: 24px;
+        border-radius: 60px;
+        text-align: center;
+        color: $pure-white;
+    }
 
 }
 
