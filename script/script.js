@@ -19,21 +19,37 @@ onValue(dbRef, (data) => {
   const products = ourData.products;
   const cart = ourData.cart;
 
-  let cartCount = 0;
-
-  for (let item in cart) {
-
-    const amountInCart = cart[item].amountInCart;
-    cartCount += amountInCart;
-  }
-
   displayItems(products);
-  displayCartCount(cartCount);
+  updateCartCount(cart);
 });
 
-const displayItems = (products) => {
+const cartCountElement = document.querySelector(".cart-count");
 
-  const featuredDiv = document.querySelector(".featured");
+const updateCartCount = (cart) =>{
+  let cartCount = 0;
+  
+  for (let item in cart) {
+    
+    const amountInCart = cart[item].amountInCart;
+    cartCount += amountInCart;
+  };
+  displayCartCount(cartCount);
+};
+
+const displayCartCount = (cartCount) => {
+
+  if (cartCount > 99) {
+    cartCountElement.innerHTML = `<p>99+</p>`;
+  } else if (cartCount > 0) { 
+    cartCountElement.innerHTML = `<p>${cartCount}</p>`;
+  } else {
+    cartCountElement.innerHTML = ``;
+  }
+};
+
+const featuredDiv = document.querySelector(".featured");
+
+const displayItems = (products) => {
 
   featuredDiv.innerHTML = "";
 
@@ -56,41 +72,49 @@ const displayItems = (products) => {
     featuredDiv.append(productDiv);
   }
 
-  addToCart();
+  setupButtonClick();
 };
 
-const addToCart = () => {
+const setupButtonClick = () => {
 
   const addToCartButtons = document.querySelectorAll(".featured button");
   
   addToCartButtons.forEach((button) => {
   
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (e) => {
 
-      get(productRef).then((product) => {
+      addToCart(e); 
 
-        const newCartItem = product.val()[button.id];
-        const newCartItemRef = ref(database, `/cart/${button.id}`);
-        const amountInCartRef = ref(database, `/cart/${button.id}/amountInCart`);
-
-        get(newCartItemRef).then((newProduct) => {
-
-          if (newProduct.val() === null) {
-
-            set(newCartItemRef, newCartItem);
-            set(amountInCartRef, 1);
-            
-          } else {
-
-            const newAmount = newProduct.val().amountInCart + 1;
-            set(amountInCartRef, newAmount);
-          }
-        });
-      });
+     
     });
   });
 }
 
+const addToCart = (e) =>{
+
+  const button = e.target;
+
+  get(productRef).then((product) => {
+  
+    const newCartItem = product.val()[button.id];
+    const newCartItemRef = ref(database, `/cart/${button.id}`);
+    const amountInCartRef = ref(database, `/cart/${button.id}/amountInCart`);
+  
+    get(newCartItemRef).then((newProduct) => {
+  
+      if (newProduct.val() === null) {
+  
+        set(newCartItemRef, newCartItem);
+        set(amountInCartRef, 1);
+        
+      } else {
+  
+        const newAmount = newProduct.val().amountInCart + 1;
+        set(amountInCartRef, newAmount);
+      }
+    });
+  });
+}
 
 const cartModal = document.querySelector('.cart-modal');
 cartModal.style.display = "none";
@@ -274,18 +298,6 @@ const closeCart = () => {
 }
 
 
-const cartCountElement = document.querySelector(".cart-count");
-
-const displayCartCount = (cartCount) => {
-
-  if (cartCount > 99) {
-    cartCountElement.innerHTML = `<p>99+</p>`;
-  } else if (cartCount > 0) { 
-    cartCountElement.innerHTML = `<p>${cartCount}</p>`;
-  } else {
-    cartCountElement.innerHTML = ``;
-  }
-};
 
 
 
