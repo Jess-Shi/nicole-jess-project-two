@@ -28,14 +28,15 @@ onValue(dbRef, (data) => {
 
 const cartCountElement = document.querySelector(".cart-count");
 
-const updateCartCount = (cart) =>{
+const updateCartCount = (cart) => {
+
   let cartCount = 0;
-  
+
   for (let item in cart) {
-    
     const amountInCart = cart[item].amountInCart;
     cartCount += amountInCart;
   };
+
   displayCartCount(cartCount);
 };
 
@@ -121,7 +122,7 @@ const addToCart = (button) => {
 const cartModal = document.querySelector('.cart-modal');
 cartModal.classList.add("cart-modal-hidden");
 
-const bagButton = document.querySelector('.bag-icon');
+const bagButton = document.querySelector('.bag-button');
 
 bagButton.addEventListener('click', () => {
   
@@ -329,11 +330,11 @@ for (let i = 0; i < settings.length; i++) {
 // hamburger menu
 
 document
-  .querySelector("header .hamburger-icon")
+  .querySelector("header .hamburger-button")
   .addEventListener("click", (e) => {
     e.stopPropagation();
     document
-      .querySelector("header .mobile .hidden")
+      .querySelector("header > .mobile")
       .classList.toggle("display");
   });
 

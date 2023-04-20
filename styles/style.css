@@ -377,7 +377,7 @@ address {
   text-transform: uppercase;
 }
 
-.bag-icon {
+.bag-button {
   width: 48px;
   padding: 9px;
   border-radius: 24px;
@@ -480,11 +480,31 @@ h2 {
 }
 @media (max-width: 600px) {
   .settings .expandable,
-  .header-nav > ul {
+  .header-nav ul {
     display: none;
   }
   .logo {
-    width: 96px;
+    -ms-flex-preferred-size: 75%;
+        flex-basis: 75%;
+  }
+  .logo a {
+    width: 84px;
+  }
+  .hamburger-button {
+    display: block;
+    background-color: #ffffff;
+    color: #4c4c4c;
+    width: 48px;
+    height: 48px;
+    margin-left: 12px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    -webkit-transition: -webkit-box-shadow 0.25s;
+    transition: -webkit-box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
   }
   .heading .wrapper {
     background-size: 65%;
@@ -1426,8 +1446,9 @@ footer a {
   }
 }
 .settings button,
-.logo,
-.bag-icon,
+.logo a,
+.bag-button,
+.hamburger-button,
 .discover-now,
 .product-image a,
 .shop-now,
@@ -1439,12 +1460,15 @@ form button {
   transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
 }
 .settings button:hover, .settings button:focus, .settings button:focus-within,
-.logo:hover,
-.logo:focus,
-.logo:focus-within,
-.bag-icon:hover,
-.bag-icon:focus,
-.bag-icon:focus-within,
+.logo a:hover,
+.logo a:focus,
+.logo a:focus-within,
+.bag-button:hover,
+.bag-button:focus,
+.bag-button:focus-within,
+.hamburger-button:hover,
+.hamburger-button:focus,
+.hamburger-button:focus-within,
 .discover-now:hover,
 .discover-now:focus,
 .discover-now:focus-within,
@@ -1565,7 +1589,7 @@ textarea:focus {
   }
 }
 @media (max-width: 600px) {
-  header .mobile {
+  header > .mobile .child {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1580,27 +1604,51 @@ textarea:focus {
         -ms-flex-align: center;
             align-items: center;
   }
-  header .mobile .visible {
+  header > .mobile .child button {
+    background-color: #ffffff;
+    color: #4c4c4c;
+    border-radius: 6px;
+    padding: 3px 6px;
+    margin: 3px 0;
+    cursor: pointer;
+  }
+  header > .mobile .child button:hover, header > .mobile .child button:focus {
+    background-color: #d3d3d3;
+  }
+  header > .mobile h6 {
+    font-size: 1rem;
+    line-height: 1rem;
+    color: #4c4c4c;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 2px solid #4c4c4c;
+    padding-bottom: 6px;
+    margin: 24px 0 12px 0;
+  }
+  header > .mobile ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 100%;
-    padding: 24px 0;
   }
-  header .mobile .hidden {
-    display: none;
+  header > .mobile li a {
+    border-radius: 6px;
+    padding: 3px 6px;
+    margin: 3px 0;
   }
-  header .mobile .display {
+  header > .mobile li a:hover, header > .mobile li a:focus {
+    background-color: #d3d3d3;
+  }
+  header > .display {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1618,104 +1666,6 @@ textarea:focus {
     padding: 24px 0;
     border-top: 2px solid #4c4c4c;
     border-bottom: 2px solid #4c4c4c;
-  }
-  header .mobile .child {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header .mobile .child button {
-    background-color: #ffffff;
-    color: #4c4c4c;
-    border-radius: 6px;
-    padding: 3px 6px;
-    margin: 3px 0;
-    cursor: pointer;
-  }
-  header .mobile .child button:hover, header .mobile .child button:focus {
-    background-color: #d3d3d3;
-  }
-  header .mobile .nav-icons {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header .mobile .bag-icon {
-    margin-right: 6px;
-  }
-  header .mobile .bag-icon img {
-    width: 48px;
-  }
-  header .mobile h6 {
-    font-size: 1rem;
-    line-height: 1rem;
-    color: #4c4c4c;
-    text-transform: uppercase;
-    font-weight: 600;
-    border-bottom: 2px solid #4c4c4c;
-    padding-bottom: 6px;
-    margin: 24px 0 12px 0;
-  }
-  header .mobile ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header .mobile li a {
-    border-radius: 6px;
-    padding: 3px 6px;
-    margin: 3px 0;
-  }
-  header .mobile li a:hover, header .mobile li a:focus {
-    background-color: #d3d3d3;
-  }
-  header .mobile .hamburger-icon {
-    background-color: #ffffff;
-    color: #4c4c4c;
-    width: 48px;
-    height: auto;
-    border-radius: 6px;
-    padding: 3px 6px;
-    margin: 3px 0;
-    cursor: pointer;
-    -webkit-transition: -webkit-box-shadow 0.25s;
-    transition: -webkit-box-shadow 0.25s;
-    transition: box-shadow 0.25s;
-    transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
-  }
-  header .mobile .hamburger-icon:hover, header .mobile .hamburger-icon:focus {
-    -webkit-box-shadow: 0 0 9px #4c4c4c;
-            box-shadow: 0 0 9px #4c4c4c;
   }
 }
 @media (max-width: 540px) {
@@ -1926,7 +1876,7 @@ textarea:focus {
 .empty-cart a {
   font-size: 1.5rem;
   line-height: 1.5rem;
-  color: #000000;
+  color: #ffffff;
   text-transform: none;
   font-weight: 600;
   background: #06321B;
@@ -1935,7 +1885,6 @@ textarea:focus {
   padding: 24px;
   border-radius: 60px;
   text-align: center;
-  color: #ffffff;
 }
 
 .cart-modal-hidden {
@@ -1955,21 +1904,18 @@ textarea:focus {
 .shopping-bag {
   position: relative;
 }
-.shopping-bag .cart-count, .shopping-bag .cart-count-mobile {
+.shopping-bag .cart-count {
   position: absolute;
-  top: -6px;
-  right: -6px;
+  top: -3px;
+  right: -3px;
   text-align: center;
 }
-.shopping-bag .cart-count p, .shopping-bag .cart-count-mobile p {
+.shopping-bag .cart-count p {
   font-size: 0.75rem;
   background-color: #abd373;
   color: #06321B;
   padding: 0 9px;
   border-radius: 12px;
-}
-.shopping-bag .cart-count-mobile {
-  right: 0;
 }
 
 @media (max-width: 1080px) {
@@ -2004,7 +1950,7 @@ textarea:focus {
 }
 @media (max-width: 600px) {
   .cart-modal {
-    padding: 30px;
+    padding: 42px;
     text-align: center;
     max-height: 600px;
   }
@@ -2022,7 +1968,7 @@ textarea:focus {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 240px;
+    width: 218px;
   }
   .cart-modal .subtotal {
     display: -webkit-box;
@@ -2038,27 +1984,38 @@ textarea:focus {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 240px;
+    width: 218px;
   }
   .cart-modal .checkout {
-    width: 240px;
+    width: 218px;
   }
   .cart-modal .amount-btns {
     margin: 24px;
     -ms-flex-item-align: auto;
         align-self: auto;
   }
+  .cart-modal .close {
+    top: 12px;
+    right: 12px;
+  }
   .empty-cart {
     height: 360px;
   }
   .empty-cart p {
-    font-size: 1.5rem;
-    line-height: 1.5;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
     color: #4c4c4c;
     text-transform: none;
     font-weight: 400;
+    margin-top: 48px;
   }
   .empty-cart a {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    color: #ffffff;
+    text-transform: none;
+    font-weight: 600;
     width: 240px;
+    margin-bottom: 36px;
   }
 }

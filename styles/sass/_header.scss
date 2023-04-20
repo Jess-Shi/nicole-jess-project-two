@@ -49,7 +49,7 @@
     }
 }
 
-.bag-icon {
+.bag-button {
     width: 48px;
     padding: 9px;
     border-radius: 24px;
@@ -136,12 +136,29 @@ h2 {
 @media (max-width: 600px) {
     
     .settings .expandable,
-    .header-nav > ul {
+    .header-nav ul {
         display: none;
     }
 
     .logo {
-        width: 96px;
+        flex-basis: 75%;
+
+        a {
+            width: 84px;
+        }
+    }
+
+    .hamburger-button {
+        display: block;
+        background-color: $button-background;
+        color: $primary-font-color;
+        width: 48px;
+        height: 48px;
+        margin-left: 12px;
+        flex-shrink: 0;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: box-shadow 0.25s;
     }
 
     .heading .wrapper {

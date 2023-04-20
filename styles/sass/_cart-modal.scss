@@ -122,14 +122,13 @@
     }
     
     a {
-        @include font(1.5rem, 1.5rem, $secondary-font-color, none, 600);
+        @include font(1.5rem, 1.5rem, $modal-accent, none, 600);
         background: $tertiary-font-color;
         width: 720px;
         margin-top: 48px;
         padding: 24px;
         border-radius: 60px;
         text-align: center;
-        color: $modal-accent;
     }
 
 }
@@ -151,10 +150,10 @@
 .shopping-bag {
     position: relative;
 
-    .cart-count, .cart-count-mobile {
+    .cart-count {
         position: absolute;
-        top: -6px;
-        right: -6px;
+        top: -3px;
+        right: -3px;
         text-align: center;
 
         p {
@@ -164,10 +163,6 @@
             padding: 0 9px;
             border-radius: 12px;
         }
-    }
-
-    .cart-count-mobile{
-        right: 0;
     }
 }
 
@@ -194,7 +189,7 @@
 
     .empty-cart a{
 
-            width: 360px;
+        width: 360px;
     }
 
 }
@@ -203,23 +198,23 @@
 
     .cart-modal{
 
-        padding: 30px;
+        padding: 42px;
         text-align: center;
         max-height: 600px;
 
         .product-container {
             @include flexbox(column, center, center);
-            width: 240px;
+            width: 218px;
 
         }
 
         .subtotal {
             @include flexbox(column);
-            width: 240px;
+            width: 218px;
         }
 
         .checkout {
-            width: 240px;
+            width: 218px;
         }
 
         .amount-btns {
@@ -227,6 +222,10 @@
             align-self: auto;
         }
 
+        .close {
+            top: 12px;
+            right: 12px;
+        }
     }
 
     .empty-cart{
@@ -234,11 +233,14 @@
         height: 360px;
 
         p{
-            @include font(1.5rem, 1.5)
+            @include font(1.2rem, 1.5rem);
+            margin-top: 48px;
         }
 
         a{
+            @include font(1.3rem, 1.3rem, $modal-accent, none, 600);
             width: 240px;
+            margin-bottom: 36px;
         }
 }
 

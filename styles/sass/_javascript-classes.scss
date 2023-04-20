@@ -32,27 +32,7 @@
 
 @media (max-width: 600px) {
 
-    header .mobile {
-
-        @include flexbox(column);
-
-        .visible {
-            @include flexbox();
-            width: 100%;
-            padding: 24px 0;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .display {
-            @include flexbox(column);
-            width: 100%;
-            padding: 24px 0;
-            border-top: 2px solid $primary-font-color;
-            border-bottom: 2px solid $primary-font-color;
-        }
+    header > .mobile {
 
         .child {
             @include flexbox(column);
@@ -69,18 +49,6 @@
                 &:focus {
                 background-color: $button-border;
             }
-            }
-        }
-
-        .nav-icons {
-            @include flexbox();
-        }
-
-        .bag-icon {
-            margin-right: 6px;
-
-            img {
-                width: 48px;
             }
         }
 
@@ -105,23 +73,14 @@
                 background-color: $button-border;
             }
         }
+    }
 
-        .hamburger-icon {
-            background-color: $button-background;
-            color: $primary-font-color;
-            width: 48px;
-            height: auto;
-            border-radius: 6px;
-            padding: 3px 6px;
-            margin: 3px 0;
-            cursor: pointer;
-            transition: box-shadow 0.25s;
-
-            &:hover,
-            &:focus {
-                box-shadow: 0 0 9px $primary-font-color;
-            }
-        }
+    header > .display {
+        @include flexbox(column);
+        width: 100%;
+        padding: 24px 0;
+        border-top: 2px solid $primary-font-color;
+        border-bottom: 2px solid $primary-font-color;
     }
 }
 
