@@ -119,19 +119,24 @@ const addToCart = (button) => {
   });
 }
 
-const cartModal = document.querySelector('.cart-modal');
+const cartModal = document.querySelector(".cart-modal");
 cartModal.classList.add("cart-modal-hidden");
 
-const bagButton = document.querySelector('.bag-button');
+const bagButton = document.querySelector(".bag-button");
 
-bagButton.addEventListener('click', () => {
+bagButton.addEventListener("click", () => {
   
   generateCartModal();
+  addBackgroundOverlay();
+});
 
-  const overlay = document.createElement('div');
+const addBackgroundOverlay = () =>{
+  
+  const overlay = document.createElement("div");
   overlay.classList.add("overlay");
   document.body.append(overlay);
-});
+  overlay.addEventListener("click", closeCart);
+}
 
 const generateCartModal = () => {
 
@@ -142,92 +147,106 @@ const generateCartModal = () => {
 
     const items = cartItems.val();
   
-    for(let item in items) {
-
-      const productContainer = document.createElement('div');
-      productContainer.classList.add("product-container");
-      productContainer.classList.add(item);
-
-      const id = `quantity of ${items[item].name}`;
-      const idWithoutSpaces = id.replaceAll(" ", "-");
-  
-      productContainer.innerHTML = `
-      
-        <div class="image-container">
-            <img src=${items[item].image} alt="${items[item].description}"/>
-        </div>
-
-        <div class="product-details">
-            <h2>${items[item].name}</h2>
-            <p>Quantity: ${items[item].amountInCart}</p>
-            <p>Price: $${(items[item].price * items[item].amountInCart).toFixed(2)}</p>
-            <button>Remove</button>
-        </div>
-
-        <div class="amount-btns">
-            <button>-</button>
-            <label class="sr-only" for=${idWithoutSpaces} >Quantity of ${items[item].name}</label>
-            <input type="number" min="0" id=${idWithoutSpaces} value="${items[item].amountInCart}" pattern="[0-9]*"/>
-            <button>+</button>
-        </div>
-      `;
-
-      cartModal.append(productContainer);
-    }
+    displayCartItems(items);
+    displaySubtotal(items);
+    displayCloseButton();
+    displayEmptyCart(items);
     
-    let subtotal = 0;
-    
-    for (let item in items) {
-      
-      const price = items[item].amountInCart * items[item].price;
-      subtotal += price;
-    }
-    
-    const subtotalDiv = document.createElement("div");
-    subtotalDiv.classList.add("subtotal");
-    
-    subtotalDiv.innerHTML = `
-    <h2>Subtotal</h2>
-    <h2>$${subtotal.toFixed(2)}</h2>
-    `
-    
-    const checkoutDiv = document.createElement("div");
-    checkoutDiv.classList.add("checkout");
-    
-    checkoutDiv.innerHTML = `
-    <a href="#">Checkout</a>
-    `
-
-    const closeModal = document.createElement("button");
-    closeModal.innerHTML = "x";
-    closeModal.classList.add("close");
-    closeModal.addEventListener("click", closeCart);
-    
-    cartModal.append(subtotalDiv, checkoutDiv, closeModal);
     cartModal.addEventListener("click", modifyCartOnClick);
-
+    
     const cartInputs = document.querySelectorAll(".cart-modal input");
     cartInputs.forEach((input) => {
       input.addEventListener("change", modifyCartOnChange);
     });
-
-    if (!items) {
-      cartModal.classList.add("empty-cart");
-      cartModal.innerHTML = `<p>Your cart is empty! <br/>Click here to start filling it up.</p>
-      <a href="#products" class="shop">Shop Now</a>
-      `;
-      const closeModal = document.createElement("button");
-      closeModal.innerHTML = "x";
-      closeModal.classList.add("close");
-      cartModal.append(closeModal);
-      closeModal.addEventListener("click", closeCart);
-      const shopNowBtn = document.querySelector('.shop');
-      shopNowBtn.addEventListener('click', closeCart);
-      
-    } else {
-      cartModal.classList.remove("empty-cart");
-    }
   });
+}
+
+const displayCartItems = (items) =>{
+
+  for(let item in items) {
+
+    const productContainer = document.createElement('div');
+    productContainer.classList.add("product-container");
+    productContainer.classList.add(item);
+
+    const id = `quantity of ${items[item].name}`;
+    const idWithoutSpaces = id.replaceAll(" ", "-");
+
+    productContainer.innerHTML = `
+    
+      <div class="image-container">
+          <img src=${items[item].image} alt="${items[item].description}"/>
+      </div>
+
+      <div class="product-details">
+          <h2>${items[item].name}</h2>
+          <p>Quantity: ${items[item].amountInCart}</p>
+          <p>Price: $${(items[item].price * items[item].amountInCart).toFixed(2)}</p>
+          <button>Remove</button>
+      </div>
+
+      <div class="amount-btns">
+          <button>-</button>
+          <label class="sr-only" for=${idWithoutSpaces} >Quantity of ${items[item].name}</label>
+          <input type="number" min="0" id=${idWithoutSpaces} value="${items[item].amountInCart}" pattern="[0-9]*"/>
+          <button>+</button>
+      </div>
+    `;
+
+    cartModal.append(productContainer);
+  }
+}
+
+const displaySubtotal = (items) =>{
+
+  let subtotal = 0;
+    
+  for (let item in items) {
+    
+    const price = items[item].amountInCart * items[item].price;
+    subtotal += price;
+  }
+  
+  const subtotalDiv = document.createElement("div");
+  subtotalDiv.classList.add("subtotal");
+  
+  subtotalDiv.innerHTML = `
+  <h2>Subtotal</h2>
+  <h2>$${subtotal.toFixed(2)}</h2>
+  `
+  
+  const checkoutDiv = document.createElement("div");
+  checkoutDiv.classList.add("checkout");
+  
+  checkoutDiv.innerHTML = `
+  <a href="#">Checkout</a>
+  `
+  cartModal.append(subtotalDiv, checkoutDiv);
+} 
+
+const displayCloseButton = () =>{
+  const closeModal = document.createElement("button");
+  closeModal.innerHTML = "x";
+  closeModal.classList.add("close");
+  closeModal.addEventListener("click", closeCart);
+  cartModal.append(closeModal);
+}
+
+const displayEmptyCart = (items) =>{
+
+  if (!items) {
+    cartModal.classList.add("empty-cart");
+    cartModal.innerHTML = `<p>Your cart is empty! <br/>Click here to start filling it up.</p>
+    <a href="#products" class="shop">Shop Now</a>
+    `;
+    displayCloseButton();
+    
+    const shopNowBtn = document.querySelector('.shop');
+    shopNowBtn.addEventListener('click', closeCart);
+    
+  } else {
+    cartModal.classList.remove("empty-cart");
+  }
 }
 
 const modifyCartOnClick = (e) => {
