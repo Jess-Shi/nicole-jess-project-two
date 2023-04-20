@@ -1541,6 +1541,214 @@ textarea:focus {
   background-color: #dddddd;
 }
 
+.settings .expandable .display {
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  footer .child .display {
+    display: block;
+  }
+  footer button {
+    font-size: 1rem;
+    line-height: 1rem;
+    color: #000000;
+    text-transform: none;
+    font-weight: 400;
+    background-color: #d8e9d6;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #d8e9d6;
+    cursor: pointer;
+  }
+  footer button:hover, footer button:focus {
+    border-bottom: 2px solid #06321B;
+  }
+}
+@media (max-width: 600px) {
+  header .mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .mobile .visible {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    padding: 24px 0;
+  }
+  header .mobile .hidden {
+    display: none;
+  }
+  header .mobile .display {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    padding: 24px 0;
+    border-top: 2px solid #4c4c4c;
+    border-bottom: 2px solid #4c4c4c;
+  }
+  header .mobile .child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .mobile .child button {
+    background-color: #ffffff;
+    color: #4c4c4c;
+    border-radius: 6px;
+    padding: 3px 6px;
+    margin: 3px 0;
+    cursor: pointer;
+  }
+  header .mobile .child button:hover, header .mobile .child button:focus {
+    background-color: #d3d3d3;
+  }
+  header .mobile .nav-icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .mobile .bag-icon {
+    margin-right: 6px;
+  }
+  header .mobile .bag-icon img {
+    width: 48px;
+  }
+  header .mobile h6 {
+    font-size: 1rem;
+    line-height: 1rem;
+    color: #4c4c4c;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 2px solid #4c4c4c;
+    padding-bottom: 6px;
+    margin: 24px 0 12px 0;
+  }
+  header .mobile ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .mobile li a {
+    border-radius: 6px;
+    padding: 3px 6px;
+    margin: 3px 0;
+  }
+  header .mobile li a:hover, header .mobile li a:focus {
+    background-color: #d3d3d3;
+  }
+  header .mobile .hamburger-icon {
+    background-color: #ffffff;
+    color: #4c4c4c;
+    width: 48px;
+    height: auto;
+    border-radius: 6px;
+    padding: 3px 6px;
+    margin: 3px 0;
+    cursor: pointer;
+    -webkit-transition: -webkit-box-shadow 0.25s;
+    transition: -webkit-box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+  }
+  header .mobile .hamburger-icon:hover, header .mobile .hamburger-icon:focus {
+    -webkit-box-shadow: 0 0 9px #4c4c4c;
+            box-shadow: 0 0 9px #4c4c4c;
+  }
+}
+@media (max-width: 540px) {
+  .filters .display {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 12px;
+  }
+  .filters .display button {
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px dotted #06321B;
+    width: 180px;
+    padding: 6px 0;
+  }
+  .filters .display button:hover, .filters .display button:focus {
+    background-color: #d3d3d3;
+  }
+  .filters .display :first-child {
+    border-top: 2px dotted #06321B;
+  }
+}
 .cart-modal {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1760,31 +1968,56 @@ textarea:focus {
   right: 0;
 }
 
-.settings .expandable .display {
-  display: block;
-}
-
-@media (max-width: 1200px) {
-  footer .child .display {
-    display: block;
+@media (max-width: 1080px) {
+  .cart-modal {
+    padding: 96px;
   }
-  footer button {
-    font-size: 1rem;
-    line-height: 1rem;
-    color: #000000;
-    text-transform: none;
-    font-weight: 400;
-    background-color: #d8e9d6;
-    padding-bottom: 3px;
-    border-bottom: 2px solid #d8e9d6;
-    cursor: pointer;
+  .cart-modal .product-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 360px;
   }
-  footer button:hover, footer button:focus {
-    border-bottom: 2px solid #06321B;
+  .cart-modal .subtotal {
+    width: 360px;
+  }
+  .cart-modal .checkout {
+    width: 360px;
   }
 }
 @media (max-width: 600px) {
-  header .mobile {
+  .cart-modal {
+    padding: 30px;
+    text-align: center;
+    max-height: 600px;
+  }
+  .cart-modal .product-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 240px;
+  }
+  .cart-modal .subtotal {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1798,173 +2031,14 @@ textarea:focus {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    width: 240px;
   }
-  header .mobile .visible {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-    padding: 24px 0;
+  .cart-modal .checkout {
+    width: 240px;
   }
-  header .mobile .hidden {
-    display: none;
-  }
-  header .mobile .display {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-    padding: 24px 0;
-    border-top: 2px solid #4c4c4c;
-    border-bottom: 2px solid #4c4c4c;
-  }
-  header .mobile .child {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header .mobile .child button {
-    background-color: #ffffff;
-    color: #4c4c4c;
-    border-radius: 6px;
-    padding: 3px 6px;
-    margin: 3px 0;
-    cursor: pointer;
-  }
-  header .mobile .child button:hover, header .mobile .child button:focus {
-    background-color: #d3d3d3;
-  }
-  header .mobile .nav-icons {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header .mobile .bag-icon {
-    margin-right: 6px;
-  }
-  header .mobile .bag-icon img {
-    width: 48px;
-  }
-  header .mobile h6 {
-    font-size: 1rem;
-    line-height: 1rem;
-    color: #4c4c4c;
-    text-transform: uppercase;
-    font-weight: 600;
-    border-bottom: 2px solid #4c4c4c;
-    padding-bottom: 6px;
-    margin: 24px 0 12px 0;
-  }
-  header .mobile ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header .mobile li a {
-    border-radius: 6px;
-    padding: 3px 6px;
-    margin: 3px 0;
-  }
-  header .mobile li a:hover, header .mobile li a:focus {
-    background-color: #d3d3d3;
-  }
-  header .mobile .hamburger-icon {
-    background-color: #ffffff;
-    color: #4c4c4c;
-    width: 48px;
-    height: auto;
-    border-radius: 6px;
-    padding: 3px 6px;
-    margin: 3px 0;
-    cursor: pointer;
-    -webkit-transition: -webkit-box-shadow 0.25s;
-    transition: -webkit-box-shadow 0.25s;
-    transition: box-shadow 0.25s;
-    transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
-  }
-  header .mobile .hamburger-icon:hover, header .mobile .hamburger-icon:focus {
-    -webkit-box-shadow: 0 0 9px #4c4c4c;
-            box-shadow: 0 0 9px #4c4c4c;
-  }
-}
-@media (max-width: 540px) {
-  .filters .display {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-top: 12px;
-  }
-  .filters .display button {
-    border: none;
-    border-radius: 0;
-    border-bottom: 2px dotted #06321B;
-    width: 180px;
-    padding: 6px 0;
-  }
-  .filters .display button:hover, .filters .display button:focus {
-    background-color: #d3d3d3;
-  }
-  .filters .display :first-child {
-    border-top: 2px dotted #06321B;
+  .cart-modal .amount-btns {
+    margin: 24px;
+    -ms-flex-item-align: auto;
+        align-self: auto;
   }
 }

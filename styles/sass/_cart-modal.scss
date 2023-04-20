@@ -1,0 +1,224 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.cart-modal{
+    @include flexbox(column);
+    position: fixed;
+    max-height: 720px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden auto;
+    background: $footer-background;
+    padding: 120px;
+    box-shadow: 0 0 24px $secondary-font-color;
+    z-index: 20;
+    
+    
+    .product-container{
+        @include flexbox();
+        width: 720px;
+        background: $modal-accent;
+        margin-bottom: 36px;
+        border-radius: 24px;
+    }
+    
+    img{
+        border-radius: 24px;
+    }
+    
+    .product-details{
+        flex-basis: 50%;
+
+        p{
+            line-height: 1.5rem;
+        }
+
+        button{
+            margin-top: 36px;
+            background-color: $button-background;
+            border-bottom: 1px solid $secondary-font-color;
+            cursor: pointer;
+        }
+    }
+
+    h2{
+        @include font(1.5rem, 1.5rem, $secondary-font-color, none, 600);
+        margin-bottom: 20px;
+        
+    }
+
+    .amount-btns{
+        @include flexbox();
+        align-self: flex-end;
+        margin: 0 36px 36px 0;
+
+        button{
+            @include font(1.2rem, 1.2rem, $secondary-font-color, none, 600);
+            cursor: pointer;
+            background-color: $accent-color;
+            width: 36px;
+            height: 36px;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+    }
+
+    .subtotal {
+        @include flexbox();
+        width: 720px;
+        border-bottom: 2px solid $modal-accent;
+        padding: 12px 0;
+    }
+
+    .checkout {
+        background: $tertiary-font-color;
+        width: 720px;
+        margin-top: 48px;
+        padding: 24px;
+        border-radius: 60px;
+        text-align: center;
+
+        
+        a {
+            @include font(1.5rem, 1.5rem, $secondary-font-color, none, 600);
+            color: $modal-accent;
+        }
+    }
+
+    .close {
+        @include font(2rem, 1.5rem, $tertiary-font-color, none, 600);
+        cursor: pointer;
+        background: $footer-background;
+        position: absolute;
+        top: 24px;
+        right: 24px;
+    }
+
+    input[type=number] {
+    appearance: textfield;
+    width: 48px;
+    height: 36px;
+    margin: 0 3px;
+    text-align: center;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+}
+
+.empty-cart{
+    border-radius: 30px;
+    height: 500px;
+    text-align: center;
+
+    p{
+        @include font(2rem, 2.5rem, $secondary-font-color);
+        margin: auto;
+    }
+    
+    a {
+        @include font(1.5rem, 1.5rem, $secondary-font-color, none, 600);
+        background: $tertiary-font-color;
+        width: 720px;
+        margin-top: 48px;
+        padding: 24px;
+        border-radius: 60px;
+        text-align: center;
+        color: $modal-accent;
+    }
+
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.shopping-bag {
+    position: relative;
+
+    .cart-count, .cart-count-mobile {
+        position: absolute;
+        top: -6px;
+        right: -6px;
+        text-align: center;
+
+        p {
+            font-size: 0.75rem;;
+            background-color: $accent-color;
+            color: $tertiary-font-color;
+            padding: 0 9px;
+            border-radius: 12px;
+        }
+    }
+
+    .cart-count-mobile{
+        right: 0;
+    }
+}
+
+@media (max-width: 1080px) {
+
+    .cart-modal{
+
+        padding: 96px;
+
+        .product-container {
+            @include flexbox(column);
+            width: 360px;
+
+        }
+
+        .subtotal {
+            width: 360px;
+        }
+
+        .checkout {
+            width: 360px;
+        }
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .cart-modal{
+
+        padding: 30px;
+        text-align: center;
+        max-height: 600px;
+
+        .product-container {
+            @include flexbox(column, center, center);
+            width: 240px;
+
+        }
+
+        .subtotal {
+            @include flexbox(column);
+            width: 240px;
+        }
+
+        .checkout {
+            width: 240px;
+        }
+
+        .amount-btns {
+            margin: 24px;
+            align-self: auto;
+        }
+
+    }
+
+
+}
