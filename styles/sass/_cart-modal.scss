@@ -154,7 +154,7 @@
         text-align: center;
 
         p {
-            font-size: 0.75rem;;
+            font-size: 0.75rem;
             background-color: $accent-color;
             color: $tertiary-font-color;
             padding: 0 9px;
@@ -188,6 +188,11 @@
         }
     }
 
+    .empty-cart a{
+
+            width: 360px;
+    }
+
 }
 
 @media (max-width: 600px) {
@@ -219,6 +224,19 @@
         }
 
     }
+
+    .empty-cart{
+
+        height: 360px;
+
+        p{
+            @include font(1.5rem, 1.5)
+        }
+
+        a{
+            width: 240px;
+        }
+}
 
 
 }

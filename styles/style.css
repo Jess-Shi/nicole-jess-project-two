@@ -1994,6 +1994,9 @@ textarea:focus {
   .cart-modal .checkout {
     width: 360px;
   }
+  .empty-cart a {
+    width: 360px;
+  }
 }
 @media (max-width: 600px) {
   .cart-modal {
@@ -2040,5 +2043,18 @@ textarea:focus {
     margin: 24px;
     -ms-flex-item-align: auto;
         align-self: auto;
+  }
+  .empty-cart {
+    height: 360px;
+  }
+  .empty-cart p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #4c4c4c;
+    text-transform: none;
+    font-weight: 400;
+  }
+  .empty-cart a {
+    width: 240px;
   }
 }
