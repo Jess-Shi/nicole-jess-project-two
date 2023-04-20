@@ -1,0 +1,100 @@
+{
+  "products": {
+    "-NSxM-VFYjOwt-SFclKK": {
+      "attributes": {
+        "height": "75 cm",
+        "width": "35 cm"
+      },
+      "category": "featured",
+      "description": "American Marigold in brown pot",
+      "image": "./assets/p2.jpeg",
+      "inventory": 100,
+      "name": "American Marigold",
+      "price": 23.45
+    },
+    "-NSxMwH_lNHX6I6w302L": {
+      "attributes": {
+        "height": "30 cm",
+        "width": "15 cm"
+      },
+      "category": "featured",
+      "description": "Black Eyed Susan in black pot",
+      "image": "./assets/p1.jpeg",
+      "inventory": 100,
+      "name": "Black Eyed Susan",
+      "price": 25.45
+    },
+    "-NSxNGnR9jYW1mAJRaqk": {
+      "attributes": {
+        "height": "35 cm",
+        "width": "25 cm"
+      },
+      "category": "featured",
+      "description": "Bleeding Heart in white pot with grey base",
+      "image": "./assets/p3.jpeg",
+      "inventory": 100,
+      "name": "Bleeding Heart",
+      "price": 30.45
+    },
+    "-NSxNlXpDgjW05MpYAGm": {
+      "attributes": {
+        "height": "55 cm",
+        "width": "40 cm"
+      },
+      "category": "featured",
+      "description": "Bloody Cranesbill in white pot with grey base",
+      "image": "./assets/p4.jpeg",
+      "inventory": 30,
+      "name": "Bloody Cranesbill",
+      "price": 45
+    },
+    "-NSxO7oVm8Lz1w4_nYu_": {
+      "attributes": {
+        "height": "55 cm",
+        "width": "50 cm"
+      },
+      "category": "featured",
+      "description": "Butterfly Weed in white pot on brass metal stand",
+      "image": "./assets/p5.jpeg",
+      "inventory": 40,
+      "name": "Butterfly Weed",
+      "price": 50.45
+    },
+    "-NSxOT0hthaPcfeBFjBZ": {
+      "attributes": {
+        "height": "60 cm",
+        "width": "40 cm"
+      },
+      "category": "featured",
+      "description": "Common Yarrow in white pot",
+      "image": "./assets/p6.jpeg",
+      "inventory": 40,
+      "name": "Common Yarrow",
+      "price": 65
+    },
+    "-NSxOxkP5RJ2tmirFKcf": {
+      "attributes": {
+        "height": "100 cm",
+        "width": "50 cm"
+      },
+      "category": "featured",
+      "description": "Doublefile Viburnum in white pot",
+      "image": "./assets/p7.jpeg",
+      "inventory": 40,
+      "name": "Doublefile Viburnum",
+      "price": 67.45
+    },
+    "-NSxPKyaTxZAr80dkZA6": {
+      "attributes": {
+        "height": "30 cm",
+        "width": "20 cm"
+      },
+      "category": "featured",
+      "description": "Feather Reed Grass in brass metal pot",
+      "image": "./assets/p8.jpeg",
+      "inventory": 200,
+      "name": "Feather Reed Grass",
+      "price": 20
+    }
+  }
+}

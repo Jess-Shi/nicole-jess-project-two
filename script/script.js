@@ -9,9 +9,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 const database = getDatabase(app);
-
 const dbRef = ref(database);
-
 const productRef = ref(database, "/products");
 const cartRef = ref(database, "/cart");
 
@@ -31,7 +29,6 @@ onValue(dbRef, (data) => {
 
   displayItems(products);
   displayCartCount(cartCount);
-  displayMobileCartCount(cartCount);
 });
 
 const displayItems = (products) => {
@@ -46,7 +43,7 @@ const displayItems = (products) => {
 
     productDiv.innerHTML = `
       <div class="product-image">
-        <a href="#"><img src=${products[item].image} alt=${products[item].description}/></a>
+        <a href="#"><img src=${products[item].image} alt="${products[item].description}"/></a>
         <button id=${item}><img src="./assets/icons/cart.svg" alt="Shopping cart icon"/></button>
       </div>
 
@@ -129,7 +126,7 @@ const generateCartModal = () => {
       productContainer.innerHTML = `
       
         <div class="image-container">
-            <img src=${items[item].image} />
+            <img src=${items[item].image} alt="${items[item].description}"/>
         </div>
 
         <div class="product-details">
@@ -142,7 +139,7 @@ const generateCartModal = () => {
         <div class="amount-btns">
             <button>-</button>
             <label class="sr-only" for=${idWithoutSpaces} >Quantity of ${items[item].name}</label>
-            <input type="number" min="0" id=${idWithoutSpaces} value="${items[item].amountInCart}"/>
+            <input type="number" min="0" id=${idWithoutSpaces} value="${items[item].amountInCart}" pattern="[0-9]*"/>
             <button>+</button>
         </div>
       `;
@@ -253,7 +250,7 @@ const modifyCartOnChange = (e) => {
   const amountInCartRef = ref(database, `/cart/${productKey}/amountInCart`);
   const itemRef = ref(database, `/cart/${productKey}`);
 
-  if(input.value < 0 ){
+  if (input.value < 0 || input.value === "") {
     input.value = 0;
   }
 
@@ -287,20 +284,6 @@ const displayCartCount = (cartCount) => {
     cartCountElement.innerHTML = `<p>${cartCount}</p>`;
   } else {
     cartCountElement.innerHTML = ``;
-  }
-};
-
-
-const cartCountMobileElement = document.querySelector(".cart-count-mobile");
-
-const displayMobileCartCount = (cartCount) => {
-
-  if (cartCount > 99) {
-    cartCountMobileElement.innerHTML = `<p>99+</p>`;
-  } else if (cartCount > 0) { 
-    cartCountMobileElement.innerHTML = `<p>${cartCount}</p>`;
-  } else {
-    cartCountMobileElement.innerHTML = ``;
   }
 };
 
