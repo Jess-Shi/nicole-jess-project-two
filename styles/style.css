@@ -480,7 +480,7 @@ h2 {
 }
 @media (max-width: 600px) {
   .settings .expandable,
-  .header-nav {
+  .header-nav > ul {
     display: none;
   }
   .logo {
@@ -1559,9 +1559,9 @@ textarea:focus {
   max-height: 720px;
   top: 50%;
   left: 50%;
-  overflow: hidden auto;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  overflow: hidden auto;
   background: #d8e9d6;
   padding: 120px;
   -webkit-box-shadow: 0 0 24px #000000;

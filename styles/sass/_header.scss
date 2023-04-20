@@ -136,7 +136,7 @@ h2 {
 @media (max-width: 600px) {
     
     .settings .expandable,
-    .header-nav {
+    .header-nav > ul {
         display: none;
     }
 

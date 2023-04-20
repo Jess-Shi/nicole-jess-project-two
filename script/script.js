@@ -306,6 +306,8 @@ const displayMobileCartCount = (cartCount) => {
 
 
 
+// Project 1 content below
+
 // global
 
 document.addEventListener("click", () => {
@@ -331,7 +333,7 @@ for (let i = 0; i < settings.length; i++) {
 // hamburger menu
 
 document
-  .querySelector("header .mobile .hamburger-icon")
+  .querySelector("header .hamburger-icon")
   .addEventListener("click", (e) => {
     e.stopPropagation();
     document
