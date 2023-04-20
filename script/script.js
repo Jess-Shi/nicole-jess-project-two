@@ -24,7 +24,7 @@ onValue(dbRef, (data) => {
 });
 
 
-// cart count
+// Cart count
 
 const cartCountElement = document.querySelector(".cart-count");
 
@@ -52,7 +52,7 @@ const displayCartCount = (cartCount) => {
 }
 
 
-// product section
+// Product section
 
 const featuredDiv = document.querySelector(".featured");
 
@@ -119,6 +119,9 @@ const addToCart = (button) => {
   });
 }
 
+
+// Cart modal
+
 const cartModal = document.querySelector(".cart-modal");
 cartModal.classList.add("cart-modal-hidden");
 
@@ -130,7 +133,7 @@ bagButton.addEventListener("click", () => {
   addBackgroundOverlay();
 });
 
-const addBackgroundOverlay = () =>{
+const addBackgroundOverlay = () => {
   
   const overlay = document.createElement("div");
   overlay.classList.add("overlay");
@@ -143,7 +146,7 @@ const generateCartModal = () => {
   cartModal.innerHTML = "";
   cartModal.classList.remove("cart-modal-hidden");
 
-  get(cartRef).then((cartItems)=>{
+  get(cartRef).then((cartItems) => {
 
     const items = cartItems.val();
   
@@ -161,11 +164,11 @@ const generateCartModal = () => {
   });
 }
 
-const displayCartItems = (items) =>{
+const displayCartItems = (items) => {
 
   for(let item in items) {
 
-    const productContainer = document.createElement('div');
+    const productContainer = document.createElement("div");
     productContainer.classList.add("product-container");
     productContainer.classList.add(item);
 
@@ -241,8 +244,8 @@ const displayEmptyCart = (items) =>{
     `;
     displayCloseButton();
     
-    const shopNowBtn = document.querySelector('.shop');
-    shopNowBtn.addEventListener('click', closeCart);
+    const shopNowBtn = document.querySelector(".shop");
+    shopNowBtn.addEventListener("click", closeCart);
     
   } else {
     cartModal.classList.remove("empty-cart");
@@ -275,7 +278,7 @@ const modifyCartOnClick = (e) => {
         if(newAmount === 0 ){
           remove(itemRef);
         }
-        
+
         generateCartModal();
   
       } else if (e.target.innerHTML === "Remove") {
@@ -295,7 +298,10 @@ const modifyCartOnChange = (e) => {
   const amountInCartRef = ref(database, `/cart/${productKey}/amountInCart`);
   const itemRef = ref(database, `/cart/${productKey}`);
 
-  if (input.value < 0 || input.value === "") {
+  if (!parseInt(input.value) && parseInt(input.value) !== 0) {
+    input.value = 1;
+
+  } else if (input.value < 0 || input.value === "") {
     input.value = 0;
   }
 
@@ -306,16 +312,14 @@ const modifyCartOnChange = (e) => {
     remove(itemRef);
   }
 
-
   generateCartModal();
 }
 
-
 const closeCart = () => {
-
-  cartModal.classList.add("cart-modal-hidden");
-  const overlay = document.querySelector('.overlay');
+  
+  const overlay = document.querySelector(".overlay");
   document.body.removeChild(overlay);
+  cartModal.classList.add("cart-modal-hidden");
 }
 
 
