@@ -38,24 +38,27 @@
             // once we have the product, add it to the cart object in firebase.
             //if it exists in the cart just increase the number, else add to cart 
 
-        
 
-
-
-
-
-        
         // Automatically add the price of all items in the cart and display the subtotal
         // Add an input field that allows the user to increase (or decrease) the amount of each item in cart
         // Add a button for each product that allows the user to delete the product completely
 
 
+        //add addEventListener to the remove button
+        //set the amountInCart to 0 on remove button click
+        //set cartCount to minus amountInCart
 
 
-//add addEventListener to the remove button
-    //set the amountInCart to 0 on remove button click
-    //set cartCount to minus amountInCart
-    //add t
+// Stretch goal 1: Allow the user to filter the products.
+
+    // Add event listeners to filter options 
+    // When user clicks the button it will triggert displayProducts function
+        // grab the id of the button clicked and pass it as an argument to displayProducts function
+        // use the id to filter the product category
+        // display the matching product on to the page
+        // if no product match the filtered category then display some message
+    // Make featured option a default selection on page load
+        // add a selected class to the button that the user clicks on 
 
 
 

@@ -636,8 +636,11 @@ h3::after {
   padding: 12px 24px;
   cursor: pointer;
 }
+.filters .selected {
+  border: 2px solid #06321B;
+}
 
-.featured {
+.filtered-products {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -654,7 +657,7 @@ h3::after {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.featured .child {
+.filtered-products .child {
   width: calc(25% - 24px);
 }
 
@@ -897,7 +900,7 @@ h3::after {
   .promises > :first-child {
     border-top: 2px dotted #06321B;
   }
-  .featured {
+  .filtered-products {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -912,7 +915,7 @@ h3::after {
         -ms-flex-align: center;
             align-items: center;
   }
-  .featured .child {
+  .filtered-products .child {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

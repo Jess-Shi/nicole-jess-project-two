@@ -53,12 +53,12 @@ const displayCartCount = (totalCartCount) => {
 
 const displayProducts = () => {
   
-  const featuredDiv = document.querySelector(".featured");
+  const filteredDiv = document.querySelector(".filtered-products");
 
   get(productRef).then((data) => {
 
     const products = data.val();
-    featuredDiv.innerHTML = "";
+    filteredDiv.innerHTML = "";
   
     for (let key in products) {
       const productDiv = document.createElement("div");
@@ -76,7 +76,7 @@ const displayProducts = () => {
         </div>
       `;
   
-      featuredDiv.append(productDiv);
+      filteredDiv.append(productDiv);
     }
     setupButtonClick();
   });
@@ -84,7 +84,7 @@ const displayProducts = () => {
 
 const setupButtonClick = () => {
 
-  const addToCartButtons = document.querySelectorAll(".featured button");
+  const addToCartButtons = document.querySelectorAll(".filtered-products button");
   
   addToCartButtons.forEach((button) => {
   
@@ -119,7 +119,7 @@ const addToCart = (button) => {
   });
 }
 
-if (document.querySelector(".featured")) {
+if (document.querySelector(".filtered-products")) {
 
   displayProducts();
 }
