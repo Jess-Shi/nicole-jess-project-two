@@ -1501,7 +1501,7 @@ form button:focus-within {
 .filters button:hover,
 .filters button:focus {
   color: #06321B;
-  border: 2px dotted #06321B;
+  border: 2px solid #06321B;
 }
 .filters .mobile:hover,
 .filters .mobile:focus {

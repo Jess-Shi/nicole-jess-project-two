@@ -50,7 +50,6 @@ const displayCartCount = (totalCartCount) => {
 
 // Product section
 
-
 const displayProducts = () => {
   
   const filteredDiv = document.querySelector(".filtered-products");
@@ -124,6 +123,17 @@ if (document.querySelector(".filtered-products")) {
   displayProducts();
 }
 
+const filterOptions = document.querySelector(".filters .options");
+
+filterOptions.addEventListener("click", (e)=>{
+
+  if(e.target.tagName === "BUTTON"){
+    console.log(e.target)
+    document.querySelector(".selected").classList.remove("selected");
+    e.target.classList.add("selected");
+  }
+  
+})
 
 // Cart modal
 
