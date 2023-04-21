@@ -1,6 +1,7 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+// Project 1 content below
 
 .settings .expandable .display {
     display: block;
@@ -31,38 +32,23 @@
 
 @media (max-width: 600px) {
 
-    header .mobile {
-
-        @include flexbox(column);
-
-        .visible {
-            @include flexbox();
-            width: 100%;
-            padding: 24px 0;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .display {
-            @include flexbox(column);
-            width: 100%;
-            padding: 24px 0;
-            border-top: 2px solid $primary-font-color;
-            border-bottom: 2px solid $primary-font-color;
-        }
+    header > .mobile {
 
         .child {
             @include flexbox(column);
-        }
 
-        .shopping-bag {
-            @include flexbox();
-            width: 150px;
+            button {
+                background-color: $button-background;
+                color: $primary-font-color;
+                border-radius: 6px;
+                padding: 3px 6px;
+                margin: 3px 0;
+                cursor: pointer;
 
-            img {
-                width: 30px;
+                &:hover,
+                &:focus {
+                background-color: $button-border;
+            }
             }
         }
 
@@ -87,20 +73,14 @@
                 background-color: $button-border;
             }
         }
+    }
 
-        button {
-            background-color: $button-background;
-            color: $primary-font-color;
-            border-radius: 6px;
-            padding: 3px 6px;
-            margin: 3px 0;
-            cursor: pointer;
-
-            &:hover,
-            &:focus {
-                background-color: $button-border;
-            }
-        }
+    header > .display {
+        @include flexbox(column);
+        width: 100%;
+        padding: 24px 0;
+        border-top: 2px solid $primary-font-color;
+        border-bottom: 2px solid $primary-font-color;
     }
 }
 
