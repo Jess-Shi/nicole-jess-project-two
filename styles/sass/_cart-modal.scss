@@ -7,12 +7,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow: hidden scroll;
+    overflow: hidden auto;
     background: $footer-background;
     padding: 120px;
     box-shadow: 0 0 24px $secondary-font-color;
     z-index: 20;
-    
     
     .product-container{
         @include flexbox();
@@ -182,7 +181,11 @@
 
         .product-details{
             width: 100%;
-            padding: 24px;
+            padding: 0 30px;
+
+            button {
+                margin-top: 12px;
+            }
         }
 
         .subtotal {
@@ -212,7 +215,10 @@
         .product-container {
             @include flexbox(column, center, center);
             width: 218px;
+        }
 
+        .product-details {
+            padding: 0;
         }
 
         .subtotal {

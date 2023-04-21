@@ -1724,7 +1724,7 @@ textarea:focus {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  overflow: hidden scroll;
+  overflow: hidden auto;
   background: #d8e9d6;
   padding: 120px;
   -webkit-box-shadow: 0 0 24px #000000;
@@ -1947,7 +1947,10 @@ textarea:focus {
   }
   .cart-modal .product-details {
     width: 100%;
-    padding: 24px;
+    padding: 0 30px;
+  }
+  .cart-modal .product-details button {
+    margin-top: 12px;
   }
   .cart-modal .subtotal {
     width: 360px;
@@ -1980,6 +1983,9 @@ textarea:focus {
         -ms-flex-align: center;
             align-items: center;
     width: 218px;
+  }
+  .cart-modal .product-details {
+    padding: 0;
   }
   .cart-modal .subtotal {
     display: -webkit-box;
