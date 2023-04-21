@@ -327,11 +327,15 @@ address {
   margin-left: 12px;
   position: relative;
 }
+.settings .expandable button {
+  border: 3px solid #abd373;
+}
 .settings .expandable :last-child {
   position: absolute;
   left: 0;
   bottom: -42px;
   z-index: 10;
+  background: #ffffff;
   display: none;
 }
 .settings button {
@@ -1423,10 +1427,6 @@ footer a {
   outline: none;
 }
 
-.product-image button:active {
-  background-color: #d3d3d3;
-}
-
 .header-nav ul a {
   -webkit-transition: border-bottom 0.1s;
   transition: border-bottom 0.1s;
@@ -1514,10 +1514,10 @@ form button:focus-within {
 
 .product-image button,
 .media-icons li {
-  -webkit-transition: -webkit-transform 0.25s;
-  transition: -webkit-transform 0.25s;
-  transition: transform 0.25s;
-  transition: transform 0.25s, -webkit-transform 0.25s;
+  -webkit-transition: -webkit-transform 0.1s;
+  transition: -webkit-transform 0.1s;
+  transition: transform 0.1s;
+  transition: transform 0.1s, -webkit-transform 0.1s;
 }
 .product-image button:hover, .product-image button:focus, .product-image button:focus-within,
 .media-icons li:hover,
@@ -1525,6 +1525,11 @@ form button:focus-within {
 .media-icons li:focus-within {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
+}
+.product-image button:active,
+.media-icons li:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .product-text a,
