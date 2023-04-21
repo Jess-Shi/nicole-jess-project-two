@@ -50,7 +50,9 @@ const displayCartCount = (totalCartCount) => {
 
 // Product section
 
-const displayProducts = () => {
+const displayProducts = (userChoice) => {
+
+  //featured
   
   const filteredDiv = document.querySelector(".filtered-products");
 
@@ -58,25 +60,36 @@ const displayProducts = () => {
 
     const products = data.val();
     filteredDiv.innerHTML = "";
+
+    let filteredArray = [];
+
+    for(let key in products){
+
+      if(products[key].category === userChoice){
+
+        products[key].id = key;
+        filteredArray.push(products[key]);
+      }
+    }
   
-    for (let key in products) {
+    filteredArray.forEach((product)=>{
       const productDiv = document.createElement("div");
       productDiv.classList.add("child");
   
       productDiv.innerHTML = `
         <div class="product-image">
-          <a href="#"><img src=${products[key].image} alt="${products[key].description}"/></a>
-          <button id=${key}><img src="./assets/icons/cart.svg" alt="Shopping cart icon"/></button>
+          <a href="#"><img src=${product.image} alt="${product.description}"/></a>
+          <button id=${product.id}><img src="./assets/icons/cart.svg" alt="Shopping cart icon"/></button>
         </div>
   
         <div class="product-text">
-          <a href="#">${products[key].name}</a>
-          <p class="price">$${products[key].price.toFixed(2)}</p>
+          <a href="#">${product.name}</a>
+          <p class="price">$${product.price.toFixed(2)}</p>
         </div>
       `;
   
       filteredDiv.append(productDiv);
-    }
+    });
     setupButtonClick();
   });
 }
@@ -120,20 +133,22 @@ const addToCart = (button) => {
 
 if (document.querySelector(".filtered-products")) {
 
-  displayProducts();
-}
-
-const filterOptions = document.querySelector(".filters .options");
-
-filterOptions.addEventListener("click", (e)=>{
-
-  if(e.target.tagName === "BUTTON"){
-    console.log(e.target)
-    document.querySelector(".selected").classList.remove("selected");
-    e.target.classList.add("selected");
-  }
+  displayProducts("featured");
   
-})
+  const filterOptions = document.querySelector(".filters .options");
+
+  filterOptions.addEventListener("click", (e)=>{
+    
+    if(e.target.tagName === "BUTTON"){
+      
+      document.querySelector(".selected").classList.remove("selected");
+      e.target.classList.add("selected");
+      
+      const userChoice = e.target.id;
+      displayProducts(userChoice);
+    }
+  });
+}
 
 // Cart modal
 
