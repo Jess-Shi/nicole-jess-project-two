@@ -19,10 +19,10 @@ onValue(dbRef, (data) => {
   const products = ourData.products;
   const cart = ourData.cart;
 
-  if (document.querySelector(".featured")) {
-    displayItems(products);
-  }
+  // if (document.querySelector(".featured")) {
+  // }
   
+  displayItems(products);
   updateCartCount(cart);
 });
 
