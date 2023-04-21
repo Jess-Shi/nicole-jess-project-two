@@ -18,11 +18,16 @@
         margin-left: 12px;
         position: relative;
 
+        button {
+            border: 3px solid $accent-color;
+        }
+
         :last-child {
             position: absolute;
             left: 0;
             bottom: -42px;
             z-index: 10;
+            background: $button-background;
             display: none;
         }
     }
