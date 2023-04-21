@@ -1756,6 +1756,7 @@ textarea:focus {
   line-height: 1.5rem;
 }
 .cart-modal .product-details button {
+  color: #000000;
   margin-top: 36px;
   background-color: #ffffff;
   border-bottom: 1px solid #000000;
@@ -1797,6 +1798,7 @@ textarea:focus {
   background-color: #abd373;
   width: 36px;
   height: 36px;
+  padding: auto;
   text-align: center;
   border-radius: 18px;
 }
