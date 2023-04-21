@@ -24,7 +24,7 @@
                     <button>French</button>
                 </div>
             </div>
-        </section>
+        </section> 
 
         <nav class="wrapper header-nav">
             <div class="logo">
@@ -37,41 +37,35 @@
                 <li><a href="./contact.html">Contact Us</a></li>
             </ul>
 
-            <a href="#" class="shopping-bag"><img src="./assets/icons/shopping-bag.svg" alt="Shopping bag icon"></a>
-        </nav>
-
-        <nav class="wrapper mobile">
-            <div class="visible">
-                <div class="logo">
-                    <a href="./index.html"><img src="./assets/logo.png" alt="Pronia logo"></a>
-                </div>
-    
-                <button><img src="./assets/icons/menu.png" alt="Menu icon"></button>
+            <div class="shopping-bag">
+                <button class="bag-button"><img src="./assets/icons/shopping-bag.svg" alt="Shopping bag icon"></button>
+                <div class="cart-count"></div>
+                <div class="cart-modal cart-modal-hidden"></div>
             </div>
 
-            <div class="hidden">
-                <a href="#" class="child shopping-bag"><img src="./assets/icons/shopping-bag.svg" alt="Shopping bag icon">View Cart</a>
+            <button class="hamburger-button mobile"><img src="./assets/icons/menu.png" alt="Menu icon"></button>
+        </nav>
 
-                <nav class="child">
-                    <h6>Menu</h6>
-                    <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="./contact.html">Contact Us</a></li>
-                    </ul>
-                </nav>
+        <nav class="mobile">
+            <nav class="child">
+                <h6>Menu</h6>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
 
-                <div class="child">
-                    <h6>Currency</h6>
-                    <button>CAD</button>
-                    <button>USD</button>
-                </div>
+            <div class="child">
+                <h6>Currency</h6>
+                <button>CAD</button>
+                <button>USD</button>
+            </div>
 
-                <div class="child">
-                    <h6>Language</h6>
-                    <button>English</button>
-                    <button>French</button>
-                </div>
+            <div class="child">
+                <h6>Language</h6>
+                <button>English</button>
+                <button>French</button>
             </div>
         </nav>
 
@@ -115,7 +109,7 @@
             </div>
         </section>
 
-        <section class="products">
+        <section class="products" id="products">
             <h3>Our Products</h3>
 
             <div class="filters">
@@ -365,6 +359,6 @@
         </div>
     </footer>
 
-    <script src="./script/script.js"></script>
+    <script type="module" src="./script/script.js"></script>
 </body>
 </html>

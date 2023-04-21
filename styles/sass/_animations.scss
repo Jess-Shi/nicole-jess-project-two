@@ -5,6 +5,10 @@
     outline: none;
 }
 
+.product-image button:active{
+    background-color: $button-border;
+}
+
 .header-nav ul a {
     transition: border-bottom 0.1s;
 
@@ -26,8 +30,9 @@
 }
 
 .settings button,
-.logo,
-.shopping-bag,
+.logo a,
+.bag-button,
+.hamburger-button,
 .discover-now,
 .product-image a,
 .shop-now,
