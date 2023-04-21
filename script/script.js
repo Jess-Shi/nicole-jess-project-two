@@ -73,12 +73,12 @@ const displayProducts = (userChoice) => {
     if(filteredArray.length === 0){
 
       filteredDiv.innerHTML = `
-      
         <p class="product-not-found">No products match your filter criteria. Please adjust your filters and try again.</p>
       `
     }
 
-    filteredArray.forEach((product)=>{
+    filteredArray.forEach((product) => {
+      
       const productDiv = document.createElement("div");
       productDiv.classList.add("child");
   
@@ -96,6 +96,7 @@ const displayProducts = (userChoice) => {
   
       filteredDiv.append(productDiv);
     });
+
     setupButtonClick();
   });
 }
