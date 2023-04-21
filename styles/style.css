@@ -660,6 +660,9 @@ h3::after {
 .filtered-products .child {
   width: calc(25% - 24px);
 }
+.filtered-products .product-not-found {
+  text-align: center;
+}
 
 .product-image {
   position: relative;

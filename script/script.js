@@ -52,8 +52,6 @@ const displayCartCount = (totalCartCount) => {
 
 const displayProducts = (userChoice) => {
 
-  //featured
-  
   const filteredDiv = document.querySelector(".filtered-products");
 
   get(productRef).then((data) => {
@@ -71,7 +69,15 @@ const displayProducts = (userChoice) => {
         filteredArray.push(products[key]);
       }
     }
-  
+
+    if(filteredArray.length === 0){
+
+      filteredDiv.innerHTML = `
+      
+        <p class="product-not-found">No products match your filter criteria. Please adjust your filters and try again.</p>
+      `
+    }
+
     filteredArray.forEach((product)=>{
       const productDiv = document.createElement("div");
       productDiv.classList.add("child");

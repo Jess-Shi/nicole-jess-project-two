@@ -81,6 +81,10 @@ h3 {
     .child {
         width: calc(100%/4 - 24px);
     }    
+
+    .product-not-found{
+        text-align: center;
+    }
 }
 
 .product-image {
