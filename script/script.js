@@ -126,7 +126,6 @@ if (document.querySelector(".featured")) {
 // Cart modal
 
 const cartModal = document.querySelector(".cart-modal");
-cartModal.classList.add("cart-modal-hidden");
 
 const bagButton = document.querySelector(".bag-button");
 
