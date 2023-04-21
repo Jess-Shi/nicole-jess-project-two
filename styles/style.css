@@ -1417,6 +1417,10 @@ footer a {
   outline: none;
 }
 
+.product-image button:active {
+  background-color: #d3d3d3;
+}
+
 .header-nav ul a {
   -webkit-transition: border-bottom 0.1s;
   transition: border-bottom 0.1s;

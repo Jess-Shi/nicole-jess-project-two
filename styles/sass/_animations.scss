@@ -5,6 +5,10 @@
     outline: none;
 }
 
+.product-image button:active{
+    background-color: $button-border;
+}
+
 .header-nav ul a {
     transition: border-bottom 0.1s;
 
