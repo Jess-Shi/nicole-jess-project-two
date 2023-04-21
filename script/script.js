@@ -9,20 +9,13 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 const database = getDatabase(app);
-const dbRef = ref(database);
 const productRef = ref(database, "/products");
 const cartRef = ref(database, "/cart");
 
-onValue(dbRef, (data) => {
+onValue(cartRef, (data) => {
 
-  const ourData = data.val();
-  const products = ourData.products;
-  const cart = ourData.cart;
-
-  // if (document.querySelector(".featured")) {
-  // }
+  const cart = data.val();
   
-  displayItems(products);
   updateCartCount(cart);
 });
 
@@ -59,30 +52,33 @@ const displayCartCount = (totalCartCount) => {
 
 const featuredDiv = document.querySelector(".featured");
 
-const displayItems = (products) => {
+const displayItems = () => {
 
-  featuredDiv.innerHTML = "";
+  get(productRef).then((data) => {
 
-  for (let key in products) {
-    const productDiv = document.createElement("div");
-    productDiv.classList.add("child");
-
-    productDiv.innerHTML = `
-      <div class="product-image">
-        <a href="#"><img src=${products[key].image} alt="${products[key].description}"/></a>
-        <button id=${key}><img src="./assets/icons/cart.svg" alt="Shopping cart icon"/></button>
-      </div>
-
-      <div class="product-text">
-        <a href="#">${products[key].name}</a>
-        <p class="price">$${products[key].price.toFixed(2)}</p>
-      </div>
-    `;
-
-    featuredDiv.append(productDiv);
-  }
-
-  setupButtonClick();
+    const products = data.val();
+    featuredDiv.innerHTML = "";
+  
+    for (let key in products) {
+      const productDiv = document.createElement("div");
+      productDiv.classList.add("child");
+  
+      productDiv.innerHTML = `
+        <div class="product-image">
+          <a href="#"><img src=${products[key].image} alt="${products[key].description}"/></a>
+          <button id=${key}><img src="./assets/icons/cart.svg" alt="Shopping cart icon"/></button>
+        </div>
+  
+        <div class="product-text">
+          <a href="#">${products[key].name}</a>
+          <p class="price">$${products[key].price.toFixed(2)}</p>
+        </div>
+      `;
+  
+      featuredDiv.append(productDiv);
+    }
+    setupButtonClick();
+  });
 }
 
 const setupButtonClick = () => {
@@ -100,9 +96,9 @@ const setupButtonClick = () => {
 
 const addToCart = (button) => {
 
-  get(productRef).then((product) => {
+  get(productRef).then((data) => {
   
-    const newCartItem = product.val()[button.id];
+    const newCartItem = data.val()[button.id];
     const newCartItemRef = ref(database, `/cart/${button.id}`);
     const amountInCartRef = ref(database, `/cart/${button.id}/amountInCart`);
   
@@ -122,6 +118,10 @@ const addToCart = (button) => {
   });
 }
 
+if (document.querySelector(".featured")) {
+
+  displayItems();
+}
 
 // Cart modal
 
