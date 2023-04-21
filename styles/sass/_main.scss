@@ -68,15 +68,23 @@ h3 {
         padding: 12px 24px;
         cursor: pointer;
     }
+
+    .selected{
+        border: 2px solid $tertiary-font-color;
+    }
 }
 
-.featured {
+.filtered-products {
     @include flexbox();
     flex-wrap: wrap;
 
     .child {
         width: calc(100%/4 - 24px);
     }    
+
+    .product-not-found{
+        text-align: center;
+    }
 }
 
 .product-image {
@@ -234,7 +242,7 @@ h3 {
         }
     }
 
-    .featured {
+    .filtered-products {
         @include flexbox(row, center);
 
         .child {

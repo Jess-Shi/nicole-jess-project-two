@@ -50,41 +50,60 @@ const displayCartCount = (totalCartCount) => {
 
 // Product section
 
+const displayProducts = (userChoice) => {
 
-const displayProducts = () => {
-  
-  const featuredDiv = document.querySelector(".featured");
+  const filteredDiv = document.querySelector(".filtered-products");
 
   get(productRef).then((data) => {
 
     const products = data.val();
-    featuredDiv.innerHTML = "";
-  
-    for (let key in products) {
+    filteredDiv.innerHTML = "";
+
+    let filteredArray = [];
+
+    for(let key in products){
+
+      if(products[key].category === userChoice){
+
+        products[key].id = key;
+        filteredArray.push(products[key]);
+      }
+    }
+
+    if(filteredArray.length === 0){
+
+      filteredDiv.innerHTML = `
+        <p class="product-not-found">No products match your filter criteria. Please adjust your filters and try again.</p>
+      `
+    }
+
+    filteredArray.forEach((product) => {
+      
       const productDiv = document.createElement("div");
       productDiv.classList.add("child");
   
       productDiv.innerHTML = `
         <div class="product-image">
-          <a href="#"><img src=${products[key].image} alt="${products[key].description}"/></a>
-          <button id=${key}><img src="./assets/icons/cart.svg" alt="Shopping cart icon"/></button>
+          <a href="#"><img src=${product.image} alt="${product.description}"/></a>
+          <button id=${product.id}><img src="./assets/icons/cart.svg" alt="Shopping cart icon"/></button>
         </div>
   
         <div class="product-text">
-          <a href="#">${products[key].name}</a>
-          <p class="price">$${products[key].price.toFixed(2)}</p>
+          <a href="#">${product.name}</a>
+          <p class="price">$${product.price.toFixed(2)}</p>
         </div>
       `;
   
-      featuredDiv.append(productDiv);
-    }
+      filteredDiv.append(productDiv);
+    });
+
     setupButtonClick();
   });
 }
 
 const setupButtonClick = () => {
 
-  const addToCartButtons = document.querySelectorAll(".featured button");
+  const addToCartButtons = document.querySelectorAll(".filtered-products button");
   
   addToCartButtons.forEach((button) => {
   
@@ -119,11 +138,24 @@ const addToCart = (button) => {
   });
 }
 
-if (document.querySelector(".featured")) {
+if (document.querySelector(".filtered-products")) {
 
-  displayProducts();
+  displayProducts("featured");
+  
+  const filterOptions = document.querySelector(".filters .options");
+
+  filterOptions.addEventListener("click", (e)=>{
+    
+    if(e.target.tagName === "BUTTON"){
+      
+      document.querySelector(".selected").classList.remove("selected");
+      e.target.classList.add("selected");
+      
+      const userChoice = e.target.id;
+      displayProducts(userChoice);
+    }
+  });
 }
-
 
 // Cart modal
 
