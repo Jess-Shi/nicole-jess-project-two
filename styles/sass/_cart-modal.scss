@@ -2,13 +2,12 @@
 @use "./mixins" as *;
 
 .cart-modal{
-    @include flexbox(column);
     position: fixed;
     max-height: 720px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow: hidden auto;
+    overflow: hidden scroll;
     background: $footer-background;
     padding: 120px;
     box-shadow: 0 0 24px $secondary-font-color;
@@ -25,10 +24,12 @@
     
     img{
         border-radius: 24px;
+        width: 228px;
+        height: auto;
     }
     
     .product-details{
-        flex-basis: 50%;
+        width: 50%;
 
         p{
             line-height: 1.5rem;
@@ -177,6 +178,11 @@
             @include flexbox(column);
             width: 360px;
 
+        }
+
+        .product-details{
+            width: 100%;
+            padding: 24px;
         }
 
         .subtotal {
