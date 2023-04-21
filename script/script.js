@@ -12,6 +12,9 @@ const database = getDatabase(app);
 const productRef = ref(database, "/products");
 const cartRef = ref(database, "/cart");
 
+
+// Cart count
+
 onValue(cartRef, (data) => {
 
   const cart = data.val();
@@ -19,24 +22,21 @@ onValue(cartRef, (data) => {
   updateCartCount(cart);
 });
 
-
-// Cart count
-
-const cartCountElement = document.querySelector(".cart-count");
-
 const updateCartCount = (cart) => {
-
+  
   let totalCartCount = 0;
-
+  
   for (let key in cart) {
     const amountInCart = cart[key].amountInCart;
     totalCartCount += amountInCart;
   };
-
+  
   displayCartCount(totalCartCount);
 };
 
 const displayCartCount = (totalCartCount) => {
+  
+  const cartCountElement = document.querySelector(".cart-count");
 
   if (totalCartCount > 99) {
     cartCountElement.innerHTML = `<p>99+</p>`;
@@ -50,9 +50,10 @@ const displayCartCount = (totalCartCount) => {
 
 // Product section
 
-const featuredDiv = document.querySelector(".featured");
 
-const displayItems = () => {
+const displayProducts = () => {
+  
+  const featuredDiv = document.querySelector(".featured");
 
   get(productRef).then((data) => {
 
@@ -120,13 +121,13 @@ const addToCart = (button) => {
 
 if (document.querySelector(".featured")) {
 
-  displayItems();
+  displayProducts();
 }
+
 
 // Cart modal
 
 const cartModal = document.querySelector(".cart-modal");
-
 const bagButton = document.querySelector(".bag-button");
 
 bagButton.addEventListener("click", () => {
@@ -242,7 +243,7 @@ const displayEmptyCart = (items) =>{
   if (!items) {
     cartModal.classList.add("empty-cart");
     cartModal.innerHTML = `<p>Your cart is empty! <br/>Click here to start filling it up.</p>
-    <a href="#products" class="shop">Shop Now</a>
+    <a href="./index.html#products" class="shop">Shop Now</a>
     `;
     displayCloseButton();
     
@@ -300,10 +301,10 @@ const modifyCartOnChange = (e) => {
   const amountInCartRef = ref(database, `/cart/${productKey}/amountInCart`);
   const itemRef = ref(database, `/cart/${productKey}`);
 
-  if (!parseInt(input.value) && parseInt(input.value) !== 0) {
+  if (input.value === "") {
     input.value = 1;
 
-  } else if (input.value < 0 || input.value === "") {
+  } else if (input.value < 0) {
     input.value = 0;
   }
 
