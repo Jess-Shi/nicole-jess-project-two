@@ -48,7 +48,7 @@
         
     }
 
-    .amount-btns{
+    .amount-buttons{
         @include flexbox();
         align-self: flex-end;
         margin: 0 36px 36px 0;
@@ -60,7 +60,7 @@
             width: 36px;
             height: 36px;
             text-align: center;
-            border-radius: 50%;
+            border-radius: 18px;
         }
 
     }
@@ -217,7 +217,7 @@
             width: 218px;
         }
 
-        .amount-btns {
+        .amount-buttons {
             margin: 24px;
             align-self: auto;
         }
@@ -229,20 +229,16 @@
     }
 
     .empty-cart{
-
-        height: 384px;
+        height: 330px;
 
         p{
             @include font(1.2rem, 1.5rem);
-            margin-top: 48px;
+            margin-top: 24px;
         }
 
         a{
             @include font(1.3rem, 1.3rem, $modal-accent, none, 600);
-            width: 240px;
-            margin-bottom: 36px;
+            width: 218px;
         }
-}
-
-
+    }
 }

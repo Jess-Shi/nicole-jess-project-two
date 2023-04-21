@@ -30,22 +30,22 @@ const cartCountElement = document.querySelector(".cart-count");
 
 const updateCartCount = (cart) => {
 
-  let cartCount = 0;
+  let totalCartCount = 0;
 
-  for (let item in cart) {
-    const amountInCart = cart[item].amountInCart;
-    cartCount += amountInCart;
+  for (let key in cart) {
+    const amountInCart = cart[key].amountInCart;
+    totalCartCount += amountInCart;
   };
 
-  displayCartCount(cartCount);
+  displayCartCount(totalCartCount);
 };
 
-const displayCartCount = (cartCount) => {
+const displayCartCount = (totalCartCount) => {
 
-  if (cartCount > 99) {
+  if (totalCartCount > 99) {
     cartCountElement.innerHTML = `<p>99+</p>`;
-  } else if (cartCount > 0) { 
-    cartCountElement.innerHTML = `<p>${cartCount}</p>`;
+  } else if (totalCartCount > 0) {
+    cartCountElement.innerHTML = `<p>${totalCartCount}</p>`;
   } else {
     cartCountElement.innerHTML = ``;
   }
@@ -60,19 +60,19 @@ const displayItems = (products) => {
 
   featuredDiv.innerHTML = "";
 
-  for (let item in products) {
+  for (let key in products) {
     const productDiv = document.createElement("div");
     productDiv.classList.add("child");
 
     productDiv.innerHTML = `
       <div class="product-image">
-        <a href="#"><img src=${products[item].image} alt="${products[item].description}"/></a>
-        <button id=${item}><img src="./assets/icons/cart.svg" alt="Shopping cart icon"/></button>
+        <a href="#"><img src=${products[key].image} alt="${products[key].description}"/></a>
+        <button id=${key}><img src="./assets/icons/cart.svg" alt="Shopping cart icon"/></button>
       </div>
 
       <div class="product-text">
-        <a href="#">${products[item].name}</a>
-        <p class="price">$${products[item].price.toFixed(2)}</p>
+        <a href="#">${products[key].name}</a>
+        <p class="price">$${products[key].price.toFixed(2)}</p>
       </div>
     `;
 
@@ -166,32 +166,32 @@ const generateCartModal = () => {
 
 const displayCartItems = (items) => {
 
-  for(let item in items) {
+  for(let key in items) {
 
     const productContainer = document.createElement("div");
     productContainer.classList.add("product-container");
-    productContainer.classList.add(item);
+    productContainer.classList.add(key);
 
-    const id = `quantity of ${items[item].name}`;
+    const id = `quantity of ${items[key].name}`;
     const idWithoutSpaces = id.replaceAll(" ", "-");
 
     productContainer.innerHTML = `
     
       <div class="image-container">
-          <img src=${items[item].image} alt="${items[item].description}"/>
+          <img src=${items[key].image} alt="${items[key].description}"/>
       </div>
 
       <div class="product-details">
-          <h2>${items[item].name}</h2>
-          <p>Quantity: ${items[item].amountInCart}</p>
-          <p>Price: $${(items[item].price * items[item].amountInCart).toFixed(2)}</p>
+          <h2>${items[key].name}</h2>
+          <p>Quantity: ${items[key].amountInCart}</p>
+          <p>Price: $${(items[key].price * items[key].amountInCart).toFixed(2)}</p>
           <button>Remove</button>
       </div>
 
-      <div class="amount-btns">
+      <div class="amount-buttons">
           <button>-</button>
-          <label class="sr-only" for=${idWithoutSpaces} >Quantity of ${items[item].name}</label>
-          <input type="number" min="0" id=${idWithoutSpaces} value="${items[item].amountInCart}" pattern="[0-9]*"/>
+          <label class="sr-only" for=${idWithoutSpaces} >Quantity of ${items[key].name}</label>
+          <input type="number" min="0" id=${idWithoutSpaces} value="${items[key].amountInCart}" pattern="[0-9]*"/>
           <button>+</button>
       </div>
     `;
@@ -204,9 +204,9 @@ const displaySubtotal = (items) =>{
 
   let subtotal = 0;
     
-  for (let item in items) {
+  for (let key in items) {
     
-    const price = items[item].amountInCart * items[item].price;
+    const price = items[key].amountInCart * items[key].price;
     subtotal += price;
   }
   
@@ -244,8 +244,8 @@ const displayEmptyCart = (items) =>{
     `;
     displayCloseButton();
     
-    const shopNowBtn = document.querySelector(".shop");
-    shopNowBtn.addEventListener("click", closeCart);
+    const shopNowButton = document.querySelector(".shop");
+    shopNowButton.addEventListener("click", closeCart);
     
   } else {
     cartModal.classList.remove("empty-cart");

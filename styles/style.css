@@ -1769,7 +1769,7 @@ textarea:focus {
   font-weight: 600;
   margin-bottom: 20px;
 }
-.cart-modal .amount-btns {
+.cart-modal .amount-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1787,7 +1787,7 @@ textarea:focus {
       align-self: flex-end;
   margin: 0 36px 36px 0;
 }
-.cart-modal .amount-btns button {
+.cart-modal .amount-buttons button {
   font-size: 1.2rem;
   line-height: 1.2rem;
   color: #000000;
@@ -1798,7 +1798,7 @@ textarea:focus {
   width: 36px;
   height: 36px;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 18px;
 }
 .cart-modal .subtotal {
   display: -webkit-box;
@@ -1989,7 +1989,7 @@ textarea:focus {
   .cart-modal .checkout {
     width: 218px;
   }
-  .cart-modal .amount-btns {
+  .cart-modal .amount-buttons {
     margin: 24px;
     -ms-flex-item-align: auto;
         align-self: auto;
@@ -1999,7 +1999,7 @@ textarea:focus {
     right: 12px;
   }
   .empty-cart {
-    height: 384px;
+    height: 330px;
   }
   .empty-cart p {
     font-size: 1.2rem;
@@ -2007,7 +2007,7 @@ textarea:focus {
     color: #4c4c4c;
     text-transform: none;
     font-weight: 400;
-    margin-top: 48px;
+    margin-top: 24px;
   }
   .empty-cart a {
     font-size: 1.3rem;
@@ -2015,7 +2015,6 @@ textarea:focus {
     color: #ffffff;
     text-transform: none;
     font-weight: 600;
-    width: 240px;
-    margin-bottom: 36px;
+    width: 218px;
   }
 }
