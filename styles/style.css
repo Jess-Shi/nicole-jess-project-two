@@ -239,7 +239,7 @@ body {
   font-family: "Rubik", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, fieldset, input {
+h1, h2, h3, h4, h5, h6, p, ul, fieldset, input, button {
   margin: 0;
   padding: 0;
 }
@@ -494,8 +494,6 @@ h2 {
     display: block;
     background-color: #ffffff;
     color: #4c4c4c;
-    width: 48px;
-    height: 48px;
     margin-left: 12px;
     -ms-flex-negative: 0;
         flex-shrink: 0;
@@ -505,6 +503,11 @@ h2 {
     transition: -webkit-box-shadow 0.25s;
     transition: box-shadow 0.25s;
     transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+  }
+  .hamburger-button img {
+    margin: 3px;
+    width: 42px;
+    height: 42px;
   }
   .heading .wrapper {
     background-size: 65%;
@@ -1414,6 +1417,10 @@ footer a {
   outline: none;
 }
 
+.product-image button:active {
+  background-color: #d3d3d3;
+}
+
 .header-nav ul a {
   -webkit-transition: border-bottom 0.1s;
   transition: border-bottom 0.1s;
@@ -1756,6 +1763,7 @@ textarea:focus {
   line-height: 1.5rem;
 }
 .cart-modal .product-details button {
+  color: #000000;
   margin-top: 36px;
   background-color: #ffffff;
   border-bottom: 1px solid #000000;
