@@ -183,7 +183,6 @@ const generateCartModal = () => {
   get(cartRef).then((cartItems) => {
     
     const items = cartItems.val();
-    cartModal.innerHTML = "";
     
     displayCartItems(items);
     displaySubtotal(items);
@@ -201,6 +200,8 @@ const generateCartModal = () => {
 
 const displayCartItems = (items) => {
 
+  cartModal.innerHTML = "";
+  
   for(let key in items) {
 
     const productContainer = document.createElement("div");
