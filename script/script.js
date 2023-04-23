@@ -178,13 +178,13 @@ const addBackgroundOverlay = () => {
 
 const generateCartModal = () => {
 
-  cartModal.innerHTML = "";
   cartModal.classList.remove("cart-modal-hidden");
-
-  get(cartRef).then((cartItems) => {
-
-    const items = cartItems.val();
   
+  get(cartRef).then((cartItems) => {
+    
+    const items = cartItems.val();
+    cartModal.innerHTML = "";
+    
     displayCartItems(items);
     displaySubtotal(items);
     displayCloseButton();

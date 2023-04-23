@@ -1377,7 +1377,13 @@ footer a {
   right: 0;
   border-top: 2px solid #06321B;
   text-align: center;
-  padding: 12px 0;
+  padding: 6px 0;
+}
+.copyright p {
+  margin: 6px;
+}
+.copyright a {
+  color: #06321B;
 }
 
 @media (max-width: 1200px) {

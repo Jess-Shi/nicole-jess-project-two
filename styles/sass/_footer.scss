@@ -56,7 +56,15 @@ footer {
     right: 0;
     border-top: 2px solid $tertiary-font-color;
     text-align: center;
-    padding: 12px 0;
+    padding: 6px 0;
+
+    p {
+        margin: 6px;
+    }
+
+    a {
+        color: $tertiary-font-color;
+    }
 }
 
 @media (max-width: 1200px) {
