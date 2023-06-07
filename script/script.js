@@ -6,7 +6,7 @@ import {
   get,
   onValue,
   remove
-} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 
 const database = getDatabase(app);
 const productRef = ref(database, "/products");
