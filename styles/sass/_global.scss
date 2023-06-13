@@ -8,6 +8,7 @@ html {
 body {
     @include font();
     font-family: $font-stack;
+    background: $body-background;
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, fieldset, input, button {
